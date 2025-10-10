@@ -2,14 +2,34 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { ShoppingCart, Plus, Minus, Trash2, MessageCircle } from "lucide-react"
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+import { Plus, Minus, Trash2, MessageCircle } from "lucide-react"
 import { useCart } from "@/contexts/cart-context"
 import { getWhatsAppUrl } from "@/lib/utils"
 import { BUSINESS_INFO } from "@/lib/constants"
 import { toast } from "sonner"
 import Link from "next/link"
+
+// ✅ Inline, self-styled cart icon (immune to global svg overrides)
+function CartIcon({ size = 28 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      role="img"
+      aria-hidden="true"
+      style={{ stroke: "#fff", fill: "none", strokeWidth: 2.5 }}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {/* Based on lucide "shopping-cart" */}
+      <circle cx="9" cy="20" r="1.8" />
+      <circle cx="17" cy="20" r="1.8" />
+      <path d="M3 4h2l1.2 6m0 0L7 13h10l4-8H5.4m0 0L5 6" />
+    </svg>
+  )
+}
 
 export function FloatingCart() {
   const { cart, updateQuantity, removeFromCart, clearCart, getTotalPrice, getTotalItems } = useCart()
@@ -24,12 +44,9 @@ export function FloatingCart() {
 Hi! I would like to place an order:
 
 `
-    
     cart.forEach((cartItem, index) => {
       message += `${index + 1}. *${cartItem.name}*`
-      if (cartItem.size) {
-        message += ` (${cartItem.size})`
-      }
+      if (cartItem.size) message += ` (${cartItem.size})`
       message += `
    ₹${cartItem.price} × ${cartItem.quantity} = ₹${cartItem.price * cartItem.quantity}
 
@@ -50,14 +67,12 @@ Please confirm availability and estimated delivery time. Thank you! 🙏`
   const handleWhatsAppOrder = () => {
     const message = generateWhatsAppMessage()
     const whatsappUrl = getWhatsAppUrl(BUSINESS_INFO.phones.primary, message)
-    window.open(whatsappUrl, '_blank')
+    window.open(whatsappUrl, "_blank")
     toast.success("Opening WhatsApp...", {
       description: "Your order is ready to send!",
       duration: 3000,
     })
     setIsOpen(false)
-    // Optionally clear cart after order
-    // clearCart()
   }
 
   if (cart.length === 0) return null
@@ -66,19 +81,24 @@ Please confirm availability and estimated delivery time. Thank you! 🙏`
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <div className="fixed bottom-24 right-4 z-50">
-          <Button 
-            size="lg" 
-            className="bg-[#e10600] hover:bg-[#c10500] rounded-full h-16 w-16 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 relative flex items-center justify-center"
+          <Button
+            size="lg"
             aria-label="View Cart"
+            className="
+              bg-[#e10600] hover:bg-[#c10500] rounded-full h-16 w-16
+              shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110
+              relative flex items-center justify-center border-2 border-white
+              text-white
+            "
           >
-            {/* Modern cart icon SVG */}
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8">
-              <circle cx="9" cy="21" r="1.5" />
-              <circle cx="18" cy="21" r="1.5" />
-              <path d="M3 3h2l.4 2M7 13h10l4-8H5.4" />
-            </svg>
+            {/* ✅ Inline icon with explicit stroke/fill */}
+            <span className="pointer-events-none">
+              <CartIcon size={28} />
+            </span>
+
+            {/* Count badge */}
             <span 
-              className="absolute -top-2 -right-2 bg-white text-[#e10600] border-2 border-[#e10600] h-7 w-7 rounded-full flex items-center justify-center text-base font-bold shadow-lg animate-bounce"
+              className="absolute -top-2 -right-2 bg-white text-[#e10600] border-2 border-[#e10600] h-7 w-7 rounded-full flex items-center justify-center text-base font-bold shadow-lg"
               style={{ minWidth: 28 }}
             >
               {getTotalItems()}
@@ -86,13 +106,14 @@ Please confirm availability and estimated delivery time. Thank you! 🙏`
           </Button>
         </div>
       </SheetTrigger>
+
       <SheetContent className="w-[90vw] sm:w-[400px] md:w-[450px] max-w-md p-0">
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="p-6 border-b bg-gradient-to-r from-[#e10600] to-[#c10500] text-white">
             <SheetTitle className="flex items-center gap-3 text-xl font-bold">
               <div className="bg-white/20 p-2 rounded-full">
-                <ShoppingCart className="h-6 w-6" />
+                <CartIcon size={20} />
               </div>
               <div>
                 <div>Your Order</div>
@@ -106,7 +127,6 @@ Please confirm availability and estimated delivery time. Thank you! 🙏`
             {cart.map((cartItem) => (
               <div key={cartItem.id} className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <div className="flex items-start gap-3">
-                  {/* Item Info */}
                   <div className="flex-1 min-w-0">
                     <Link 
                       href={`/items/${cartItem.item.slug}`}
@@ -120,8 +140,6 @@ Please confirm availability and estimated delivery time. Thank you! 🙏`
                     )}
                     <div className="text-sm font-semibold text-[#e10600]">₹{cartItem.price} each</div>
                   </div>
-                  
-                  {/* Remove Button */}
                   <Button
                     size="sm"
                     variant="ghost"
@@ -132,7 +150,6 @@ Please confirm availability and estimated delivery time. Thank you! 🙏`
                   </Button>
                 </div>
                 
-                {/* Quantity Controls & Price */}
                 <div className="flex items-center justify-between mt-3">
                   <div className="flex items-center gap-3">
                     <Button

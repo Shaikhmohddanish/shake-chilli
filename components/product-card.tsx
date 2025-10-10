@@ -80,10 +80,10 @@ export function ProductCard({ item }: ProductCardProps) {
           {/* Quick Add for Single Price Items */}
           {priceInfo.type === 'single' && (
             <Button 
-              className="w-full bg-[#e10600] hover:bg-[#c10500]"
+              className="w-full bg-[#e10600] hover:bg-[#c10500] h-12 md:h-14 font-semibold text-base shadow-md hover:shadow-lg transition-all duration-300"
               onClick={handleQuickAdd}
             >
-              <ShoppingCart className="h-4 w-4 mr-2" />
+              <ShoppingCart className="h-5 w-5 mr-2" />
               Add to Cart - ₹{priceInfo.prices[0].price}
             </Button>
           )}

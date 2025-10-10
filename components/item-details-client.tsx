@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { formatPriceAdvanced } from "@/lib/utils"
@@ -19,17 +19,19 @@ export function ItemDetailsClient({ item }: ItemDetailsClientProps) {
   const [selectedPrice, setSelectedPrice] = useState<number>(0)
   const [quantity, setQuantity] = useState<number>(1)
 
-  const priceInfo = formatPriceAdvanced(item.price)
+  // ✅ Memoize so identity is stable across renders
+  const priceInfo = useMemo(() => formatPriceAdvanced(item.price), [item.price])
 
-  // Initialize selected size and price
+  // Initialize selected size and price once per item.price change
   useEffect(() => {
-    if (priceInfo.type === 'single') {
+    if (priceInfo.type === "single") {
+      setSelectedSize("") // not used for single price
       setSelectedPrice(priceInfo.prices[0].price)
     } else if (priceInfo.prices.length > 0) {
       setSelectedSize(priceInfo.prices[0].size)
       setSelectedPrice(priceInfo.prices[0].price)
     }
-  }, [priceInfo])
+  }, [priceInfo, item.price])
 
   const handleSizeChange = (size: string, price: number) => {
     setSelectedSize(size)
@@ -37,12 +39,18 @@ export function ItemDetailsClient({ item }: ItemDetailsClientProps) {
   }
 
   const handleAddToCart = () => {
-    addToCart(item, selectedSize, selectedPrice, quantity)
-    setQuantity(1) // Reset quantity after adding
+    const effectivePrice =
+      selectedPrice || (priceInfo.type === "single" ? priceInfo.prices[0].price : 0)
+    addToCart(item, selectedSize, effectivePrice, quantity)
+    setQuantity(1)
   }
 
-  const incrementQuantity = () => setQuantity(prev => prev + 1)
-  const decrementQuantity = () => setQuantity(prev => prev > 1 ? prev - 1 : 1)
+  const incrementQuantity = () => setQuantity((prev) => prev + 1)
+  const decrementQuantity = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1))
+
+  const effectiveUnitPrice =
+    selectedPrice || (priceInfo.type === "single" ? priceInfo.prices[0].price : 0)
+  const totalPrice = effectiveUnitPrice * quantity
 
   return (
     <div>
@@ -99,24 +107,44 @@ export function ItemDetailsClient({ item }: ItemDetailsClientProps) {
           <p className="text-lg text-muted-foreground mb-6 text-pretty">{item.descriptionLong}</p>
 
           {/* Size Selection */}
-          {priceInfo.type === 'multiple' && (
+          {priceInfo.type === "multiple" && (
             <div className="mb-6">
               <h3 className="text-lg font-semibold mb-3">Choose Size</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {priceInfo.prices.map((priceItem) => (
-                  <button
+                  <label
                     key={priceItem.size}
-                    type="button"
-                    onClick={() => handleSizeChange(priceItem.size, priceItem.price)}
-                    className={`p-4 rounded-xl border-2 transition-all text-center hover:scale-105 ${
+                    className={`p-4 rounded-xl border-2 transition-all text-center hover:scale-105 cursor-pointer relative ${
                       selectedSize === priceItem.size
-                        ? 'border-[#e10600] bg-[#e10600]/10 shadow-lg'
-                        : 'border-gray-300 bg-white hover:border-[#e10600]/50 hover:bg-gray-50'
+                        ? "border-[#e10600] bg-[#e10600]/10 shadow-lg"
+                        : "border-gray-300 bg-white hover:border-[#e10600]/50 hover:bg-gray-50"
                     }`}
                   >
+                    <input
+                      type="radio"
+                      name="size"
+                      value={priceItem.size}
+                      checked={selectedSize === priceItem.size}
+                      onChange={() => handleSizeChange(priceItem.size, priceItem.price)}
+                      className="sr-only"
+                    />
+                    {selectedSize === priceItem.size && (
+                      <div className="absolute top-2 right-2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="12" cy="12" r="10" fill="#e10600" />
+                          <path
+                            d="M8 12L10.5 14.5L16 9"
+                            stroke="white"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    )}
                     <div className="font-semibold text-sm text-gray-700">{priceItem.label}</div>
                     <div className="text-lg font-bold text-[#e10600]">₹{priceItem.price}</div>
-                  </button>
+                  </label>
                 ))}
               </div>
             </div>
@@ -143,27 +171,23 @@ export function ItemDetailsClient({ item }: ItemDetailsClientProps) {
               >
                 <Plus className="h-5 w-5" />
               </Button>
-              <span className="text-sm text-muted-foreground ml-4">
-                Total: ₹{(selectedPrice || (priceInfo.type === 'single' ? priceInfo.prices[0].price : priceInfo.prices[0].price)) * quantity}
-              </span>
+              <span className="text-sm text-muted-foreground ml-4">Total: ₹{totalPrice}</span>
             </div>
           </div>
 
           {/* Price Display */}
-          <div className="text-3xl font-bold text-[#e10600] mb-6">
-            ₹{selectedPrice || (priceInfo.type === 'single' ? priceInfo.prices[0].price : priceInfo.prices[0].price)}
-          </div>
+          <div className="text-3xl font-bold text-[#e10600] mb-6">₹{effectiveUnitPrice}</div>
 
           {/* Add to Cart Button */}
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <Button 
-              size="lg" 
-              className="bg-[#e10600] hover:bg-[#c10500] text-white flex-1 h-14 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 rounded-xl"
+            <Button
+              size="lg"
+              className="bg-[#e10600] hover:bg-[#c10500] text-white flex-1 h-16 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 rounded-xl border-2 border-[#e10600]"
               onClick={handleAddToCart}
-              disabled={priceInfo.type === 'multiple' && !selectedSize}
+              disabled={priceInfo.type === "multiple" && !selectedSize}
             >
-              <ShoppingCart className="h-6 w-6 mr-2" />
-              Add {quantity} to Cart - ₹{(selectedPrice || (priceInfo.type === 'single' ? priceInfo.prices[0].price : priceInfo.prices[0].price)) * quantity}
+              <ShoppingCart className="h-6 w-6 mr-3" />
+              Add {quantity} to Cart - ₹{totalPrice}
             </Button>
             <Button size="lg" variant="outline" className="h-14 px-6 rounded-xl" asChild>
               <a href={`tel:${BUSINESS_INFO.phones.primary}`}>
