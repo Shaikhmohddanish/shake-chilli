@@ -18,8 +18,12 @@ export function PWAInstall() {
   const [showInstallPrompt, setShowInstallPrompt] = useState(false)
   const [isIOS, setIsIOS] = useState(false)
   const [isStandalone, setIsStandalone] = useState(false)
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
+    // Set client-side flag
+    setIsClient(true)
+
     // Check if it's iOS
     const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
     setIsIOS(iOS)
@@ -64,13 +68,16 @@ export function PWAInstall() {
 
   const handleDismiss = () => {
     setShowInstallPrompt(false)
-    // Hide for this session
-    sessionStorage.setItem('pwa-install-dismissed', 'true')
+    // Hide for this session (only on client side)
+    if (typeof window !== 'undefined' && window.sessionStorage) {
+      sessionStorage.setItem('pwa-install-dismissed', 'true')
+    }
   }
 
-  // Don't show if already installed, dismissed, or not supported
-  if (isStandalone || 
-      sessionStorage.getItem('pwa-install-dismissed') || 
+  // Don't render anything on server side or if already dismissed
+  if (!isClient || 
+      isStandalone || 
+      (typeof window !== 'undefined' && window.sessionStorage && sessionStorage.getItem('pwa-install-dismissed')) || 
       (!deferredPrompt && !isIOS) || 
       !showInstallPrompt) {
     return null

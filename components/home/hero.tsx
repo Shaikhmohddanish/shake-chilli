@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-0">
       <div className="absolute inset-0 gradient-hero" />
       <div
         className="absolute inset-0 opacity-20"

@@ -4,7 +4,7 @@ import { FloatingCTA } from "@/components/floating-cta"
 import { MENU_ITEMS } from "@/lib/menu-data"
 import { generateBreadcrumbSchema } from "@/lib/seo"
 import { ProductCard } from "@/components/product-card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSection } from "@/components/faq-section"
 import type { Metadata } from "next"
 import Image from "next/image"
 
@@ -33,11 +33,34 @@ export default function PizzaPage() {
   const nonVegPizzas = MENU_ITEMS.filter((item) => item.category === "pizza-non-veg")
   const specialPizzas = MENU_ITEMS.filter((item) => item.category === "pizza-special")
 
+  const pizzaFAQs = [
+    {
+      question: "Which is the best pizza in Mumbra?",
+      answer: "Shake Chilli serves the best pizza in Mumbra and Shilphata. Our Chicken Tikka Pizza and Margherita Pizza are customer favorites. We use fresh ingredients, hand-tossed dough, and 100% halal chicken. Located near Al-Hidaya School in Shilphata."
+    },
+    {
+      question: "Do you deliver pizza to Diva and Dosti?",
+      answer: "Yes! We offer free home delivery to Mumbra, Shilphata, Diva, Dosti, Shalimar and nearby areas. Hot and fresh pizza delivered to your doorstep in 30-45 minutes. Call us at 7208 697 371 to order."
+    },
+    {
+      question: "Is your pizza halal?",
+      answer: "Yes, all our pizzas are 100% halal. We use only halal-certified chicken and ingredients. Shake Chilli is a trusted halal restaurant in Mumbra and Shilphata."
+    },
+    {
+      question: "What sizes are available?",
+      answer: "Our pizzas are available in three sizes: Small (serves 1-2), Medium (serves 2-3), and Large (serves 3-4). Perfect for individuals, couples, and families in Mumbra and Shilphata."
+    },
+    {
+      question: "Can I customize my pizza?",
+      answer: "Yes! You can customize your pizza with extra toppings or remove ingredients. Call us at 7208 697 371 or 9082 990 187 to place a custom order. We are located near Al-Hidaya School in Shilphata."
+    }
+  ]
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Header />
-      <main className="min-h-screen">
+      <main className="min-h-screen pt-20 md:pt-0">
         <section className="bg-foreground text-background py-12">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-balance">
@@ -118,47 +141,7 @@ export default function PizzaPage() {
               </div>
             </div>
 
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>Which is the best pizza in Mumbra?</AccordionTrigger>
-                  <AccordionContent>
-                    Shake Chilli serves the best pizza in Mumbra and Shilphata. Our Chicken Tikka Pizza and Margherita
-                    Pizza are customer favorites. We use fresh ingredients, hand-tossed dough, and 100% halal chicken.
-                    Located near Al-Hidaya School in Shilphata.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>Do you deliver pizza to Diva and Dosti?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes! We offer free home delivery to Mumbra, Shilphata, Diva, Dosti, Shalimar and nearby areas. Hot
-                    and fresh pizza delivered to your doorstep in 30-45 minutes. Call us at 7208 697 371 to order.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>Is your pizza halal?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes, all our pizzas are 100% halal. We use only halal-certified chicken and ingredients. Shake
-                    Chilli is a trusted halal restaurant in Mumbra and Shilphata.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-4">
-                  <AccordionTrigger>What sizes are available?</AccordionTrigger>
-                  <AccordionContent>
-                    Our pizzas are available in three sizes: Small (serves 1-2), Medium (serves 2-3), and Large (serves
-                    3-4). Perfect for individuals, couples, and families in Mumbra and Shilphata.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-5">
-                  <AccordionTrigger>Can I customize my pizza?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes! You can customize your pizza with extra toppings or remove ingredients. Call us at 7208 697 371
-                    or 9082 990 187 to place a custom order. We are located near Al-Hidaya School in Shilphata.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
+            <FAQSection faqs={pizzaFAQs} />
           </div>
         </section>
       </main>

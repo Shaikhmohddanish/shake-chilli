@@ -1,16 +1,27 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { BUSINESS_INFO } from "@/lib/constants"
 import { generateLocalBusinessSchema } from "@/lib/seo"
 import { PWAInstall } from "@/components/pwa-install"
+import { CartProvider } from "@/contexts/cart-context"
+import { FloatingCart } from "@/components/floating-cart"
+import { Toaster } from "@/components/ui/sonner"
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 })
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(BUSINESS_INFO.domain),
@@ -20,13 +31,6 @@ export const metadata: Metadata = {
   },
   description:
     "Best Pizza, Burgers, Footlong Sandwiches & More in Shilphata, Mumbra. 4.7★ Rated Halal Restaurant near Al-Hidaya School. Free Home Delivery 30min. Order Online: 7208-697-371",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-    viewportFit: "cover",
-  },
   keywords: [
     "best pizza in mumbra",
     "pizza near shilphata",
@@ -128,8 +132,12 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="antialiased">
-        {children}
-        <PWAInstall />
+        <CartProvider>
+          {children}
+          <FloatingCart />
+          <Toaster />
+          <PWAInstall />
+        </CartProvider>
       </body>
     </html>
   )

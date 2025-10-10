@@ -3,16 +3,17 @@ import { Footer } from "@/components/footer"
 import { FloatingCTA } from "@/components/floating-cta"
 import { MENU_ITEMS } from "@/lib/menu-data"
 import { generateBreadcrumbSchema } from "@/lib/seo"
-import { formatPrice } from "@/lib/utils"
+import { formatPriceAdvanced } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Star, Phone, MapPin } from "lucide-react"
+import { Star, Phone, MapPin, ShoppingCart, MessageCircle } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
-import { getDirectionsUrl } from "@/lib/utils"
+import { getDirectionsUrl, getWhatsAppUrl } from "@/lib/utils"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
+import { ItemDetailsClient } from "@/components/item-details-client"
 
 interface PageProps {
   params: {
@@ -107,98 +108,10 @@ export default async function ItemDetailPage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <Header />
-      <main className="min-h-screen">
+      <main className="min-h-screen pt-20 md:pt-0">
         <section className="py-12">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-              {/* Image Section */}
-              <div>
-                <div className="aspect-square bg-muted rounded-2xl overflow-hidden flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-8xl mb-4">{item.isVeg ? "🍕" : "🍔"}</div>
-                    <h3 className="text-2xl font-bold text-muted-foreground">{item.name}</h3>
-                    <p className="text-muted-foreground mt-2">{item.categoryDisplay}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Details Section */}
-              <div>
-                <div className="flex items-start gap-2 mb-4">
-                  {item.isVeg && (
-                    <Badge variant="success" className="bg-[#18a558] text-white">
-                      Veg
-                    </Badge>
-                  )}
-                  {!item.isVeg && (
-                    <Badge variant="default" className="bg-[#e10600] text-white">
-                      Non-Veg
-                    </Badge>
-                  )}
-                  {item.isHalal && (
-                    <Badge variant="success" className="bg-secondary text-secondary-foreground">
-                      Halal
-                    </Badge>
-                  )}
-                  {item.isPopular && (
-                    <Badge variant="default" className="bg-[#e10600] text-white">
-                      Popular
-                    </Badge>
-                  )}
-                </div>
-
-                <h1 className="text-4xl font-bold mb-4 text-balance">{item.name}</h1>
-
-                <div className="flex items-center gap-2 mb-6">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-[#e10600] text-[#e10600]" />
-                    ))}
-                  </div>
-                  <span className="text-lg font-semibold">4.7/5</span>
-                  <span className="text-muted-foreground">(120 reviews)</span>
-                </div>
-
-                <div className="text-3xl font-bold text-[#e10600] mb-6">{formatPrice(item.price)}</div>
-
-                <p className="text-lg text-muted-foreground mb-6 text-pretty">{item.descriptionLong}</p>
-
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <Button size="lg" className="bg-[#e10600] hover:bg-[#c10500]" asChild>
-                    <a href={`tel:${BUSINESS_INFO.phones.primary}`}>
-                      <Phone className="h-5 w-5" />
-                      Call to Order
-                    </a>
-                  </Button>
-                  <Button size="lg" variant="outline" asChild>
-                    <a href={getDirectionsUrl(BUSINESS_INFO.address.full)} target="_blank" rel="noopener noreferrer">
-                      <MapPin className="h-5 w-5" />
-                      Get Directions
-                    </a>
-                  </Button>
-                </div>
-
-                <div className="bg-muted/50 rounded-xl p-6">
-                  <h3 className="font-semibold mb-3">Highlights</h3>
-                  <ul className="space-y-2">
-                    {item.tags.map((tag, index) => (
-                      <li key={index} className="flex items-center gap-2 text-sm">
-                        <span className="text-[#18a558]">✓</span>
-                        <span className="capitalize">{tag}</span>
-                      </li>
-                    ))}
-                    <li className="flex items-center gap-2 text-sm">
-                      <span className="text-[#18a558]">✓</span>
-                      <span>Free delivery in Mumbra, Shilphata, Diva</span>
-                    </li>
-                    <li className="flex items-center gap-2 text-sm">
-                      <span className="text-[#18a558]">✓</span>
-                      <span>Made fresh to order</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <ItemDetailsClient item={item} />
 
             {/* Reviews Section */}
             <div className="mb-16">
@@ -231,17 +144,25 @@ export default async function ItemDetailPage({ params }: PageProps) {
               <div>
                 <h2 className="text-3xl font-bold mb-8">You May Also Like</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {relatedItems.map((relatedItem) => (
-                    <Link key={relatedItem.id} href={`/items/${relatedItem.slug}`}>
-                      <Card className="h-full hover:shadow-lg transition-shadow">
-                        <CardContent className="p-6">
-                          <h3 className="text-xl font-semibold mb-2">{relatedItem.name}</h3>
-                          <p className="text-sm text-muted-foreground mb-4">{relatedItem.description}</p>
-                          <div className="text-lg font-bold text-[#e10600]">{formatPrice(relatedItem.price)}</div>
-                        </CardContent>
-                      </Card>
-                    </Link>
-                  ))}
+                  {relatedItems.map((relatedItem) => {
+                    const relatedPriceInfo = formatPriceAdvanced(relatedItem.price)
+                    return (
+                      <Link key={relatedItem.id} href={`/items/${relatedItem.slug}`}>
+                        <Card className="h-full hover:shadow-lg transition-shadow">
+                          <CardContent className="p-6">
+                            <h3 className="text-xl font-semibold mb-2">{relatedItem.name}</h3>
+                            <p className="text-sm text-muted-foreground mb-4">{relatedItem.description}</p>
+                            <div className="text-lg font-bold text-[#e10600]">
+                              {relatedPriceInfo.type === 'single' 
+                                ? `₹${relatedPriceInfo.prices[0].price}` 
+                                : `Starting ₹${Math.min(...relatedPriceInfo.prices.map(p => p.price))}`
+                              }
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </Link>
+                    )
+                  })}
                 </div>
               </div>
             )}

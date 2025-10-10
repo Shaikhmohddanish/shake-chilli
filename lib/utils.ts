@@ -15,15 +15,44 @@ export function formatPrice(
   }
 
   const prices: string[] = []
-  if (price.S) prices.push(`S: ₹${price.S}`)
-  if (price.M) prices.push(`M: ₹${price.M}`)
-  if (price.L) prices.push(`L: ₹${price.L}`)
-  if (price.regular) prices.push(`Regular: ₹${price.regular}`)
-  if (price.large) prices.push(`Large: ₹${price.large}`)
-  if (price["6inch"]) prices.push(`6": ₹${price["6inch"]}`)
-  if (price["12inch"]) prices.push(`12": ₹${price["12inch"]}`)
+  if (price.S) prices.push(`Small ₹${price.S}`)
+  if (price.M) prices.push(`Medium ₹${price.M}`)
+  if (price.L) prices.push(`Large ₹${price.L}`)
+  if (price.regular) prices.push(`Regular ₹${price.regular}`)
+  if (price.large) prices.push(`Large ₹${price.large}`)
+  if (price["6inch"]) prices.push(`6" ₹${price["6inch"]}`)
+  if (price["12inch"]) prices.push(`12" ₹${price["12inch"]}`)
 
-  return prices.join(" | ")
+  return prices.join(" • ")
+}
+
+// New function for advanced pricing display
+export function formatPriceAdvanced(
+  price:
+    | number
+    | { S?: number; M?: number; L?: number; regular?: number; large?: number; "6inch"?: number; "12inch"?: number },
+): { type: 'single' | 'multiple', prices: Array<{ size: string, price: number, label: string }> } {
+  if (typeof price === "number") {
+    return {
+      type: 'single',
+      prices: [{ size: 'fixed', price, label: `₹${price}` }]
+    }
+  }
+
+  const prices: Array<{ size: string, price: number, label: string }> = []
+  
+  if (price.S) prices.push({ size: 'S', price: price.S, label: 'Small' })
+  if (price.M) prices.push({ size: 'M', price: price.M, label: 'Medium' })
+  if (price.L) prices.push({ size: 'L', price: price.L, label: 'Large' })
+  if (price.regular) prices.push({ size: 'R', price: price.regular, label: 'Regular' })
+  if (price.large) prices.push({ size: 'L', price: price.large, label: 'Large' })
+  if (price["6inch"]) prices.push({ size: '6"', price: price["6inch"], label: '6 Inch' })
+  if (price["12inch"]) prices.push({ size: '12"', price: price["12inch"], label: '12 Inch' })
+
+  return {
+    type: 'multiple',
+    prices
+  }
 }
 
 export function getDirectionsUrl(address: string): string {

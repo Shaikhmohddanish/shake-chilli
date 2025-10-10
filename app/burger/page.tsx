@@ -4,7 +4,7 @@ import { FloatingCTA } from "@/components/floating-cta"
 import { MENU_ITEMS } from "@/lib/menu-data"
 import { generateBreadcrumbSchema } from "@/lib/seo"
 import { ProductCard } from "@/components/product-card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { FAQSection } from "@/components/faq-section"
 import type { Metadata } from "next"
 import Image from "next/image"
 
@@ -30,11 +30,34 @@ export default function BurgerPage() {
 
   const burgers = MENU_ITEMS.filter((item) => item.category === "burger")
 
+  const burgerFAQs = [
+    {
+      question: "Which is the best burger in Mumbra?",
+      answer: "Shake Chilli serves the best burgers in Mumbra and Shilphata. Our Big ShakeChilli Burger and Xinger Burger are customer favorites. Made with 100% halal chicken, fresh vegetables, and special sauces. Located near Al-Hidaya School in Shilphata."
+    },
+    {
+      question: "Are your burgers halal?",
+      answer: "Yes, all our chicken burgers are made with 100% halal-certified chicken. Shake Chilli is a trusted halal restaurant in Mumbra and Shilphata. We also have delicious vegetarian burger options."
+    },
+    {
+      question: "Do you have veg burger options?",
+      answer: "Yes! We have Veg Burger and Veg Cheese Burst options. Both are made with crispy vegetable patties, fresh toppings, and our special sauce. Perfect for vegetarians in Mumbra and Shilphata."
+    },
+    {
+      question: "Do you deliver burgers to Diva and Dosti?",
+      answer: "Yes! We offer free home delivery to Mumbra, Shilphata, Diva, Dosti, Shalimar and nearby areas. Hot and fresh burgers delivered in 30-45 minutes. Call 7208 697 371 to order."
+    },
+    {
+      question: "What makes your burgers special?",
+      answer: "Our burgers are made fresh to order with juicy patties, fresh vegetables, and our signature sauces. We use 100% halal chicken and quality ingredients. The best burger experience in Mumbra, Shilphata, and surrounding areas."
+    }
+  ]
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Header />
-      <main className="min-h-screen">
+      <main className="min-h-screen pt-20 md:pt-0">
         <section className="bg-foreground text-background py-12">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-balance">
@@ -87,48 +110,7 @@ export default function BurgerPage() {
               </div>
             </div>
 
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-6">Frequently Asked Questions</h2>
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1">
-                  <AccordionTrigger>Which is the best burger in Mumbra?</AccordionTrigger>
-                  <AccordionContent>
-                    Shake Chilli serves the best burgers in Mumbra and Shilphata. Our Big ShakeChilli Burger and Xinger
-                    Burger are customer favorites. Made with 100% halal chicken, fresh vegetables, and special sauces.
-                    Located near Al-Hidaya School in Shilphata.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2">
-                  <AccordionTrigger>Are your burgers halal?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes, all our chicken burgers are made with 100% halal-certified chicken. Shake Chilli is a trusted
-                    halal restaurant in Mumbra and Shilphata. We also have delicious vegetarian burger options.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3">
-                  <AccordionTrigger>Do you have veg burger options?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes! We have Veg Burger and Veg Cheese Burst options. Both are made with crispy vegetable patties,
-                    fresh toppings, and our special sauce. Perfect for vegetarians in Mumbra and Shilphata.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-4">
-                  <AccordionTrigger>Do you deliver burgers to Diva and Dosti?</AccordionTrigger>
-                  <AccordionContent>
-                    Yes! We offer free home delivery to Mumbra, Shilphata, Diva, Dosti, Shalimar and nearby areas. Hot
-                    and fresh burgers delivered in 30-45 minutes. Call 7208 697 371 to order.
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-5">
-                  <AccordionTrigger>What makes your burgers special?</AccordionTrigger>
-                  <AccordionContent>
-                    Our burgers are made fresh to order with juicy patties, fresh vegetables, and our signature sauces.
-                    We use 100% halal chicken and quality ingredients. The best burger experience in Mumbra, Shilphata,
-                    and surrounding areas.
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
+            <FAQSection faqs={burgerFAQs} />
           </div>
         </section>
       </main>
