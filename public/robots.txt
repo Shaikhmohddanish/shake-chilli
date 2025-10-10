@@ -1,0 +1,26 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://shake-chilli.com
+
+# Sitemaps
+Sitemap: https://shake-chilli.com/sitemap.xml
+
+# Improve crawl efficiency
+Crawl-delay: 1
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+Disallow: /*.json$
+
+# Allow important pages
+Allow: /menu
+Allow: /pizza
+Allow: /burger
+Allow: /contact
+Allow: /how-to-reach
+Allow: /reviews

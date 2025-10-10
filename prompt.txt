@@ -1,0 +1,242 @@
+
+**Goal:** Build a production-ready Next.js 14 (App Router, TypeScript) website for **Shake Chilli Café & Restaurant** in **Shilphata / Mumbra (Thane, MH)**, optimized for **SEO + Local ranking** (e.g., “pizza near me”, “best pizza in mumbra”, etc.), **mobile-first**, and **installable PWA**.
+Use TailwindCSS + shadcn/ui + lucide-react. Create clean, modern UI using brand colors: **#000000 (black)**, **#ffffff (white)**, **#e10600 (chilli red)**, **#18a558 (mint green)** as accents. Rounded-2xl cards, soft shadows, large readable type. Import the logo later from `/public/brand/` (add placeholder now).
+
+---
+
+## Tech / Project Setup
+
+* Next.js 14 App Router with TypeScript.
+* Tailwind + shadcn/ui (Button, Card, Badge, Input, Tabs, Sheet).
+* ESLint + Prettier.
+* Image optimization via `next/image`.
+* PWA:
+
+  * `next-pwa` (appDir mode) or equivalent SW setup.
+  * `public/manifest.webmanifest` with icons, theme color `#000000`, background `#ffffff`.
+  * Service worker caches static assets, fonts, images, and pages.
+* SEO:
+
+  * Base metadata in `app/layout.tsx` + per-page dynamic metadata (title, description, canonical, OpenGraph, Twitter).
+  * `sitemap.xml` + `robots.txt`.
+  * JSON-LD schema for **LocalBusiness/Restaurant** on home and **Product + Review** on item pages.
+* Analytics ready placeholder.
+
+---
+
+## Business Info (use everywhere)
+
+* **Brand:** Shake Chilli – Cafe & Restaurant (Halal)
+* **Domain:** `https://shake-chilli.com` (set as canonical)
+* **Phones:** **+91 7208 697 371**, **+91 9082 990 187**
+* **Address (canonical):** **Shop No 04, Silver Enclave, Shilphata, Thane, Maharashtra 400612**
+
+  * Nearby landmarks for copy/SEO: **near Shilphata, in Mumbra, near Dosti, near Shalimar, near Domino’s, near Diva, near Al Hidaya School**.
+* **Google Maps direction link button:** query the address string.
+* **Open hours (placeholder):** 11:00–23:30 daily (editable in one config file).
+* **Cuisines:** Pizza, Burgers, Footlong Sandwiches, Garlic Bread, Mojito, Milkshakes, Coffee (Hot/Cold), Starters.
+* **Halal badge** in header.
+
+---
+
+## Routing Structure (App Router)
+
+Create the following routes and files:
+
+```
+app/
+  layout.tsx
+  page.tsx                      # Home
+  menu/page.tsx                 # Full menu
+  how-to-reach/page.tsx         # Map + directions + parking tips
+  contact/page.tsx              # Phones, hours, WhatsApp CTA (placeholder)
+  reviews/page.tsx              # All reviews + stars
+  (categories)/
+    pizza/page.tsx
+    burger/page.tsx
+    french-fries/page.tsx
+    footlong-sandwich/page.tsx
+    garlic-bread/page.tsx
+    mojito/page.tsx
+    milkshakes/page.tsx
+    coffee/page.tsx
+    starters/page.tsx
+  (items)/
+    [slug]/page.tsx             # Item detail template with 10 sample reviews
+  api/og/route.ts               # Dynamic OG image for sharing
+public/
+  brand/placeholder-logo.svg
+  images/placeholders/*         # fallback images
+  icons/* (PWA)
+  menu/*                         # we’ll drop real photos later
+```
+
+---
+
+## Global Layout & Components
+
+* **Header:** left logo + brand; centered nav (Home, Menu, Categories (mega menu), How to Reach, Contact); right CTA buttons: **Call**, **Get Directions**, **Order (placeholder)**. Mobile uses a sheet menu.
+* **Hero (home):** black background, bold red/white title “Best Pizza, Burgers & More in Shilphata–Mumbra”, subcopy featuring landmarks keywords, primary CTAs (**View Menu**, **Call Now**, **Get Directions**).
+* **USP strip:** “Freshly baked pizza • Halal • Free Home Delivery • Near Shilphata, Mumbra, Diva”.
+* **Category cards grid:** Pizza, Burger, Footlong Sandwich, Garlic Bread, French Fries, Starters, Mojito, Milkshakes, Coffee.
+* **Featured combos section** (from menu images) with price badges.
+* **Reviews carousel:** 10 snippet cards with 5★ average (placeholder text rich with long-tail keywords).
+* **Footer:** address, phones (tel:), open hours, social icons placeholder, mini links, halal badge, copyright.
+
+**UI utilities:**
+
+* `components/Seo.tsx` helper to set per-page `title`, `description`, `canonical`, `og`, `jsonLd`.
+* `components/CategoryCard.tsx`, `ProductCard.tsx`, `ReviewList.tsx`, `PhoneButtons.tsx`, `MapCard.tsx`.
+* `lib/seo.ts`—keyword dictionary and description builders.
+* `lib/menu.ts`—typed data for categories + items (slug, name, price ranges, short/long descriptions, placeholder image path, tags, structured-data fragments).
+
+---
+
+## SEO Requirements
+
+* **Keyword strategy** (use in titles, H1/H2, body, alt, and internal links):
+
+  * “best pizza in mumbra”, “pizza near shilphata”, “best burgers near me mumbra”, “crispy french fries in shilphata”, “footlong sandwich near al hidaya school”, “garlic bread near dosti / shalimar”, “mojito in mumbra”, “milkshakes near diva”, “hot coffee in shilphata”, “halal restaurant mumbra”.
+* **Titles (pattern):**
+
+  * Home: `Best Pizza & Burgers in Shilphata–Mumbra | Shake Chilli Café (Halal)`
+  * Category: `{Category} in Shilphata, Mumbra | Best {Category} Near Me | Shake Chilli`
+  * Item: `Best {Item} in Mumbra (Shilphata) | Price, Reviews & Photos | Shake Chilli`
+  * Menu: `Shake Chilli Menu & Prices | Pizza, Burgers, Sandwiches | Mumbra Shilphata`
+  * How to Reach: `How to Reach Shake Chilli – Shilphata Mumbra | Directions & Parking`
+* **Meta descriptions:** 150–160 chars, include phone, address area, and 1–2 landmarks.
+* **OpenGraph/Twitter cards** with dynamic OG image (`/api/og`) rendering product/category title + brand.
+* **Local SEO JSON-LD (home):** `@type: Restaurant` with name, phones, address, `geo` (omit if unknown), `servesCuisine`, `priceRange` (“₹”), `openingHours`, `sameAs` (empty array for now).
+* **Breadcrumb JSON-LD** across all pages.
+* **Product JSON-LD (item pages):** include `AggregateRating` (4.7 avg, 120 reviews placeholder) + `offers` (price range).
+* **Review JSON-LD:** embed 10 sample reviews per item using realistic first names and localities (e.g., “Diva”, “Mumbra”, “Shilphata”); weave keywords naturally.
+* **Sitemap & Robots:** include all category + item routes; allow indexing; add `Host: https://shake-chilli.com`.
+
+**Image/ALT policy:**
+For every image, generate descriptive `alt` like:
+
+* `alt="best chicken tikka pizza in Mumbra near Shilphata – Shake Chilli"`
+* `alt="crispy french fries in Mumbra near Dosti and Shalimar"`
+  Use file names with keywords: `best-pizza-mumbra-shilphata.jpg`, etc.
+
+---
+
+## Pages — Content & Sections
+
+### 1) Home (`/`)
+
+* Hero with CTAs: **View Menu**, **Call 7208697371**, **Get Directions** (opens Google Maps with the address).
+* Category grid (9 cards) → links to category pages.
+* Featured combos (from menu): show prices: 180, 200, 400, 540, 750, 280, 320, 260, 330, 200 (as per cards).
+* Why us: Fresh dough, Halal, Fast delivery in **Shilphata/Mumbra/Diva**, Affordable combos.
+* Review carousel (5 cards) + link to `/reviews`.
+* Location banner: address + “Get Directions” button.
+* Rich internal links with keywords.
+
+### 2) Menu (`/menu`)
+
+* Tabbed sections matching categories.
+* Each item links to its detail page `/items/[slug]`.
+* Price ranges pulled from `lib/menu.ts` (use numbers visible in images as sample ranges; allow “S/M/L”).
+
+### 3) How to Reach (`/how-to-reach`)
+
+* Map embed (Google Maps place search for the address).
+* Buttons: **Open in Google Maps**, **Call**, **Copy Address**.
+* Landmarks list for walk/ride: Shilphata, Dosti, Shalimar, Al Hidaya School, Dominos, Diva.
+* Parking and delivery radius notes (2–3 km radius placeholder).
+
+### 4) Category pages (`/pizza`, `/burger`, `/french-fries`, `/footlong-sandwich`, `/garlic-bread`, `/mojito`, `/milkshakes`, `/coffee`, `/starters`)
+
+* H1 with primary keyword.
+* Intro paragraph (150–200 words) with local SEO phrases.
+* Grid of `ProductCard`s (from `lib/menu.ts`).
+* FAQ accordion with keyword questions (e.g., “Which is the best pizza in Mumbra?”, “Do you deliver to Diva?”).
+* Internal links to related categories (e.g., Pizza ↔ Garlic Bread, Mojito).
+
+### 5) Item detail template (`/items/[slug]`)
+
+* Above-the-fold: title, price (S/M/L if pizza), short highlights, **Call** + **Directions**.
+* Image with strong ALT (use placeholder path).
+* Description (120–160 words) with local keywords.
+* Nutrition/allergens placeholders.
+* “Pairs well with” upsell (e.g., Garlic Bread + Mojito).
+* **10 customer reviews** (realistic first names + localities), star 4–5, date, text mixing keywords naturally.
+* JSON-LD Product + Reviews.
+
+### 6) Contact (`/contact`)
+
+* Phones clickable, WhatsApp CTA (placeholder link), hours, simple contact form (no backend – mailto fallback).
+* Delivery areas badges (Mumbra, Shilphata, Diva).
+
+### 7) Reviews (`/reviews`)
+
+* Aggregate rating, schema, filter by category.
+
+---
+
+## Content Data (seed examples)
+
+Seed `lib/menu.ts` with items (you can expand):
+
+* **Pizza (Veg):** Margherita (S/M/L 150/280/400), Double Cheese Margherita (180/300/420), Fresh Veggie (200/320/440), Corn Delight (220/340/460), Paneer (250/370/500), Veg Veganza (300/420/550).
+* **Pizza (Non-Veg):** Chicken Tikka (200/350/480), Chicken Spicy (240/370/500), BBQ (250/400/530), Golden Delight (300/450/580), Chicken Vegenza (350/500/630), Chicken Italian (380/530/660), Chicken Mexican (420/570/700).
+* **Special Pizza:** Mamamia (480/630/750), 7G (500/650/780), 8G (550/700/820), Double Layer (600/750/870).
+* **Combos:** Loot Combo (Veg Burger+Fries+Mojito 180), Burger Meal (Chicken Burger+Fries+Mojito 200), Hunger Combo (Chicken Tikka Pizza(S)+Chicken Burger+Fries(S)+Mojito 400), Combo for Two (540), Family Meal (750).
+* **Burgers:** Veg (70), Veg Cheese Burst (100), Chicken (80), Xinger (120), Chicken Cheese Burst (140), Big ShakeChilli (180).
+* **Footlong Sandwich (6in/12in):** Veg (140/250), Chicken (160/280), Chicken Crispy (180/300).
+* **Fries:** Salted (80/120), Peri Peri (100/140), Cheesy (120/180), Chicken Loaded (200/300), Nuggets 6pcs (160), Popcorn 10pcs (150).
+* **Garlic Bread:** Cheesy (150), Corn (170), Chicken (250).
+* **Coffee (Hot):** Americano (50), Cappuccino (70), Flat White (90), Mocha (100), Irish (120), Hazelnut (120).
+* **Iced/Cold Coffee:** Iced Americano (90), Iced Cappuccino (150), Creamy Iced Latte (170), Oreo/Irish/Hazelnut Iced (170–180), Caramel Macchiato (200), Classic Cold (100), Frappuccino (140), Cocoa Mocha (150).
+* **Milkshakes:** Mango, Strawberry, Butterscotch, KitKat, Oreo, Chocolate (120).
+* **Mocktails:** Virgin Mojito, Watermelon, Green Apple, Kala Khatta, Blueberry, Spicy Mango, Orange, Litchi, Chilli Guava, Kiwi (80).
+  (Use placeholder images in `/public/images/placeholders/`.)
+
+---
+
+## Accessibility & Performance
+
+* Semantic HTML5, landmark roles, focus states, aria labels.
+* Lazy-load images, prefetch critical routes, responsive images.
+* Lighthouse targets: Performance ≥90, SEO ≥ 95, PWA installable.
+
+---
+
+## JSON-LD Examples (implement helpers)
+
+* **Home (Restaurant/LocalBusiness)** with address, phones, openingHours, servesCuisine array, `areaServed` (“Mumbra”, “Shilphata”, “Diva”), `hasMenu` pointing to `/menu`.
+* **BreadcrumbList** for all pages.
+* **Product** for item pages with `AggregateRating` + `Review` list and `offers`.
+
+---
+
+## CTA + Utilities
+
+* Floating mobile bar with **Call Now**, **WhatsApp**, **Directions**.
+* Direction button triggers Google Maps with destination set to the address.
+* Reusable **ReviewCard** with star icons and location tags.
+
+---
+
+## Content Tone
+
+Friendly, energetic, food-craving copy. Keep long-tail local keywords natural—not spammy.
+
+---
+
+## Deliverables
+
+1. Complete Next.js project scaffold with pages, components, `lib/menu.ts`, `lib/seo.ts`, `public/manifest.webmanifest`, `service-worker`, `sitemap.xml`, `robots.txt`.
+2. Strong default metadata + JSON-LD per page.
+3. All pages mobile responsive and PWA installable.
+4. Placeholder images and ALT text patterns added.
+5. Example of one **item page** fully filled (e.g., **Chicken Tikka Pizza**) with 10 sample reviews.
+
+---
+
+**End of prompt.**
+
+---
+
+When you’re ready, tell me which page you want next (e.g., **/pizza** or a specific **item**), and I’ll craft the exact v0 prompt for that page with SEO title/description, JSON-LD, headings, copy, FAQs, and 10 keyword-rich reviews.

@@ -1,0 +1,40 @@
+import { Button } from "@/components/ui/button"
+import { MapPin, Phone } from "lucide-react"
+import { BUSINESS_INFO } from "@/lib/constants"
+import { getDirectionsUrl } from "@/lib/utils"
+
+export function LocationBanner() {
+  return (
+    <section className="py-16 md:py-24 bg-foreground text-background">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Visit Us Today</h2>
+          <p className="text-lg text-background/80 mb-6">{BUSINESS_INFO.address.full}</p>
+          <p className="text-background/80 mb-8">
+            Near Al-Hidaya School, Shilphata | Easy access from Mumbra, Diva, Dosti, Shalimar
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" variant="secondary" asChild>
+              <a href={getDirectionsUrl(BUSINESS_INFO.address.full)} target="_blank" rel="noopener noreferrer">
+                <MapPin className="h-5 w-5" />
+                Get Directions
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              asChild
+              className="border-background text-background hover:bg-background hover:text-foreground bg-transparent"
+            >
+              <a href={`tel:${BUSINESS_INFO.phones.primary}`}>
+                <Phone className="h-5 w-5" />
+                Call Now
+              </a>
+            </Button>
+          </div>
+          <p className="text-sm text-background/60 mt-6">Open Daily: {BUSINESS_INFO.hours.display}</p>
+        </div>
+      </div>
+    </section>
+  )
+}
