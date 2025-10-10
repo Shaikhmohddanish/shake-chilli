@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { BUSINESS_INFO } from "@/lib/constants"
 import { generateLocalBusinessSchema } from "@/lib/seo"
+import { PWAInstall } from "@/components/pwa-install"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,6 +20,13 @@ export const metadata: Metadata = {
   },
   description:
     "Best Pizza, Burgers, Footlong Sandwiches & More in Shilphata, Mumbra. 4.7★ Rated Halal Restaurant near Al-Hidaya School. Free Home Delivery 30min. Order Online: 7208-697-371",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+    viewportFit: "cover",
+  },
   keywords: [
     "best pizza in mumbra",
     "pizza near shilphata",
@@ -95,6 +103,15 @@ export const metadata: Metadata = {
     ],
     shortcut: "/favicon.ico",
   },
+  other: {
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "Shake Chilli",
+    "application-name": "Shake Chilli",
+    "msapplication-TileColor": "#e10600",
+    "msapplication-tap-highlight": "no",
+  },
     generator: 'v0.app'
 }
 
@@ -110,7 +127,10 @@ export default function RootLayout({
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <PWAInstall />
+      </body>
     </html>
   )
 }

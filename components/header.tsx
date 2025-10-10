@@ -90,78 +90,142 @@ export function Header() {
           </div>
 
           {/* Mobile Actions */}
-          <div className="flex lg:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-1">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setMobileSearchOpen(true)}
-              className="h-10 w-10"
+              className="h-9 w-9 hover:bg-accent/50 transition-colors"
+              aria-label="Search menu"
             >
-              <Search className="h-5 w-5" />
+              <Search className="h-4 w-4" />
             </Button>
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-10 w-10">
-                  <Menu className="h-5 w-5" />
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="h-9 w-9 hover:bg-accent/50 transition-colors"
+                  aria-label="Open menu"
+                >
+                  <Menu className="h-4 w-4" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <nav className="flex flex-col gap-6 mt-6">
-                  <Link 
-                    href="/" 
-                    className="text-lg font-medium hover:text-primary transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Home
-                  </Link>
-                  <Link 
-                    href="/menu" 
-                    className="text-lg font-medium hover:text-primary transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Menu
-                  </Link>
-                  <Link 
-                    href="/pizza" 
-                    className="text-lg font-medium hover:text-primary transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Pizza
-                  </Link>
-                  <Link 
-                    href="/burger" 
-                    className="text-lg font-medium hover:text-primary transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Burgers
-                  </Link>
-                  <Link 
-                    href="/contact" 
-                    className="text-lg font-medium hover:text-primary transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Contact
-                  </Link>
-                  
-                  <div className="flex flex-col gap-3 pt-6">
+              <SheetContent side="right" className="w-[280px] sm:w-[320px] p-0 flex flex-col">
+                {/* Mobile Menu Header */}
+                <div className="flex items-center justify-between p-6 border-b border-border/20">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-8 h-8">
+                      <Image
+                        src="/images/shake-chilli-logo-brand-mumbra-restaurant.jpg"
+                        alt="Shake Chilli Logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="flex flex-col">
+                      <div className="text-lg font-bold leading-none">
+                        <span className="text-foreground">Shake</span>
+                        <span className="text-primary"> Chilli</span>
+                      </div>
+                      <span className="text-xs text-muted-foreground">Cafe & Restaurant</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile Navigation */}
+                <nav className="flex-1 px-6 py-4">
+                  <div className="space-y-1">
+                    <Link 
+                      href="/" 
+                      className="flex items-center gap-3 px-3 py-3 text-base font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span className="text-lg">🏠</span>
+                      Home
+                    </Link>
+                    <Link 
+                      href="/menu" 
+                      className="flex items-center gap-3 px-3 py-3 text-base font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span className="text-lg">📋</span>
+                      Full Menu
+                    </Link>
+                    <Link 
+                      href="/pizza" 
+                      className="flex items-center gap-3 px-3 py-3 text-base font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span className="text-lg">🍕</span>
+                      Pizza
+                    </Link>
+                    <Link 
+                      href="/burger" 
+                      className="flex items-center gap-3 px-3 py-3 text-base font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span className="text-lg">🍔</span>
+                      Burgers & Starters
+                    </Link>
+                    <Link 
+                      href="/coffee" 
+                      className="flex items-center gap-3 px-3 py-3 text-base font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span className="text-lg">☕</span>
+                      Coffee & Beverages
+                    </Link>
+                    <Link 
+                      href="/contact" 
+                      className="flex items-center gap-3 px-3 py-3 text-base font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span className="text-lg">📞</span>
+                      Contact Us
+                    </Link>
+                  </div>
+                </nav>
+
+                {/* Mobile Action Buttons */}
+                <div className="px-6 py-4 border-t border-border/20 bg-accent/10">
+                  <div className="space-y-3">
                     <a 
                       href={`tel:${BUSINESS_INFO.phones.primary}`}
-                      className="inline-flex items-center justify-start gap-3 whitespace-nowrap rounded-xl font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring h-11 px-8 border border-input bg-background hover:bg-muted w-full"
+                      className="flex items-center justify-center gap-3 h-12 px-4 bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl font-medium transition-colors shadow-sm"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
-                      <Phone className="h-5 w-5" />
+                      <Phone className="h-4 w-4" />
                       Call {BUSINESS_INFO.phones.display.primary}
                     </a>
                     <a 
                       href={getDirectionsUrl(BUSINESS_INFO.address.full)} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-start gap-3 whitespace-nowrap rounded-xl font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring h-11 px-8 bg-primary text-primary-foreground hover:bg-primary/90 w-full"
+                      className="flex items-center justify-center gap-3 h-12 px-4 bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-xl font-medium transition-colors border border-border shadow-sm"
+                      onClick={() => setMobileMenuOpen(false)}
                     >
-                      <MapPin className="h-5 w-5" />
+                      <MapPin className="h-4 w-4" />
                       Get Directions
                     </a>
                   </div>
-                </nav>
+                  
+                  {/* Business Info */}
+                  <div className="mt-4 pt-4 border-t border-border/20">
+                    <div className="text-center">
+                      <p className="text-sm font-medium text-foreground">
+                        {BUSINESS_INFO.address.area}
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        {BUSINESS_INFO.hours.display}
+                      </p>
+                      <div className="inline-flex items-center gap-1 mt-2 px-2 py-1 bg-secondary/20 rounded-full">
+                        <span className="text-xs font-medium text-secondary">100% Halal</span>
+                        <span className="text-xs">🥘</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </SheetContent>
             </Sheet>
           </div>
@@ -169,13 +233,26 @@ export function Header() {
 
         {/* Mobile Search Overlay */}
         {mobileSearchOpen && (
-          <div className="lg:hidden fixed inset-0 z-50 bg-background/80 backdrop-blur-sm">
-            <div className="container mx-auto px-4 pt-4">
-              <SearchComponent
-                className="w-full"
-                onClose={() => setMobileSearchOpen(false)}
-                showCloseButton={true}
-              />
+          <div className="lg:hidden fixed inset-0 z-50 bg-background/95 backdrop-blur-md">
+            <div className="flex flex-col h-full">
+              <div className="flex items-center justify-between p-4 border-b border-border/20">
+                <h2 className="text-lg font-semibold">Search Menu</h2>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setMobileSearchOpen(false)}
+                  className="h-8 w-8"
+                >
+                  <X className="h-4 w-4" />
+                </Button>
+              </div>
+              <div className="flex-1 p-4">
+                <SearchComponent
+                  className="w-full"
+                  onClose={() => setMobileSearchOpen(false)}
+                  showCloseButton={false}
+                />
+              </div>
             </div>
           </div>
         )}
