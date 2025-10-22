@@ -1,6 +1,17 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Pizza, Sandwich, Coffee, Wine, Salad, UtensilsCrossed, ArrowRight } from "lucide-react"
+
+interface Category {
+  name: string
+  slug: string
+  icon: React.ComponentType<{ className?: string }>
+  description: string
+  color: string
+  bgImage: string | null
+  bgGradient: string
+}
 
 export function CategoryGrid() {
   const categories = [
@@ -10,6 +21,8 @@ export function CategoryGrid() {
       icon: Pizza,
       description: "Veg & Non-Veg pizzas with fresh toppings",
       color: "text-[#e10600]",
+      bgImage: "/images/backgrounds/pizza-bg.jpg",
+      bgGradient: "from-red-500 to-orange-500",
     },
     {
       name: "Burgers",
@@ -17,6 +30,8 @@ export function CategoryGrid() {
       icon: UtensilsCrossed,
       description: "Juicy burgers with crispy patties",
       color: "text-[#18a558]",
+      bgImage: "/images/backgrounds/burger-bg.jpg",
+      bgGradient: "from-green-500 to-emerald-500",
     },
     {
       name: "Footlong Sandwich",
@@ -24,6 +39,8 @@ export function CategoryGrid() {
       icon: Sandwich,
       description: "6-inch & 12-inch subway-style sandwiches",
       color: "text-[#e10600]",
+      bgImage: "/images/backgrounds/sandwich-bg.jpg",
+      bgGradient: "from-yellow-500 to-orange-500",
     },
     {
       name: "Garlic Bread",
@@ -31,6 +48,8 @@ export function CategoryGrid() {
       icon: Salad,
       description: "Cheesy, corn & chicken garlic bread",
       color: "text-[#18a558]",
+      bgImage: "/images/backgrounds/garlic-bread-bg.jpg",
+      bgGradient: "from-amber-500 to-yellow-500",
     },
     {
       name: "French Fries",
@@ -38,6 +57,8 @@ export function CategoryGrid() {
       icon: Salad,
       description: "Crispy fries, nuggets & starters",
       color: "text-[#e10600]",
+      bgImage: "/images/backgrounds/fries-bg.jpg",
+      bgGradient: "from-yellow-600 to-orange-600",
     },
     {
       name: "Coffee",
@@ -45,6 +66,8 @@ export function CategoryGrid() {
       icon: Coffee,
       description: "Hot & cold coffee varieties",
       color: "text-[#18a558]",
+      bgImage: "/images/backgrounds/coffee-bg.jpg",
+      bgGradient: "from-amber-800 to-yellow-800",
     },
     {
       name: "Milkshakes",
@@ -52,6 +75,8 @@ export function CategoryGrid() {
       icon: Wine,
       description: "Thick & creamy milkshakes",
       color: "text-[#e10600]",
+      bgImage: null,
+      bgGradient: "from-pink-500 to-rose-500",
     },
     {
       name: "Mocktails",
@@ -59,6 +84,8 @@ export function CategoryGrid() {
       icon: Wine,
       description: "Refreshing virgin mojitos & mocktails",
       color: "text-[#18a558]",
+      bgImage: "/images/backgrounds/mocktail-bg.jpg",
+      bgGradient: "from-cyan-500 to-blue-500",
     },
     {
       name: "Starters",
@@ -66,6 +93,8 @@ export function CategoryGrid() {
       icon: UtensilsCrossed,
       description: "Chicken nuggets, popcorn & more",
       color: "text-[#e10600]",
+      bgImage: null,
+      bgGradient: "from-orange-600 to-red-600",
     },
   ]
 
@@ -84,14 +113,30 @@ export function CategoryGrid() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {categories.map((category) => (
             <Link key={category.slug} href={category.slug}>
-              <Card className="h-full hover:shadow-card transition-all duration-300 cursor-pointer group border-2 hover:border-primary/20 hover:-translate-y-1">
+              <Card className="h-full hover:shadow-card transition-all duration-300 cursor-pointer group border-2 hover:border-primary/20 hover:-translate-y-1 overflow-hidden bg-white">
+                <div className="relative h-48 md:h-56 overflow-hidden">
+                  {category.bgImage ? (
+                    <Image
+                      src={category.bgImage}
+                      alt={`Best ${category.name} in Mumbra Shilphata - ${category.description} - Shake Chilli Cafe`}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  ) : (
+                    <div className={`absolute inset-0 bg-gradient-to-br ${category.bgGradient} transition-transform duration-300 group-hover:scale-105`} />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/20 group-hover:from-black/50 group-hover:via-black/30 group-hover:to-black/10 transition-colors duration-300" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div
+                      className={`p-4 md:p-6 rounded-2xl bg-white/20 backdrop-blur-sm group-hover:scale-110 transition-transform ${category.color} flex items-center justify-center`}
+                    >
+                      <category.icon className="h-8 w-8 md:h-10 md:w-10 text-white" />
+                    </div>
+                  </div>
+                </div>
                 <CardContent className="p-6 md:p-8">
                   <div className="flex flex-col items-center text-center gap-4">
-                    <div
-                      className={`p-4 md:p-6 rounded-2xl bg-gradient-card group-hover:scale-110 transition-transform ${category.color} flex items-center justify-center`}
-                    >
-                      <category.icon className="h-8 w-8 md:h-10 md:w-10" />
-                    </div>
                     <div className="space-y-2 md:space-y-3">
                       <h3 className="text-xl md:text-2xl font-bold group-hover:text-primary transition-colors">
                         {category.name}

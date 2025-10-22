@@ -8,9 +8,9 @@ export function Hero() {
     <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-0">
       <div className="absolute inset-0 gradient-hero" />
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-30"
         style={{
-          backgroundImage: `url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-10-06%20at%2020.13.46%20%283%29-ZYMunmOLhoPih1I9I0FnNK7WYcBKF6.jpeg')`,
+          backgroundImage: `url('/images/backgrounds/hero-bg.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           mixBlendMode: "overlay",

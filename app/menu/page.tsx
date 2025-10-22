@@ -27,11 +27,12 @@ export default function MenuPage() {
   ])
 
   const categories = [
-    { id: "pizza-veg", name: "Veg Pizza" },
-    { id: "pizza-non-veg", name: "Non-Veg Pizza" },
-    { id: "pizza-special", name: "Special Pizza" },
-    { id: "burger", name: "Burgers" },
+    { id: "pizza-veg", name: "Vegetarian Pizzas" },
+    { id: "pizza-non-veg", name: "Non-Vegetarian Halal Pizzas" },
+    { id: "pizza-special", name: "Special Premium Pizzas" },
+    { id: "burger", name: "Fresh Burgers" },
     { id: "footlong-sandwich", name: "Footlong Sandwiches" },
+    { id: "garlic-bread", name: "Garlic Bread" },
     { id: "coffee-hot", name: "Hot Coffee" },
     { id: "coffee-cold", name: "Cold Coffee" },
     { id: "milkshake", name: "Milkshakes" },
@@ -45,9 +46,11 @@ export default function MenuPage() {
       <main className="min-h-screen pt-20 md:pt-0">
         <section className="bg-foreground text-background py-8 md:py-12">
           <div className="container mx-auto px-4">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">Our Complete Menu</h1>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
+              Best Restaurant Menu in Mumbra & Shilphata | Pizza, Burgers & More
+            </h1>
             <p className="text-base md:text-lg text-background/80 text-center max-w-2xl mx-auto">
-              Explore our full range of pizzas, burgers, sandwiches, and beverages. All items available for dine-in and
+              Explore our full range of fresh pizzas, burgers, footlong sandwiches, and beverages at Shake Chilli Cafe & Pizzeria. Best halal food in Mumbra, Shilphata, and Diva. All items available for dine-in and
               delivery in Mumbra, Shilphata, Diva.
             </p>
           </div>
@@ -147,7 +150,9 @@ export default function MenuPage() {
 
               return (
                 <div key={category.id} className="mb-12 md:mb-16">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 pb-2 border-b-2 border-[#e10600]">{category.name}</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 pb-2 border-b-2 border-[#e10600]">
+                    Best {category.name} in Mumbra & Shilphata | Fresh {category.id.includes('veg') ? 'Vegetarian' : category.id.includes('non-veg') ? 'Halal Non-Vegetarian' : ''} Food
+                  </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {items.map((item) => (
                       <ProductCard key={item.id} item={item} />

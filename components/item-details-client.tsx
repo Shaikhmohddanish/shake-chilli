@@ -1,9 +1,11 @@
 "use client"
 
 import { useState, useMemo, useEffect } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { formatPriceAdvanced } from "@/lib/utils"
+import { generateSEOAltText } from "@/lib/image-seo"
 import { Star, Phone, ShoppingCart, Plus, Minus } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
 import { useCart } from "@/contexts/cart-context"
@@ -58,12 +60,15 @@ export function ItemDetailsClient({ item }: ItemDetailsClientProps) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-8">
         {/* Image Section */}
         <div>
-          <div className="aspect-square bg-muted rounded-2xl overflow-hidden flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-8xl mb-4">{item.isVeg ? "🍕" : "🍔"}</div>
-              <h3 className="text-2xl font-bold text-muted-foreground">{item.name}</h3>
-              <p className="text-muted-foreground mt-2">{item.categoryDisplay}</p>
-            </div>
+          <div className="aspect-square bg-muted rounded-2xl overflow-hidden relative">
+            <Image
+              src={item.image}
+              alt={generateSEOAltText(item)}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+            />
           </div>
         </div>
 
@@ -92,7 +97,12 @@ export function ItemDetailsClient({ item }: ItemDetailsClientProps) {
             )}
           </div>
 
-          <h1 className="text-4xl font-bold mb-4 text-balance">{item.name}</h1>
+          <h1 className="text-4xl font-bold mb-4 text-balance">
+            Best {item.name} in Mumbra & Shilphata
+          </h1>
+          <h2 className="text-lg text-muted-foreground mb-4">
+            {item.isVeg ? 'Fresh Vegetarian' : 'Premium Halal Non-Vegetarian'} • Shake Chilli Cafe & Pizzeria
+          </h2>
 
           <div className="flex items-center gap-2 mb-6">
             <div className="flex">

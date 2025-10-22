@@ -5,8 +5,17 @@ import { getDirectionsUrl } from "@/lib/utils"
 
 export function LocationBanner() {
   return (
-    <section className="py-16 md:py-24 bg-foreground text-background">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-foreground text-background relative overflow-hidden">
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `url('/images/backgrounds/location-bg.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          mixBlendMode: "overlay",
+        }}
+      />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Visit Us Today</h2>
           <p className="text-lg text-background/80 mb-6">{BUSINESS_INFO.address.full}</p>

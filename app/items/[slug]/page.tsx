@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { FloatingCTA } from "@/components/floating-cta"
 import { MENU_ITEMS } from "@/lib/menu-data"
 import { generateBreadcrumbSchema } from "@/lib/seo"
+import { generateFoodItemSchema } from "@/lib/image-seo"
 import { formatPriceAdvanced } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -38,9 +39,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   return {
-    title: `Best ${item.name} in Mumbra (Shilphata) | Price, Reviews & Photos`,
-    description: `${item.descriptionLong.slice(0, 155)}... Order now from Shake Chilli near Al-Hidaya School.`,
-    keywords: item.keywords,
+    title: `Best ${item.name} in Mumbra (Shilphata) | Price ₹${typeof item.price === "number" ? item.price : Object.values(item.price)[0]} | Reviews & Photos`,
+    description: `${item.descriptionLong.slice(0, 155)}... ${item.isVeg ? 'Fresh Vegetarian' : 'Premium Halal Non-Vegetarian'} food. Order now from Shake Chilli Cafe & Pizzeria near Al-Hidaya School, Mumbra.`,
+    keywords: [...(item.keywords || []), `best ${item.name.toLowerCase()} mumbra`, `${item.name.toLowerCase()} shilphata`, `${item.name.toLowerCase()} near me`, `halal ${item.category} mumbra`],
+    openGraph: {
+      title: `Best ${item.name} in Mumbra & Shilphata`,
+      description: item.description,
+      images: [{
+        url: item.image,
+        width: 800,
+        height: 600,
+        alt: `Best ${item.name} in Mumbra Shilphata - ${item.description} - Shake Chilli Cafe & Pizzeria`,
+      }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Best ${item.name} in Mumbra & Shilphata`,
+      description: item.description,
+      images: [item.image],
+    }
   }
 }
 
@@ -61,9 +78,9 @@ export default async function ItemDetailPage({ params }: PageProps) {
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: item.name,
-    description: item.descriptionLong,
-    image: `${BUSINESS_INFO.domain}/placeholder.jpg`,
+    name: `Best ${item.name} in Mumbra Shilphata - ${item.isVeg ? 'Vegetarian' : 'Non-Vegetarian Halal'} Food`,
+    description: `${item.descriptionLong} Available at Shake Chilli Cafe & Pizzeria, the best restaurant in Mumbra, Shilphata, and Diva for fresh ${item.isVeg ? 'vegetarian' : 'halal non-vegetarian'} food.`,
+    image: `${BUSINESS_INFO.domain}${item.image}`,
     offers: {
       "@type": "Offer",
       price: typeof item.price === "number" ? item.price : item.price.S || item.price.regular || item.price["6inch"],
@@ -98,6 +115,8 @@ export default async function ItemDetailPage({ params }: PageProps) {
     })),
   }
 
+  const foodItemSchema = generateFoodItemSchema(item, BUSINESS_INFO.domain)
+  
   const relatedItems = MENU_ITEMS.filter((i) => i.category === item.category && i.id !== item.id && i.isPopular).slice(
     0,
     3,
@@ -107,6 +126,7 @@ export default async function ItemDetailPage({ params }: PageProps) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(foodItemSchema) }} />
       <Header />
       <main className="min-h-screen pt-20 md:pt-0">
         <section className="py-12">

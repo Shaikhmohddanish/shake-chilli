@@ -1,10 +1,12 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { formatPriceAdvanced } from "@/lib/utils"
+import { generateSEOAltText } from "@/lib/image-seo"
 import { ArrowRight, ShoppingCart } from "lucide-react"
 import { useCart } from "@/contexts/cart-context"
 import type { MenuItem } from "@/lib/menu-data"
@@ -30,9 +32,14 @@ export function ProductCard({ item }: ProductCardProps) {
   return (
     <Card className="flex flex-col h-full hover:shadow-card transition-all duration-300 group border-2 hover:border-primary/20 hover:-translate-y-1 overflow-hidden">
       <div className="relative h-40 md:h-48 bg-gradient-card overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center text-4xl md:text-6xl opacity-20">
-          {item.isVeg ? "🍕" : "🍔"}
-        </div>
+        <Image
+          src={item.image}
+          alt={generateSEOAltText(item)}
+          fill
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300" />
         <div className="absolute top-2 md:top-4 right-2 md:right-4 flex flex-col gap-2">
           {item.isVeg && (
             <Badge variant="secondary" className="bg-secondary text-secondary-foreground shadow-soft text-xs">
