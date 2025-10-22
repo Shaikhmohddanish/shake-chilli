@@ -195,7 +195,7 @@ export default function ReviewsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Header />
-      <main className="min-h-screen pt-20 md:pt-0">
+      <main className="min-h-screen">
         <section className="bg-foreground text-background py-12">
           <div className="container mx-auto px-4">
             <div className="text-center">

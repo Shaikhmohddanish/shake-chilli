@@ -33,7 +33,7 @@ export default function ContactPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Header />
-      <main className="min-h-screen pt-20 md:pt-0">
+      <main className="min-h-screen">
         <section className="relative py-20 md:py-32 overflow-hidden">
           <div className="absolute inset-0 gradient-hero" />
           <div className="container mx-auto px-4 lg:px-8 relative z-10">

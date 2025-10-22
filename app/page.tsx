@@ -12,14 +12,15 @@ import { ReviewsSection } from "@/components/home/reviews-section"
 import { FAQSection } from "@/components/home/faq-section"
 import { LocationBanner } from "@/components/home/location-banner"
 import { FloatingCTA } from "@/components/floating-cta"
-import { generateBreadcrumbSchema } from "@/lib/seo"
+import { generateBreadcrumbSchema, generateLocalBusinessSchema } from "@/lib/seo"
 
 export default function HomePage() {
   const breadcrumbSchema = generateBreadcrumbSchema([{ name: "Home", url: "/" }])
+  const localBusinessSchema = generateLocalBusinessSchema()
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <Header />
       <main>
         <Hero />

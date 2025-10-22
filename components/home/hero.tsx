@@ -1,11 +1,10 @@
-import { Button } from "@/components/ui/button"
 import { Phone, MenuIcon, ArrowRight } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
 import Link from "next/link"
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 md:pt-0">
+    <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 gradient-hero" />
       <div
         className="absolute inset-0 opacity-30"
@@ -19,7 +18,7 @@ export function Hero() {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="mb-4 md:mb-6">
+          <div className="mt-4 md:mb-6">
             <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs md:text-sm font-medium mb-4 md:mb-6">
               🔥 Awesome Taste in Every Bite
             </span>
