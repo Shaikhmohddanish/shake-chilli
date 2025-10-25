@@ -122,7 +122,7 @@ export function SearchComponent({ className, onClose, showCloseButton = false }:
   return (
     <div ref={searchRef} className={cn("relative", className)}>
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground/70 z-10" />
         <Input
           ref={inputRef}
           type="text"
@@ -133,7 +133,7 @@ export function SearchComponent({ className, onClose, showCloseButton = false }:
             setIsOpen(true)
           }}
           onFocus={() => setIsOpen(true)}
-          className="pl-10 pr-10 h-12 bg-background/80 backdrop-blur-sm border-border/40 focus:border-primary/50 transition-all"
+          className="pl-10 pr-10 h-12 bg-background border border-border/60 focus:border-primary/50 transition-all text-foreground placeholder:text-muted-foreground shadow-sm focus:shadow-md"
         />
         {showCloseButton && (
           <Button
@@ -148,7 +148,7 @@ export function SearchComponent({ className, onClose, showCloseButton = false }:
       </div>
 
       {isOpen && (
-        <Card className="absolute top-full left-0 right-0 mt-2 z-50 max-h-96 overflow-y-auto shadow-xl border border-border/40 bg-background/95 backdrop-blur-xl">
+        <Card className="absolute top-full left-0 right-0 mt-2 z-50 max-h-96 overflow-y-auto shadow-xl border border-border/40 bg-background/98 backdrop-blur-xl">
           {query.trim().length === 0 ? (
             // Show recent searches when no query
             <div className="p-4">
@@ -186,34 +186,35 @@ export function SearchComponent({ className, onClose, showCloseButton = false }:
             </div>
           ) : suggestions.length > 0 ? (
             // Show search results
-            <div className="p-2">
-              <div className="mb-2 px-2 py-1">
+            <div className="p-3">
+              <div className="mb-3 px-2 py-1 bg-muted/20 rounded-lg">
                 <span className="text-xs font-medium text-muted-foreground">
                   {suggestions.length} result{suggestions.length !== 1 ? 's' : ''} found
                 </span>
               </div>
-              {suggestions.map((item) => (
-                <Link
-                  key={item.id}
-                  href={`/items/${item.slug}`}
-                  onClick={() => handleItemClick(item)}
-                  className="block p-3 rounded-lg hover:bg-accent/50 transition-colors"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-muted flex-shrink-0">
+              <div className="space-y-1">
+                {suggestions.map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`/items/${item.slug}`}
+                    onClick={() => handleItemClick(item)}
+                    className="block p-3 rounded-lg hover:bg-accent/50 transition-all duration-200 border border-transparent hover:border-border/20 hover:shadow-sm"
+                  >
+                    <div className="flex items-center gap-3">
+                    <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-muted flex-shrink-0 border border-border/20">
                       <Image
-                        src="/placeholder.jpg"
+                        src={item.image}
                         alt={`${item.name} - best ${item.categoryDisplay.toLowerCase()} in mumbra near shilphata`}
                         fill
-                        className="object-cover"
+                        className="object-cover transition-transform duration-200 hover:scale-105"
                         sizes="48px"
                       />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
-                        <h4 className="font-medium text-sm truncate">{item.name}</h4>
+                        <h4 className="font-medium text-sm truncate text-foreground">{item.name}</h4>
                         {item.isVeg && (
-                          <Badge variant="secondary" className="text-xs px-1.5 py-0.5 bg-green-100 text-green-700">
+                          <Badge variant="secondary" className="text-xs px-1.5 py-0.5 bg-green-100 text-green-700 border border-green-200">
                             Veg
                           </Badge>
                         )}
@@ -221,12 +222,13 @@ export function SearchComponent({ className, onClose, showCloseButton = false }:
                       <p className="text-xs text-muted-foreground truncate">{item.description}</p>
                       <div className="flex items-center justify-between mt-1">
                         <span className="text-sm font-semibold text-primary">{formatPrice(item.price)}</span>
-                        <span className="text-xs text-muted-foreground">{item.categoryDisplay}</span>
+                        <span className="text-xs text-muted-foreground bg-muted/50 px-2 py-0.5 rounded-full">{item.categoryDisplay}</span>
                       </div>
                     </div>
                   </div>
                 </Link>
-              ))}
+                ))}
+              </div>
             </div>
           ) : (
             // No results found

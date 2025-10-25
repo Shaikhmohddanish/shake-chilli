@@ -233,20 +233,20 @@ export function Header() {
 
         {/* Mobile Search Overlay */}
         {mobileSearchOpen && (
-          <div className="lg:hidden fixed inset-0 z-50 bg-background/95 backdrop-blur-md">
+          <div className="lg:hidden fixed inset-0 z-50 bg-background/98 backdrop-blur-md" style={{ top: '80px' }}>
             <div className="flex flex-col h-full">
-              <div className="flex items-center justify-between p-4 border-b border-border/20">
-                <h2 className="text-lg font-semibold">Search Menu</h2>
+              <div className="flex items-center justify-between p-4 border-b border-border/20 bg-background/95">
+                <h2 className="text-lg font-semibold text-foreground">Search Menu</h2>
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={() => setMobileSearchOpen(false)}
-                  className="h-8 w-8"
+                  className="h-8 w-8 hover:bg-accent"
                 >
                   <X className="h-4 w-4" />
                 </Button>
               </div>
-              <div className="flex-1 p-4">
+              <div className="flex-1 p-4 pt-6">
                 <SearchComponent
                   className="w-full"
                   onClose={() => setMobileSearchOpen(false)}

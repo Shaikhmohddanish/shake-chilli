@@ -79,10 +79,10 @@ export function CategoryGrid() {
       bgGradient: "from-pink-500 to-rose-500",
     },
     {
-      name: "Mocktails",
+      name: "Mojitos & Mocktails",
       slug: "/mojito",
       icon: Wine,
-      description: "Refreshing virgin mojitos & mocktails",
+      description: "12+ flavors: Virgin, Mango, Kiwi & more",
       color: "text-[#18a558]",
       bgImage: "/images/backgrounds/mocktail-bg.jpg",
       bgGradient: "from-cyan-500 to-blue-500",
