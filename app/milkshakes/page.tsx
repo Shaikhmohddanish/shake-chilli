@@ -9,7 +9,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Best Milkshakes in Mumbra, Shilphata | Thick Shakes Near Me",
   description:
-    "Best Milkshakes in Mumbra & Shilphata. Chocolate, Oreo, KitKat, Strawberry shakes. Thick & creamy. Near Al-Hidaya School. Free delivery to Diva, Dosti.",
+    "Best Milkshakes in Mumbra & Shilphata. Chocolate, Oreo, KitKat, Strawberry shakes. Thick & creamy. Near Al-Hidaya School. Free delivery to Kausa, MM Valley, Dosti in 10-15 min.",
   keywords: [
     "best milkshake in mumbra",
     "milkshake near shilphata",
@@ -39,7 +39,7 @@ export default function MilkshakesPage() {
             </h1>
             <p className="text-lg text-background/80 text-center max-w-3xl mx-auto text-pretty">
               Thick, creamy milkshakes made with premium ingredients and fresh milk. From classic chocolate to Oreo and
-              KitKat, we have flavors for everyone. Perfect treat in Mumbra, Shilphata, Diva, and nearby areas.
+              KitKat, we have flavors for everyone. Perfect treat in Mumbra, Shilphata, Kausa, MM Valley, Dosti, Amrut Nagar and nearby areas. Delivered in 10-15 minutes!
             </p>
           </div>
         </section>

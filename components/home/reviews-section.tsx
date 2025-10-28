@@ -16,21 +16,21 @@ export function ReviewsSection() {
       name: "Fatima Sheikh",
       location: "Shilphata",
       rating: 5,
-      text: "Love their burgers! The Big ShakeChilli Burger is huge and so tasty. Great value for money. Will definitely order again.",
+      text: "Love their burgers! The Chicken Cheese Burst is so tasty. Great value for money. Will definitely order again.",
       date: "1 week ago",
     },
     {
       name: "Mohammed Ansari",
-      location: "Diva",
+      location: "Kausa",
       rating: 5,
-      text: "Fast delivery and hot food! Ordered the Family Meal combo and everyone loved it. Best restaurant near Diva.",
+      text: "Fast delivery in just 10 minutes! Ordered the Family Meal combo and everyone loved it. Best restaurant near Kausa.",
       date: "3 days ago",
     },
     {
       name: "Ayesha Patel",
-      location: "Dosti",
+      location: "MM Valley",
       rating: 5,
-      text: "The footlong sandwiches are amazing! Fresh veggies and generous portions. Perfect for lunch. Near Dosti area.",
+      text: "The footlong sandwiches are amazing! Fresh veggies and generous portions. Perfect for lunch. Quick delivery to MM Valley.",
       date: "5 days ago",
     },
     {
@@ -56,7 +56,7 @@ export function ReviewsSection() {
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Customers Say</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Loved by hundreds of customers in Mumbra, Shilphata, Diva and nearby areas
+            Loved by hundreds of customers in Mumbra, Shilphata, Kausa, MM Valley, Dosti, Amrut Nagar and nearby areas
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">

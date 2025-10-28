@@ -11,7 +11,7 @@ import Image from "next/image"
 export const metadata: Metadata = {
   title: "Best Pizza in Shilphata, Mumbra | Veg & Non-Veg Pizza Near Me",
   description:
-    "Best Pizza in Mumbra & Shilphata. Veg & Non-Veg pizzas with fresh toppings. Chicken Tikka, Margherita, BBQ Pizza. Halal. Free delivery near Al-Hidaya School, Dosti, Diva.",
+    "Best Pizza in Mumbra & Shilphata. Veg & Non-Veg pizzas with fresh toppings. Chicken Tikka, Margherita, BBQ Pizza. Halal. Free delivery near Al-Hidaya School, Kausa, MM Valley, Dosti in 10-15 min.",
   keywords: [
     "best pizza in mumbra",
     "pizza near shilphata",
@@ -39,8 +39,8 @@ export default function PizzaPage() {
       answer: "Shake Chilli serves the best pizza in Mumbra and Shilphata. Our Chicken Tikka Pizza and Margherita Pizza are customer favorites. We use fresh ingredients, hand-tossed dough, and 100% halal chicken. Located near Al-Hidaya School in Shilphata."
     },
     {
-      question: "Do you deliver pizza to Diva and Dosti?",
-      answer: "Yes! We offer free home delivery to Mumbra, Shilphata, Diva, Dosti, Shalimar and nearby areas. Hot and fresh pizza delivered to your doorstep in 30-45 minutes. Call us at 7208 697 371 to order."
+      question: "How fast is delivery?",
+      answer: "Yes! We offer super fast free home delivery to Mumbra, Shilphata, Kausa, MM Valley, Dosti (2 min), Shimla Park (5-7 min), Shalimar (1 min), Amrut Nagar, Mumbra Bypass, Y Junction, Millenium and nearby areas. Hot and fresh pizza delivered in 1-15 minutes depending on your location! Call us at 7208 697 371 to order."
     },
     {
       question: "Is your pizza halal?",
@@ -48,7 +48,7 @@ export default function PizzaPage() {
     },
     {
       question: "What sizes are available?",
-      answer: "Our pizzas are available in three sizes: Small (serves 1-2), Medium (serves 2-3), and Large (serves 3-4). Perfect for individuals, couples, and families in Mumbra and Shilphata."
+      answer: "Our pizzas are available in three sizes: Small 8 inch, Medium 10 inch, and Large 12 inch. Perfect for individuals, couples, and families in Mumbra and Shilphata."
     },
     {
       question: "Can I customize my pizza?",
@@ -68,8 +68,8 @@ export default function PizzaPage() {
             </h1>
             <p className="text-lg text-background/80 text-center max-w-3xl mx-auto text-pretty">
               Freshly baked pizzas with authentic Italian flavors and Indian spices. Choose from our wide range of veg
-              and non-veg pizzas, all made with 100% halal ingredients. Available in Small, Medium, and Large sizes.
-              Free delivery to Mumbra, Shilphata, Diva, Dosti, Shalimar and nearby areas.
+              and non-veg pizzas, all made with 100% halal ingredients. Available in Small 8 inch, Medium 10 inch, and Large 12 inch sizes.
+              Free delivery to Mumbra, Shilphata, Kausa, MM Valley, Dosti (2 min), Shimla Park (5-7 min), Shalimar (1 min), Amrut Nagar, Mumbra Bypass, Y Junction, Millenium and nearby areas!
             </p>
           </div>
         </section>
@@ -93,8 +93,8 @@ export default function PizzaPage() {
                 />
               </div>
               <p className="text-center text-sm text-muted-foreground mt-4">
-                All pizzas available in S (Small), M (Medium), and L (Large) sizes. Free home delivery in Mumbra,
-                Shilphata, Diva, Dosti areas.
+                All pizzas available in Small 8 inch, Medium 10 inch, and Large 12 inch sizes. Free home delivery in Mumbra,
+                Shilphata, Kausa, MM Valley, Dosti (2 min), Shimla Park (5-7 min), Shalimar (1 min), Amrut Nagar areas!
               </p>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function PizzaPage() {
               <h2 className="text-3xl font-bold mb-6 pb-2 border-b-2 border-[#e10600]">Non-Vegetarian Pizza</h2>
               <p className="text-muted-foreground mb-6">
                 Our non-veg pizzas feature tender, juicy 100% halal chicken with authentic spices and fresh toppings.
-                The best chicken pizza in Mumbra, Shilphata, and Diva. Try our famous Chicken Tikka Pizza!
+                The best chicken pizza in Mumbra, Shilphata, Kausa, MM Valley, and Dosti. Try our famous Chicken Tikka Pizza!
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {nonVegPizzas.map((item) => (

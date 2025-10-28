@@ -15,12 +15,12 @@ export function WhyUs() {
     {
       icon: Truck,
       title: "Fast Delivery",
-      description: "Free home delivery to Mumbra, Shilphata, Diva, Dosti, Shalimar and nearby areas",
+      description: "Free home delivery to Mumbra, Shilphata, Kausa, MM Valley, Dosti, Shimla Park, Shalimar, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium and nearby areas",
     },
     {
       icon: Clock,
-      title: "Quick Service",
-      description: "Hot and fresh food delivered to your doorstep in 30-45 minutes",
+      title: "Lightning Quick Service",
+      description: "Super fast delivery: Shalimar in 1 min, Dosti in 2 min, Shimla Park in 5-7 min, and other areas in 10-15 min!",
     },
   ]
 

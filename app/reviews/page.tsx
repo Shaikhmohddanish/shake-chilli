@@ -10,7 +10,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Customer Reviews | Shake Chilli Mumbra, Shilphata | 4.8★ Rating",
   description:
-    "Read customer reviews for Shake Chilli. 4.8/5 stars from 200+ customers in Mumbra, Shilphata, Diva. Best pizza, burgers & more. Near Al-Hidaya School.",
+    "Read customer reviews for Shake Chilli. 4.8/5 stars from 200+ customers in Mumbra, Shilphata, Kausa, MM Valley, Dosti. Best pizza, burgers & more. Near Al-Hidaya School.",
   keywords: [
     "shake chilli reviews",
     "best restaurant mumbra reviews",
@@ -39,23 +39,23 @@ export default function ReviewsPage() {
       name: "Fatima Sheikh",
       location: "Shilphata",
       rating: 5,
-      text: "Love their burgers! The Big ShakeChilli Burger is huge and so tasty. Great value for money. Will definitely order again. Best burger in Shilphata area.",
+      text: "Love their burgers! The Chicken Cheese Burst is so tasty. Great value for money. Will definitely order again. Best burger in Shilphata area.",
       date: "1 week ago",
       category: "Burgers",
     },
     {
       name: "Mohammed Ansari",
-      location: "Diva",
+      location: "Kausa",
       rating: 5,
-      text: "Fast delivery and hot food! Ordered the Family Meal combo and everyone loved it. Best restaurant near Diva. The halal certification gives peace of mind.",
+      text: "Fast delivery in just 12 minutes! Ordered the Family Meal combo and everyone loved it. Best restaurant near Kausa. The halal certification gives peace of mind.",
       date: "3 days ago",
       category: "Combos",
     },
     {
       name: "Ayesha Patel",
-      location: "Dosti",
+      location: "MM Valley",
       rating: 5,
-      text: "The footlong sandwiches are amazing! Fresh veggies and generous portions. Perfect for lunch. Near Dosti area, very convenient location.",
+      text: "The footlong sandwiches are amazing! Fresh veggies and generous portions. Perfect for lunch. Quick delivery to MM Valley, very convenient location.",
       date: "5 days ago",
       category: "Sandwiches",
     },
@@ -77,9 +77,9 @@ export default function ReviewsPage() {
     },
     {
       name: "Imran Shaikh",
-      location: "Diva",
+      location: "Amrut Nagar",
       rating: 5,
-      text: "The Veg Veganza pizza is loaded with toppings! Best vegetarian pizza I've had. Great quality and taste. Delivery to Diva was quick and food was hot.",
+      text: "The Veg Veganza pizza is loaded with toppings! Best vegetarian pizza I've had. Great quality and taste. Delivery to Amrut Nagar was super quick in 12 minutes and food was hot.",
       date: "6 days ago",
       category: "Pizza",
     },
@@ -125,9 +125,9 @@ export default function ReviewsPage() {
     },
     {
       name: "Farhan Ahmed",
-      location: "Diva",
+      location: "Mumbra Bypass",
       rating: 5,
-      text: "The milkshakes are thick and creamy! Tried the Oreo shake and it was amazing. Perfect dessert after a meal. Best shakes near Diva.",
+      text: "The milkshakes are thick and creamy! Tried the Oreo shake and it was amazing. Perfect dessert after a meal. Best shakes near Mumbra Bypass, delivered in 10 minutes!",
       date: "4 days ago",
       category: "Beverages",
     },
@@ -149,17 +149,17 @@ export default function ReviewsPage() {
     },
     {
       name: "Amina Sheikh",
-      location: "Dosti",
+      location: "Y Junction",
       rating: 5,
-      text: "The Xinger Burger is crispy and spicy! Just the way I like it. Best zinger burger near Dosti and Shalimar.",
+      text: "The Xinger Burger is crispy and spicy! Just the way I like it. Best zinger burger near Y Junction, super quick delivery!",
       date: "1 week ago",
       category: "Burgers",
     },
     {
       name: "Karim Ali",
-      location: "Diva",
+      location: "Millenium",
       rating: 5,
-      text: "Excellent food quality! Everything is made fresh. The halal certification is a big plus. Best halal restaurant near Diva.",
+      text: "Excellent food quality! Everything is made fresh. The halal certification is a big plus. Best halal restaurant near Millenium, delivered in 15 minutes.",
       date: "3 days ago",
       category: "Overall",
     },
@@ -209,8 +209,8 @@ export default function ReviewsPage() {
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4">Customer Reviews</h1>
               <p className="text-lg text-background/80 max-w-2xl mx-auto">
-                Read what our customers from Mumbra, Shilphata, Diva, Dosti, and nearby areas have to say about us. Over
-                200+ happy customers!
+                Read what our customers from Mumbra, Shilphata, Kausa, MM Valley, Dosti, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium and nearby areas have to say about us. Over
+                200+ happy customers! Delivered in just 10-15 minutes!
               </p>
             </div>
           </div>

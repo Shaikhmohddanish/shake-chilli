@@ -19,8 +19,17 @@ export function LocationBanner() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Visit Us Today</h2>
           <p className="text-lg text-background/80 mb-6">{BUSINESS_INFO.address.full}</p>
-          <p className="text-background/80 mb-8">
-            Near Al-Hidaya School, Shilphata | Easy access from Mumbra, Diva, Dosti, Shalimar
+          <p className="text-background/80 mb-4">
+            Near Al-Hidaya School, Shilphata | Easy access from Mumbra, Kausa, MM Valley, Dosti, Shimla Park, Shalimar, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium
+          </p>
+          <p className="text-xl font-semibold text-primary mb-2">
+            🚀 Lightning Fast Delivery!
+          </p>
+          <p className="text-lg text-background/90 mb-8">
+            Shalimar: 1 min • Dosti: 2 min • Shimla Park: 5-7 min • Others: 10-15 min
+          </p>
+          <p className="text-lg text-background/90 mb-8">
+            ⏰ Open Daily: 12:00 PM - 3:00 AM
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>

@@ -10,7 +10,7 @@ import Image from "next/image"
 export const metadata: Metadata = {
   title: "Best Coffee in Mumbra, Shilphata | Hot & Cold Coffee Near Me",
   description:
-    "Best Coffee in Mumbra & Shilphata. Cappuccino, Latte, Iced Coffee, Cold Coffee. Premium coffee beans. Near Al-Hidaya School. Free delivery to Diva, Dosti.",
+    "Best Coffee in Mumbra & Shilphata. Cappuccino, Latte, Iced Coffee, Cold Coffee. Premium coffee beans. Near Al-Hidaya School. Free delivery to Kausa, MM Valley, Dosti in 10-15 min.",
   keywords: [
     "best coffee in mumbra",
     "coffee near shilphata",
@@ -40,8 +40,7 @@ export default function CoffeePage() {
               Best Coffee in Mumbra & Shilphata
             </h1>
             <p className="text-lg text-background/80 text-center max-w-3xl mx-auto text-pretty">
-              Premium coffee made with the finest beans. From classic cappuccino to refreshing iced coffee, we have the
-              perfect brew for every coffee lover in Mumbra, Shilphata, Diva, and nearby areas.
+              Our Coffee – Freshly Brewed from the Finest Beans. At our café, coffee isn&apos;t just a drink — it&apos;s an experience. We brew every cup using freshly ground, high-quality coffee beans to bring out rich aroma and bold flavor in every sip. From smooth cappuccinos to creamy lattes, our coffee is made with passion, precision, and the best beans sourced for perfect taste and freshness. Delivered to Mumbra, Shilphata, Kausa, MM Valley, Dosti, Amrut Nagar in just 10-15 minutes!
             </p>
           </div>
         </section>
@@ -64,8 +63,8 @@ export default function CoffeePage() {
                 />
               </div>
               <p className="text-center text-sm text-muted-foreground mt-4">
-                All beverages freshly prepared. Available for dine-in and home delivery in Mumbra, Shilphata, Diva,
-                Dosti areas.
+                All beverages freshly prepared. Available for dine-in and home delivery in Mumbra, Shilphata, Kausa, MM Valley,
+                Dosti, Amrut Nagar areas in just 10-15 minutes!
               </p>
             </div>
           </div>

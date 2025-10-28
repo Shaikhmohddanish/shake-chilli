@@ -50,8 +50,8 @@ export default function MenuPage() {
               Best Restaurant Menu in Mumbra & Shilphata | Pizza, Burgers & More
             </h1>
             <p className="text-base md:text-lg text-background/80 text-center max-w-2xl mx-auto">
-              Explore our full range of fresh pizzas, burgers, footlong sandwiches, and beverages at Shake Chilli Cafe & Pizzeria. Best halal food in Mumbra, Shilphata, and Diva. All items available for dine-in and
-              delivery in Mumbra, Shilphata, Diva.
+              Explore our full range of fresh pizzas, burgers, footlong sandwiches, and beverages at Shake Chilli Cafe & Pizzeria. Best halal food in Mumbra, Shilphata, Kausa, MM Valley, Dosti, Amrut Nagar. All items available for dine-in and
+              delivery in just 10-15 minutes!
             </p>
           </div>
         </section>
@@ -61,7 +61,7 @@ export default function MenuPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Complete Menu with Prices</h2>
             <p className="text-center text-muted-foreground mb-8 md:mb-12 max-w-3xl mx-auto text-sm md:text-base">
               Browse our full menu cards with detailed pricing for all items. Available for dine-in and free home
-              delivery in Mumbra, Shilphata, Diva, Dosti, and nearby areas.
+              delivery in Mumbra, Shilphata, Kausa, MM Valley, Dosti, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium and nearby areas. Reach in just 10-15 minutes!
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
@@ -99,7 +99,7 @@ export default function MenuPage() {
                 <div className="rounded-xl md:rounded-2xl overflow-hidden shadow-xl md:shadow-2xl border-2 md:border-4 border-white">
                   <Image
                     src="/images/shake-chilli-footlong-sandwich-wrap-menu-shilphata.jpeg"
-                    alt="Shake Chilli Starters and Burgers Menu - Starters (Fries Salted Regular ₹80 Large ₹120, Fries Peri Peri ₹100-140, Cheesy Fries ₹120-180, Chicken Loaded Fries ₹200-300, Chicken Nuggets 6pcs ₹160, Chicken Popcorn 10pcs ₹150), Dessert (Tiramisu ₹180), Garlic Bread (Cheesy ₹150, Corn ₹170, Chicken ₹250), Footlong Sandwiches (Veg Subway 6inch ₹140 12inch ₹250, Chicken Subway ₹160-280, Chicken Crispy ₹180-300), Veg Burgers (Veg Burger ₹70, Veg Cheese Burst ₹100), Non-Veg Burgers (Chicken Burger ₹80, Xinger Burger ₹120, Chicken Cheese Burst ₹140, Big ShakeChilli Burger ₹180) in Mumbra Shilphata with home delivery"
+                    alt="Shake Chilli Starters and Burgers Menu - Starters (Fries Salted Regular ₹80 Large ₹120, Fries Peri Peri ₹100-140, Cheesy Fries ₹120-180, Chicken Loaded Fries ₹200-300, Chicken Nuggets 6pcs ₹160, Chicken Popcorn 10pcs ₹150), Dessert (Tiramisu ₹180), Garlic Bread (Cheesy ₹150, Corn ₹170, Chicken ₹250), Footlong Sandwiches (Veg Subway 6inch ₹140 12inch ₹250, Chicken Subway ₹160-280, Chicken Crispy ₹180-300), Veg Burgers (Veg Burger ₹70, Veg Cheese Burst ₹100), Non-Veg Burgers (Chicken Burger ₹80, Xinger Burger ₹120, Chicken Cheese Burst ₹140) in Mumbra Shilphata with home delivery"
                     width={800}
                     height={600}
                     className="w-full h-auto"

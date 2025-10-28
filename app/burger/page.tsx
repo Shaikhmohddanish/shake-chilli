@@ -11,7 +11,7 @@ import Image from "next/image"
 export const metadata: Metadata = {
   title: "Best Burgers in Mumbra, Shilphata | Chicken & Veg Burgers Near Me",
   description:
-    "Best Burgers in Mumbra & Shilphata. Juicy chicken burgers, veg burgers, cheese burst. Halal. Free delivery near Al-Hidaya School, Dosti, Diva, Shalimar.",
+    "Best Burgers in Mumbra & Shilphata. Juicy chicken burgers, veg burgers, cheese burst. Halal. Free delivery near Al-Hidaya School, Kausa, MM Valley, Dosti in 10-15 min.",
   keywords: [
     "best burger in mumbra",
     "burger near shilphata",
@@ -33,7 +33,7 @@ export default function BurgerPage() {
   const burgerFAQs = [
     {
       question: "Which is the best burger in Mumbra?",
-      answer: "Shake Chilli serves the best burgers in Mumbra and Shilphata. Our Big ShakeChilli Burger and Xinger Burger are customer favorites. Made with 100% halal chicken, fresh vegetables, and special sauces. Located near Al-Hidaya School in Shilphata."
+      answer: "Shake Chilli serves the best burgers in Mumbra and Shilphata. Our Chicken Cheese Burst and Xinger Burger are customer favorites. Made with 100% halal chicken, fresh vegetables, and special sauces. Located near Al-Hidaya School in Shilphata."
     },
     {
       question: "Are your burgers halal?",
@@ -44,8 +44,8 @@ export default function BurgerPage() {
       answer: "Yes! We have Veg Burger and Veg Cheese Burst options. Both are made with crispy vegetable patties, fresh toppings, and our special sauce. Perfect for vegetarians in Mumbra and Shilphata."
     },
     {
-      question: "Do you deliver burgers to Diva and Dosti?",
-      answer: "Yes! We offer free home delivery to Mumbra, Shilphata, Diva, Dosti, Shalimar and nearby areas. Hot and fresh burgers delivered in 30-45 minutes. Call 7208 697 371 to order."
+      question: "How fast is delivery?",
+      answer: "We offer super fast free home delivery to Mumbra, Shilphata, Kausa, MM Valley, Dosti, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium and nearby areas. Hot and fresh burgers delivered in just 10-15 minutes! Call 7208 697 371 to order."
     },
     {
       question: "What makes your burgers special?",
@@ -65,8 +65,8 @@ export default function BurgerPage() {
             </h1>
             <p className="text-lg text-background/80 text-center max-w-3xl mx-auto text-pretty">
               Juicy, flavorful burgers made with fresh ingredients and 100% halal chicken. From classic chicken burgers
-              to our signature Big ShakeChilli Burger, we have something for everyone. Free delivery to Mumbra,
-              Shilphata, Diva, Dosti, Shalimar and nearby areas.
+              to our signature Chicken Cheese Burst, we have something for everyone. Free delivery to Mumbra,
+              Shilphata, Kausa, MM Valley, Dosti, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium and nearby areas in just 10-15 minutes!
             </p>
           </div>
         </section>
@@ -81,7 +81,7 @@ export default function BurgerPage() {
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                 <Image
                   src="/images/menu/shake-chilli-starters-burgers-sandwiches-menu-mumbra.jpeg"
-                  alt="Shake Chilli Menu - Starters (Salted Fries, Peri Peri Fries, Cheesy Fries, Chicken Loaded Fries, Chicken Nuggets, Chicken Popcorn), Dessert (Tiramisu), Garlic Bread (Cheesy, Corn, Chicken), Footlong Sandwiches (Veg Subway, Chicken Subway, Chicken Crispy), Burgers (Veg Burger, Veg Cheese Burst, Chicken Burger, Xinger Burger, Chicken Cheese Burst, Big ShakeChilli Burger) in Mumbra Shilphata with prices and home delivery"
+                  alt="Shake Chilli Menu - Starters (Salted Fries, Peri Peri Fries, Cheesy Fries, Chicken Loaded Fries, Chicken Nuggets, Chicken Popcorn), Dessert (Tiramisu), Garlic Bread (Cheesy, Corn, Chicken), Footlong Sandwiches (Veg Subway, Chicken Subway, Chicken Crispy), Burgers (Veg Burger, Veg Cheese Burst, Chicken Burger, Xinger Burger, Chicken Cheese Burst) in Mumbra Shilphata with prices and home delivery"
                   width={1200}
                   height={800}
                   className="w-full h-auto"

@@ -12,7 +12,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "How to Reach Shake Chilli – Shilphata Mumbra | Directions & Parking",
   description:
-    "Find directions to Shake Chilli in Shilphata, Mumbra. Near Al-Hidaya School, easy access from Dosti, Shalimar, Diva. Parking available. Call 7208 697 371.",
+    "Find directions to Shake Chilli in Shilphata, Mumbra. Near Al-Hidaya School, easy access from Kausa, MM Valley, Dosti, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium. Parking available. Reach in 10-15 min. Call 7208 697 371.",
   keywords: [
     "shake chilli location",
     "directions to shake chilli",
@@ -35,19 +35,49 @@ export default function HowToReachPage() {
       direction: "Our restaurant is right next to Al-Hidaya School in Silverline Enclave",
     },
     {
-      name: "Dosti Area",
-      distance: "1.5 km",
-      direction: "Take the main road towards Shilphata, we're near the school",
-    },
-    {
       name: "Shalimar",
-      distance: "2 km",
-      direction: "Head towards Shilphata via the main road, look for Silverline Enclave",
+      distance: "1 min",
+      direction: "Super quick delivery! Just 1 minute from Shalimar to our restaurant near Al-Hidaya School",
     },
     {
-      name: "Diva Railway Station",
-      distance: "3 km",
-      direction: "Take auto or cab towards Shilphata, ask for Al-Hidaya School",
+      name: "Dosti",
+      distance: "2 min",
+      direction: "Lightning fast! Only 2 minutes from Dosti area to Shake Chilli, look for Al-Hidaya School",
+    },
+    {
+      name: "Shimla Park",
+      distance: "5-7 min",
+      direction: "Quick delivery from Shimla Park! Head towards Shilphata, we're near Al-Hidaya School",
+    },
+    {
+      name: "Kausa",
+      distance: "10-15 min",
+      direction: "Take the main road towards Shilphata, we're near Al-Hidaya School",
+    },
+    {
+      name: "MM Valley",
+      distance: "10-15 min",
+      direction: "Head towards Shilphata via the main road, look for Silverline Enclave near Al-Hidaya School",
+    },
+    {
+      name: "Amrut Nagar",
+      distance: "10-15 min",
+      direction: "Head to Shilphata main road, we're in Silverline Enclave near Al-Hidaya School",
+    },
+    {
+      name: "Mumbra Bypass",
+      distance: "10-15 min",
+      direction: "Take the bypass road to Shilphata, look for Al-Hidaya School",
+    },
+    {
+      name: "Y Junction",
+      distance: "10-15 min",
+      direction: "From Y Junction, head to Shilphata, we're near Al-Hidaya School",
+    },
+    {
+      name: "Millenium",
+      distance: "10-15 min",
+      direction: "Take auto or cab towards Shilphata, ask for Al-Hidaya School area",
     },
     {
       name: "Mumbra",
@@ -147,15 +177,31 @@ export default function HowToReachPage() {
                       <li className="flex items-start gap-3 p-3 bg-accent/30 rounded-xl">
                         <span className="text-secondary text-xl mt-0.5">•</span>
                         <span className="text-base">
-                          From Diva: Head towards Shilphata via the main road. Ask locals for Al-Hidaya School (approx
-                          15 minutes)
+                          From Shalimar: Just 1 minute away! Head straight to Shilphata, look for Al-Hidaya School
                         </span>
                       </li>
                       <li className="flex items-start gap-3 p-3 bg-accent/30 rounded-xl">
                         <span className="text-secondary text-xl mt-0.5">•</span>
                         <span className="text-base">
-                          From Dosti/Shalimar: Follow signs to Shilphata. We're in Silverline Enclave (approx 10
-                          minutes)
+                          From Dosti: Only 2 minutes! Follow signs to Shilphata, we're in Silverline Enclave near Al-Hidaya School
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3 p-3 bg-accent/30 rounded-xl">
+                        <span className="text-secondary text-xl mt-0.5">•</span>
+                        <span className="text-base">
+                          From Shimla Park: Quick 5-7 minute ride to Shilphata, ask for Al-Hidaya School area
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3 p-3 bg-accent/30 rounded-xl">
+                        <span className="text-secondary text-xl mt-0.5">•</span>
+                        <span className="text-base">
+                          From Kausa/MM Valley: Head towards Shilphata via the main road. Look for Al-Hidaya School (10-15 minutes)
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3 p-3 bg-accent/30 rounded-xl">
+                        <span className="text-secondary text-xl mt-0.5">•</span>
+                        <span className="text-base">
+                          From Amrut Nagar/Mumbra Bypass/Y Junction/Millenium: Take the route to Shilphata, ask for Al-Hidaya School (10-15 minutes)
                         </span>
                       </li>
                       <li className="flex items-start gap-3 p-3 bg-accent/30 rounded-xl">
@@ -263,10 +309,20 @@ export default function HowToReachPage() {
                   </p>
                 </div>
                 <div className="p-6 bg-accent/30 rounded-xl">
-                  <h3 className="font-bold text-xl mb-3">Delivery Radius</h3>
-                  <p className="text-muted-foreground">
-                    We deliver within 2-3 km radius covering Mumbra, Shilphata, Diva, Dosti, Shalimar and nearby areas.
+                  <h3 className="font-bold text-xl mb-3">Delivery Radius & Timing</h3>
+                  <p className="text-muted-foreground mb-3">
+                    We deliver within 2-3 km radius covering Mumbra, Shilphata, Kausa, MM Valley, Dosti, Shimla Park, Shalimar, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium and nearby areas.
                     Free home delivery on all orders.
+                  </p>
+                  <p className="text-primary font-semibold">
+                    🚀 Lightning Fast: Shalimar (1 min) • Dosti (2 min) • Shimla Park (5-7 min) • Others (10-15 min)
+                  </p>
+                </div>
+                <div className="p-6 bg-accent/30 rounded-xl">
+                  <h3 className="font-bold text-xl mb-3">Opening Hours</h3>
+                  <p className="text-muted-foreground">
+                    Open Daily: 12:00 PM - 3:00 AM<br/>
+                    Late night cravings? We've got you covered!
                   </p>
                 </div>
                 <div className="p-6 bg-accent/30 rounded-xl">

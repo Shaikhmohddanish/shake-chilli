@@ -21,12 +21,13 @@ export const BUSINESS_INFO = {
     full: "Shop No. 4, Silverline Enclave, Near Al-Hidaya School, Shilphata, Thane, Maharashtra 400612",
   },
   hours: {
-    open: "11:00",
-    close: "23:30",
-    display: "11:00 AM - 11:30 PM",
+    open: "12:00",
+    close: "03:00",
+    display: "12:00 PM - 3:00 AM",
   },
   features: ["Halal", "Free Home Delivery", "Fresh Ingredients", "Fast Service"],
-  serviceAreas: ["Mumbra", "Shilphata", "Diva", "Dosti", "Shalimar"],
+  serviceAreas: ["Mumbra", "Shilphata", "Kausa", "MM Valley", "Dosti", "Shimla Park", "Shalimar", "Amrut Nagar", "Mumbra Bypass", "Y Junction", "Millenium"],
+  deliveryTime: "10-15 minutes",
   cuisines: ["Pizza", "Burgers", "Sandwiches", "Coffee", "Milkshakes", "Mocktails"],
   priceRange: "₹₹",
 } as const

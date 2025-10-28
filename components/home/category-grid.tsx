@@ -55,7 +55,7 @@ export function CategoryGrid() {
       name: "French Fries",
       slug: "/french-fries",
       icon: Salad,
-      description: "Crispy fries, nuggets & starters",
+      description: "Crispy fries, chicken popcorn & starters",
       color: "text-[#e10600]",
       bgImage: "/images/backgrounds/fries-bg.jpg",
       bgGradient: "from-yellow-600 to-orange-600",
@@ -86,15 +86,6 @@ export function CategoryGrid() {
       color: "text-[#18a558]",
       bgImage: "/images/backgrounds/mocktail-bg.jpg",
       bgGradient: "from-cyan-500 to-blue-500",
-    },
-    {
-      name: "Starters",
-      slug: "/starters",
-      icon: UtensilsCrossed,
-      description: "Chicken nuggets, popcorn & more",
-      color: "text-[#e10600]",
-      bgImage: null,
-      bgGradient: "from-orange-600 to-red-600",
     },
   ]
 

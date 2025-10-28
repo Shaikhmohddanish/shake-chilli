@@ -1,6 +1,6 @@
 // SEO-optimized alt text generator for food items
 export function generateSEOAltText(item: any): string {
-  const locationKeywords = "Mumbra Shilphata Diva"
+  const locationKeywords = "Mumbra Shilphata Kausa MM Valley Dosti"
   const businessName = "Shake Chilli Cafe & Pizzeria"
   const foodType = item.isVeg ? "Fresh Vegetarian" : "Premium Halal Non-Vegetarian"
   
