@@ -43,7 +43,7 @@ Just like the Swiggy search result screenshot you shared, your website will now 
 ### **Desktop Search:**
 ```
 [🏪 Logo] Shake Chilli (Halal): Best Pizza & Burgers in Shilphata–Mumbra
-         https://shake-chilli.com ›
+         https://shakechillicafe.com ›
          ⭐⭐⭐⭐⭐ 4.7 (150 reviews) · Restaurant · $$
 
          Best Pizza, Burgers, Footlong Sandwiches & More in Shilphata,
@@ -177,7 +177,7 @@ Expected: Rich snippets with logo, rating, menu
 ### **BEFORE (Simple Result):**
 ```
 Shake Chilli
-https://shake-chilli.com
+https://shakechillicafe.com
 Pizza and burger restaurant in Mumbra...
 ```
 
@@ -221,7 +221,7 @@ People also ask:
 ### **After Deployment:**
 
 1. **Google Search Console**
-   - Submit sitemap: `https://shake-chilli.com/sitemap.xml`
+   - Submit sitemap: `https://shakechillicafe.com/sitemap.xml`
    - Request indexing for homepage
    - Request indexing for menu pages
 

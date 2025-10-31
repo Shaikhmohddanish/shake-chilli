@@ -90,7 +90,7 @@ Replaced placeholder/background images with REAL images from the `/public/images
 **Google Search Result:**
 ```
 Shake Chilli (Halal): Best Pizza & Burgers in Shilphata–Mumbra
-https://shake-chilli.com
+https://shakechillicafe.com
 Best Pizza, Burgers, Footlong Sandwiches & More in Shilphata, Mumbra. 
 4.7★ Rated Halal Restaurant near Al-Hidaya School. Free Home Delivery in 
 20-40min. Order: 7208-697-371. Fresh ingredients, premium quality...
@@ -201,7 +201,7 @@ When someone shares your website link on WhatsApp, they'll see:
 
 ```
 Shake Chilli (Halal): Best Pizza & Burgers in Shilphata–Mumbra | Free Delivery
-https://shake-chilli.com › 
+https://shakechillicafe.com › 
 ⭐⭐⭐⭐⭐ 4.7 (150 reviews)
 
 Best Pizza, Burgers, Footlong Sandwiches & More in Shilphata, Mumbra. 

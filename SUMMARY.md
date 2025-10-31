@@ -151,7 +151,7 @@ Created/Updated:
 - 📍 Shop No. 4, Silverline Enclave, Near Al-Hidaya School, Shilphata
 - ☎️ 7208-697-371 / 9082-990-187
 - ⏰ 12:00 PM - 3:00 AM (Daily)
-- 🌐 https://shake-chilli.com
+- 🌐 https://shakechillicafe.com
 
 ---
 

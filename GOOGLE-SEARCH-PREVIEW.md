@@ -14,7 +14,7 @@ Your website will now appear in Google search results with **rich snippets**, **
 ┌─────────────────────────────────────────────────────────────────────┐
 │  [🏪 Logo]  Shake Chilli (Halal): Best Pizza & Burgers in         │
 │            Shilphata–Mumbra | Free Delivery                        │
-│            https://shake-chilli.com ›                              │
+│            https://shakechillicafe.com ›                              │
 │            ⭐⭐⭐⭐⭐ 4.7 (150 reviews) · Restaurant · $$            │
 │                                                                     │
 │  Best Pizza, Burgers, Footlong Sandwiches & More in Shilphata,    │
@@ -65,7 +65,7 @@ Google will automatically show these quick links based on your sitemap:
 ```
 ┌──────────────────────────────────────┐
 │  🏪 Shake Chilli (Halal)            │
-│  https://shake-chilli.com           │
+│  https://shakechillicafe.com           │
 │  ⭐ 4.7 · Restaurant                │
 │                                      │
 │  Best Pizza & Burgers in            │
@@ -237,7 +237,7 @@ When someone shares your website link:
 ### **1. Google Rich Results Test**
 ```
 URL: https://search.google.com/test/rich-results
-Enter: https://shake-chilli.com
+Enter: https://shakechillicafe.com
 ```
 **What to Check:**
 - ✅ Valid Restaurant schema
@@ -259,7 +259,7 @@ URL: https://search.google.com/search-console
 ### **3. Schema Markup Validator**
 ```
 URL: https://validator.schema.org
-Enter: https://shake-chilli.com
+Enter: https://shakechillicafe.com
 ```
 **What to Check:**
 - ✅ All schemas validated
@@ -275,7 +275,7 @@ Enter: https://shake-chilli.com
 ### **5. Facebook Debug Tool**
 ```
 URL: https://developers.facebook.com/tools/debug/
-Enter: https://shake-chilli.com
+Enter: https://shakechillicafe.com
 ```
 **Actions:**
 - ✅ Click "Scrape Again"
@@ -331,10 +331,10 @@ Enter: https://shake-chilli.com
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "url": "https://shake-chilli.com",
+  "url": "https://shakechillicafe.com",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://shake-chilli.com/menu?search={search_term_string}"
+    "target": "https://shakechillicafe.com/menu?search={search_term_string}"
   }
 }
 ```
@@ -411,7 +411,7 @@ Enter: https://shake-chilli.com
 ### **BEFORE:**
 ```
 Shake Chilli
-https://shake-chilli.com
+https://shakechillicafe.com
 Pizza and burger restaurant...
 ```
 ❌ No logo
@@ -423,7 +423,7 @@ Pizza and burger restaurant...
 ### **AFTER:**
 ```
 [🏪] Shake Chilli (Halal): Best Pizza & Burgers...
-https://shake-chilli.com
+https://shakechillicafe.com
 ⭐ 4.7 (150 reviews) · Restaurant · $$
 
 Best Pizza, Burgers, Footlong Sandwiches & More...

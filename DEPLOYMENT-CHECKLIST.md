@@ -52,7 +52,7 @@ vercel --prod
 ## Google Services Setup
 
 ### Google Search Console
-- [ ] Submit updated sitemap: `https://shake-chilli.com/sitemap.xml`
+- [ ] Submit updated sitemap: `https://shakechillicafe.com/sitemap.xml`
 - [ ] Request indexing for key pages:
   - Home page (/)
   - Menu page (/menu)
@@ -120,9 +120,9 @@ vercel --prod
 ### Structured Data
 ```bash
 # Test these URLs with Google Rich Results Test:
-- https://shake-chilli.com/
-- https://shake-chilli.com/menu
-- https://shake-chilli.com/items/chicken-tikka-pizza
+- https://shakechillicafe.com/
+- https://shakechillicafe.com/menu
+- https://shakechillicafe.com/items/chicken-tikka-pizza
 ```
 
 ### Meta Tags Verification

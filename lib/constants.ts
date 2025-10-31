@@ -2,7 +2,7 @@ export const BUSINESS_INFO = {
   name: "Shake Chilli",
   fullName: "Shake Chilli – Cafe & Restaurant",
   tagline: "Awesome Taste in Every Bite",
-  domain: "https://shake-chilli.com",
+  domain: "https://shakechillicafe.com",
   phones: {
     primary: "+917208697371",
     secondary: "+919082990187",

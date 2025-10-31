@@ -13,7 +13,7 @@ This is what customers will see when they search for your restaurant on Google -
 │                                                                       │
 │  [🏪]  Shake Chilli (Halal): Best Pizza & Burgers in Shilphata–     │
 │       Mumbra | Free Delivery                                         │
-│       https://shake-chilli.com ›                                     │
+│       https://shakechillicafe.com ›                                     │
 │       ⭐⭐⭐⭐⭐ 4.7 (150 reviews) · Restaurant · ₹₹                  │
 │                                                                       │
 │  Best Pizza, Burgers, Footlong Sandwiches & More in Shilphata,      │
@@ -56,7 +56,7 @@ This is what customers will see when they search for your restaurant on Google -
 ┌─────────────────────────────────────────┐
 │                                         │
 │  [🏪]  Shake Chilli (Halal)            │
-│        https://shake-chilli.com        │
+│        https://shakechillicafe.com        │
 │        ⭐ 4.7 · Restaurant · ₹₹        │
 │                                         │
 │  Best Pizza & Burgers in Shilphata–    │
@@ -265,7 +265,7 @@ Used in: Stars, badges
 ```
 ────────────────────────────────────
 Shake Chilli
-https://shake-chilli.com
+https://shakechillicafe.com
 
 Pizza and burger restaurant...
 

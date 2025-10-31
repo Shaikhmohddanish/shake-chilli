@@ -27,7 +27,7 @@ Use TailwindCSS + shadcn/ui + lucide-react. Create clean, modern UI using brand 
 ## Business Info (use everywhere)
 
 * **Brand:** Shake Chilli – Cafe & Restaurant (Halal)
-* **Domain:** `https://shake-chilli.com` (set as canonical)
+* **Domain:** `https://shakechillicafe.com` (set as canonical)
 * **Phones:** **+91 7208 697 371**, **+91 9082 990 187**
 * **Address (canonical):** **Shop No 04, Silver Enclave, Shilphata, Thane, Maharashtra 400612**
 
@@ -110,7 +110,7 @@ public/
 * **Breadcrumb JSON-LD** across all pages.
 * **Product JSON-LD (item pages):** include `AggregateRating` (4.7 avg, 120 reviews placeholder) + `offers` (price range).
 * **Review JSON-LD:** embed 10 sample reviews per item using realistic first names and localities (e.g., “Diva”, “Mumbra”, “Shilphata”); weave keywords naturally.
-* **Sitemap & Robots:** include all category + item routes; allow indexing; add `Host: https://shake-chilli.com`.
+* **Sitemap & Robots:** include all category + item routes; allow indexing; add `Host: https://shakechillicafe.com`.
 
 **Image/ALT policy:**
 For every image, generate descriptive `alt` like:
