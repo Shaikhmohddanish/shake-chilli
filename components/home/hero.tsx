@@ -1,19 +1,21 @@
 import { Phone, MenuIcon, ArrowRight, Flame } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Hero() {
   return (
     <section className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 gradient-hero" />
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-bg.jpg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          mixBlendMode: "overlay",
-        }}
+      <Image
+        src="/images/backgrounds/hero-bg.jpg"
+        alt=""
+        fill
+        priority
+        quality={75}
+        className="absolute inset-0 opacity-30 object-cover"
+        sizes="100vw"
+        style={{ mixBlendMode: "overlay" }}
       />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -70,22 +72,22 @@ export function Hero() {
 
           <div className="mt-12 md:mt-16 flex flex-wrap justify-center gap-6 md:gap-8 text-white/80 text-sm md:text-base">
             <div className="flex items-center gap-2">
-              <span className="text-lg md:text-2xl">✓</span>
+              <span className="text-lg md:text-2xl" aria-hidden="true">✓</span>
               <span>100% Halal</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-lg md:text-2xl">✓</span>
+              <span className="text-lg md:text-2xl" aria-hidden="true">✓</span>
               <span>Free Delivery</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-lg md:text-2xl">✓</span>
+              <span className="text-lg md:text-2xl" aria-hidden="true">✓</span>
               <span>Fresh Ingredients</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
         <div className="w-5 h-8 md:w-6 md:h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-1.5 md:p-2">
           <div className="w-0.5 h-1.5 md:w-1 md:h-2 bg-white/50 rounded-full" />
         </div>

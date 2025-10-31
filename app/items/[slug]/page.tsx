@@ -128,7 +128,7 @@ export default async function ItemDetailPage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <Header />
-      <main className="min-h-screen">
+      <main id="main-content" className="min-h-screen">
         <section className="py-12">
           <div className="container mx-auto px-4">
             <ItemDetailsClient item={item} />

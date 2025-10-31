@@ -103,7 +103,7 @@ export function CategoryGrid() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {categories.map((category) => (
-            <Link key={category.slug} href={category.slug}>
+            <Link key={category.slug} href={category.slug} aria-label={`View ${category.name} menu - ${category.description}`}>
               <Card className="h-full hover:shadow-card transition-all duration-300 cursor-pointer group border-2 hover:border-primary/20 hover:-translate-y-1 overflow-hidden bg-white">
                 <div className="relative h-48 md:h-56 overflow-hidden">
                   {category.bgImage ? (
@@ -111,8 +111,10 @@ export function CategoryGrid() {
                       src={category.bgImage}
                       alt={`Best ${category.name} in Mumbra Shilphata - ${category.description} - Shake Chilli Cafe`}
                       fill
+                      priority={category.name === "Pizza" || category.name === "Burgers"}
+                      quality={80}
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                   ) : (
                     <div className={`absolute inset-0 bg-gradient-to-br ${category.bgGradient} transition-transform duration-300 group-hover:scale-105`} />
@@ -121,6 +123,7 @@ export function CategoryGrid() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div
                       className={`p-4 md:p-6 rounded-2xl bg-white/20 backdrop-blur-sm group-hover:scale-110 transition-transform ${category.color} flex items-center justify-center`}
+                      aria-hidden="true"
                     >
                       <category.icon className="h-8 w-8 md:h-10 md:w-10 text-white" />
                     </div>

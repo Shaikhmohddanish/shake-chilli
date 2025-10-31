@@ -25,7 +25,10 @@ export function Header() {
                 src="/images/shake-chilli-logo.png"
                 alt="Shake Chilli Logo - Best Halal Restaurant in Mumbra Shilphata"
                 fill
+                priority
+                quality={90}
                 className="object-contain"
+                sizes="(max-width: 1024px) 40px, 48px"
               />
             </div>
             <div className="flex flex-col">

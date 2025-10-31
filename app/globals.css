@@ -230,3 +230,104 @@ body {
     transform: translateY(0);
   }
 }
+
+/* ========================================
+   WCAG 2.1 AA Accessibility Enhancements
+   ======================================== */
+
+/* Enhanced focus indicators for keyboard navigation (WCAG 2.4.7) */
+*:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Ensure links have clear focus states */
+a:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Button focus states */
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Input focus states */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 1px;
+  border-color: var(--color-primary);
+}
+
+/* Screen reader only class for skip links */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Show skip link on focus */
+.sr-only:focus,
+.sr-only:active {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Ensure sufficient color contrast for text */
+body {
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary: oklch(0.4 0.25 25);
+    --foreground: oklch(0 0 0);
+    --border: oklch(0.3 0.01 85);
+  }
+}
+
+/* Reduced motion support (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Ensure proper spacing for touch targets (WCAG 2.5.5) */
+button,
+a,
+[role="button"],
+[role="link"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Exception for inline text links */
+p a,
+li a {
+  min-height: auto;
+  min-width: auto;
+}
+

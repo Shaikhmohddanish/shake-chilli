@@ -141,9 +141,10 @@ export function ItemDetailsClient({ item }: ItemDetailsClientProps) {
                       checked={selectedSize === priceItem.size}
                       onChange={() => handleSizeChange(priceItem.size, priceItem.price)}
                       className="sr-only"
+                      aria-label={`${priceItem.label} size for ₹${priceItem.price}`}
                     />
                     {selectedSize === priceItem.size && (
-                      <div className="absolute top-2 right-2">
+                      <div className="absolute top-2 right-2" aria-hidden="true">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <circle cx="12" cy="12" r="10" fill="#e10600" />
                           <path

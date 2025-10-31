@@ -33,7 +33,7 @@ export default function CoffeePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Header />
-      <main className="min-h-screen">
+      <main id="main-content" className="min-h-screen">
         <section className="bg-foreground text-background py-12">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-balance">

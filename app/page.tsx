@@ -23,7 +23,7 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <Header />
-      <main>
+      <main id="main-content">
         <Hero />
         <USPStrip />
         <CategoryGrid />

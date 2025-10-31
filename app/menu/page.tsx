@@ -44,7 +44,7 @@ export default function MenuPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Header />
-      <main className="min-h-screen">
+      <main id="main-content" className="min-h-screen">
         <section className="bg-foreground text-background py-8 md:py-12">
           <div className="container mx-auto px-4">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
