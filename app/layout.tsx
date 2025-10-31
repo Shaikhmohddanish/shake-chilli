@@ -100,7 +100,7 @@ export const metadata: Metadata = {
     url: BUSINESS_INFO.domain,
     siteName: BUSINESS_INFO.fullName,
     title: `Best Pizza & Burgers in Shilphata–Mumbra | ${BUSINESS_INFO.name} | Halal Restaurant`,
-    description: "🍕 4.7★ Rated Halal Restaurant | Fresh Pizza, Juicy Burgers, Footlong Sandwiches, Starters, Coffee & More | 🆓 Free Home Delivery in 20-40min | 📞 Order: 7208-697-371 | Near Al-Hidaya School, Shilphata | Menu: Pizza (Veg/Non-Veg), Burgers, Sandwiches, Garlic Bread, Fries, Milkshakes, Mocktails",
+    description: "4.7★ Rated Halal Restaurant | Fresh Pizza, Juicy Burgers, Footlong Sandwiches, Starters, Coffee & More | Free Home Delivery in 20-40min | Order: 7208-697-371 | Near Al-Hidaya School, Shilphata | Menu: Pizza (Veg/Non-Veg), Burgers, Sandwiches, Garlic Bread, Fries, Milkshakes, Mocktails",
     images: [
       {
         url: "/images/shake-chilli-complete-pizza-menu-mumbra-shilphata.jpeg",
@@ -125,7 +125,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `Best Pizza & Burgers in Shilphata–Mumbra | ${BUSINESS_INFO.name}`,
-    description: "🍕 4.7★ Rated Halal Restaurant | Fresh Pizza, Burgers, Sandwiches | 🆓 Free Delivery 20-40min | 📞 7208-697-371",
+    description: "4.7★ Rated Halal Restaurant | Fresh Pizza, Burgers, Sandwiches | Free Delivery 20-40min | 7208-697-371",
     images: ["/images/shake-chilli-complete-pizza-menu-mumbra-shilphata.jpeg"],
     creator: "@shakechilli",
     site: "@shakechilli",

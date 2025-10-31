@@ -4,6 +4,7 @@ import { FloatingCTA } from "@/components/floating-cta"
 import { MENU_ITEMS } from "@/lib/menu-data"
 import { generateBreadcrumbSchema } from "@/lib/seo"
 import { ProductCard } from "@/components/product-card"
+import { Phone } from "lucide-react"
 import type { Metadata } from "next"
 import Image from "next/image"
 
@@ -129,13 +130,15 @@ export default function MenuPage() {
                   href="tel:7208697371"
                   className="inline-flex items-center justify-center gap-2 bg-[#e10600] text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-[#c10500] transition-colors"
                 >
-                  📞 Call: 7208 697 371
+                  <Phone className="w-5 h-5" />
+                  Call: 7208 697 371
                 </a>
                 <a
                   href="tel:9082990187"
                   className="inline-flex items-center justify-center gap-2 bg-[#18a558] text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-base md:text-lg hover:bg-[#159048] transition-colors"
                 >
-                  📞 Call: 9082 990 187
+                  <Phone className="w-5 h-5" />
+                  Call: 9082 990 187
                 </a>
               </div>
             </div>

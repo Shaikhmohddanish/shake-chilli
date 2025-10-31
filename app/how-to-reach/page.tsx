@@ -5,7 +5,7 @@ import { BUSINESS_INFO } from "@/lib/constants"
 import { generateBreadcrumbSchema } from "@/lib/seo"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { MapPin, Navigation, Car, Train, Bus, Phone } from "lucide-react"
+import { MapPin, Navigation, Car, Train, Bus, Phone, Zap } from "lucide-react"
 import { getDirectionsUrl } from "@/lib/utils"
 import type { Metadata } from "next"
 
@@ -314,8 +314,9 @@ export default function HowToReachPage() {
                     We deliver within 2-3 km radius covering Mumbra, Shilphata, Kausa, MM Valley, Dosti, Shimla Park, Shalimar, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium and nearby areas.
                     Free home delivery on all orders.
                   </p>
-                  <p className="text-primary font-semibold">
-                    🚀 Lightning Fast: Shalimar (1 min) • Dosti (2 min) • Shimla Park (5-7 min) • Others (10-15 min)
+                  <p className="text-primary font-semibold flex items-center gap-2">
+                    <Zap className="w-4 h-4" />
+                    Lightning Fast: Shalimar (1 min) • Dosti (2 min) • Shimla Park (5-7 min) • Others (10-15 min)
                   </p>
                 </div>
                 <div className="p-6 bg-accent/30 rounded-xl">

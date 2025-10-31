@@ -1100,14 +1100,14 @@ export const MENU_ITEMS: MenuItem[] = [
 ]
 
 export const MENU_CATEGORIES = [
-  { id: "pizza-veg", name: "Veg Pizza", slug: "pizza", icon: "🍕" },
-  { id: "pizza-non-veg", name: "Non-Veg Pizza", slug: "pizza", icon: "🍕" },
-  { id: "burger", name: "Burgers", slug: "burger", icon: "🍔" },
-  { id: "footlong-sandwich", name: "Footlong Sandwich", slug: "footlong-sandwich", icon: "🥖" },
-  { id: "starters", name: "Starters", slug: "starters", icon: "🍟" },
-  { id: "garlic-bread", name: "Garlic Bread", slug: "garlic-bread", icon: "🥖" },
-  { id: "coffee-hot", name: "Hot Coffee", slug: "coffee", icon: "☕" },
-  { id: "coffee-cold", name: "Cold Coffee", slug: "coffee", icon: "🧊" },
-  { id: "milkshake", name: "Milkshakes", slug: "milkshakes", icon: "🥤" },
-  { id: "mocktail", name: "Mocktails", slug: "mojito", icon: "🍹" },
+  { id: "pizza-veg", name: "Veg Pizza", slug: "pizza", icon: "Pizza" },
+  { id: "pizza-non-veg", name: "Non-Veg Pizza", slug: "pizza", icon: "Pizza" },
+  { id: "burger", name: "Burgers", slug: "burger", icon: "Sandwich" },
+  { id: "footlong-sandwich", name: "Footlong Sandwich", slug: "footlong-sandwich", icon: "Sandwich" },
+  { id: "starters", name: "Starters", slug: "starters", icon: "UtensilsCrossed" },
+  { id: "garlic-bread", name: "Garlic Bread", slug: "garlic-bread", icon: "Sandwich" },
+  { id: "coffee-hot", name: "Hot Coffee", slug: "coffee", icon: "Coffee" },
+  { id: "coffee-cold", name: "Cold Coffee", slug: "coffee", icon: "Coffee" },
+  { id: "milkshake", name: "Milkshakes", slug: "milkshakes", icon: "Coffee" },
+  { id: "mocktail", name: "Mocktails", slug: "mojito", icon: "Wine" },
 ] as const

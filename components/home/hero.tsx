@@ -1,4 +1,4 @@
-import { Phone, MenuIcon, ArrowRight } from "lucide-react"
+import { Phone, MenuIcon, ArrowRight, Flame } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
 import Link from "next/link"
 
@@ -19,8 +19,9 @@ export function Hero() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           <div className="mt-4 md:mb-6">
-            <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs md:text-sm font-medium mb-4 md:mb-6">
-              🔥 Awesome Taste in Every Bite
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs md:text-sm font-medium mb-4 md:mb-6">
+              <Flame className="w-4 h-4" />
+              Awesome Taste in Every Bite
             </span>
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 md:mb-8 text-white text-balance leading-[1.1]">

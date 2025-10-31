@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Award, Users, Heart, Sparkles } from "lucide-react"
+import { Users, Clock, Heart, Utensils, Award, Shield, Sparkles, Trophy, Zap, Star, UsersRound } from "lucide-react"
 import Link from "next/link"
 
 export function AchievementsSection() {
@@ -33,12 +33,12 @@ export function AchievementsSection() {
   ]
 
   const highlights = [
-    "🏆 Top-rated restaurant in Shilphata area",
-    "🥇 Best Pizza in Mumbra according to customer reviews",
-    "⚡ Fastest delivery in the neighborhood",
-    "💝 Most loved cafe near Al-Hidaya School",
-    "🌟 Consistent quality and taste since day one",
-    "👨‍👩‍👧‍👦 Family-friendly dining atmosphere"
+    { icon: <Trophy className="w-5 h-5" />, text: "Top-rated restaurant in Shilphata area" },
+    { icon: <Award className="w-5 h-5" />, text: "Best Pizza in Mumbra according to customer reviews" },
+    { icon: <Zap className="w-5 h-5" />, text: "Fastest delivery in the neighborhood" },
+    { icon: <Heart className="w-5 h-5" />, text: "Most loved cafe near Al-Hidaya School" },
+    { icon: <Star className="w-5 h-5" />, text: "Consistent quality and taste since day one" },
+    { icon: <UsersRound className="w-5 h-5" />, text: "Family-friendly dining atmosphere" }
   ]
 
   return (
@@ -90,9 +90,9 @@ export function AchievementsSection() {
                 key={index} 
                 className="flex items-center gap-3 p-4 rounded-xl bg-accent/30 hover:bg-accent/50 transition-colors"
               >
-                <span className="text-2xl">{highlight.split(' ')[0]}</span>
+                <span className="text-primary">{highlight.icon}</span>
                 <span className="text-sm md:text-base font-medium">
-                  {highlight.substring(highlight.indexOf(' ') + 1)}
+                  {highlight.text}
                 </span>
               </div>
             ))}

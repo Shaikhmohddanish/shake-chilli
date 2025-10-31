@@ -39,7 +39,7 @@ export function FloatingCart() {
     if (cart.length === 0) return ""
 
     const totalItems = getTotalItems()
-    let message = `🍕 *Order from Shake Chilli*
+    let message = `*Order from Shake Chilli*
 
 Hi! I would like to place an order:
 
@@ -53,13 +53,13 @@ Hi! I would like to place an order:
 `
     })
     
-    message += `💰 *Total: ₹${getTotalPrice()}*
-📦 *Items: ${totalItems}*
+    message += `*Total: ₹${getTotalPrice()}*
+*Items: ${totalItems}*
 
-📍 *Delivery Address:* [Please specify]
-📞 *Contact:* [Your phone number]
+*Delivery Address:* [Please specify]
+*Contact:* [Your phone number]
 
-Please confirm availability and estimated delivery time. Thank you! 🙏`
+Please confirm availability and estimated delivery time. Thank you!`
     
     return message
   }

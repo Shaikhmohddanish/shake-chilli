@@ -1,4 +1,4 @@
-import { MapPin, Clock, Truck } from "lucide-react"
+import { MapPin, Clock, Truck, Zap, Rocket, PartyPopper } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { BUSINESS_INFO } from "@/lib/constants"
 
@@ -8,7 +8,7 @@ export function DeliveryZones() {
       name: "Express Zone",
       time: "20 minutes",
       areas: BUSINESS_INFO.deliveryZones.fast.areas,
-      icon: "🚀",
+      icon: <Rocket className="w-5 h-5" />,
       color: "bg-green-50 border-green-200",
       textColor: "text-green-700",
     },
@@ -16,7 +16,7 @@ export function DeliveryZones() {
       name: "Standard Zone",
       time: "40 minutes",
       areas: BUSINESS_INFO.deliveryZones.standard.areas,
-      icon: "⚡",
+      icon: <Zap className="w-5 h-5" />,
       color: "bg-blue-50 border-blue-200",
       textColor: "text-blue-700",
     },
@@ -24,7 +24,7 @@ export function DeliveryZones() {
       name: "Extended Zone",
       time: "60 minutes",
       areas: BUSINESS_INFO.deliveryZones.extended.areas,
-      icon: "🚚",
+      icon: <Truck className="w-5 h-5" />,
       color: "bg-amber-50 border-amber-200",
       textColor: "text-amber-700",
     },
@@ -51,7 +51,7 @@ export function DeliveryZones() {
             {deliveryZones.map((zone, index) => (
               <Card key={index} className={`border-2 ${zone.color} hover:shadow-lg transition-all`}>
                 <CardContent className="p-6">
-                  <div className="text-4xl mb-4">{zone.icon}</div>
+                  <div className="mb-4 flex justify-center">{zone.icon}</div>
                   <h3 className="text-xl font-bold mb-2">{zone.name}</h3>
                   <div className="flex items-center gap-2 mb-4">
                     <Clock className={`h-5 w-5 ${zone.textColor}`} />
@@ -71,8 +71,9 @@ export function DeliveryZones() {
           </div>
 
           <div className="bg-primary/5 border-2 border-primary/20 rounded-xl p-6 text-center">
-            <p className="text-lg font-semibold mb-2">
-              🎉 <span className="text-primary">FREE Delivery</span> on All Orders!
+            <p className="text-lg font-semibold mb-2 flex items-center justify-center gap-2">
+              <PartyPopper className="w-5 h-5 text-primary" />
+              <span className="text-primary">FREE Delivery</span> on All Orders!
             </p>
             <p className="text-muted-foreground">
               No minimum order value. No hidden charges. Just delicious food delivered to your door.

@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { formatPriceAdvanced } from "@/lib/utils"
 import { generateSEOAltText } from "@/lib/image-seo"
-import { ArrowRight, ShoppingCart } from "lucide-react"
+import { ArrowRight, ShoppingCart, Star, Leaf } from "lucide-react"
 import { useCart } from "@/contexts/cart-context"
 import type { MenuItem } from "@/lib/menu-data"
 
@@ -42,13 +42,15 @@ export function ProductCard({ item }: ProductCardProps) {
         <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300" />
         <div className="absolute top-2 md:top-4 right-2 md:right-4 flex flex-col gap-2">
           {item.isVeg && (
-            <Badge variant="secondary" className="bg-secondary text-secondary-foreground shadow-soft text-xs">
-              🌱 Veg
+            <Badge variant="secondary" className="bg-secondary text-secondary-foreground shadow-soft text-xs flex items-center gap-1">
+              <Leaf className="w-3 h-3" />
+              Veg
             </Badge>
           )}
           {item.isPopular && (
-            <Badge variant="default" className="bg-primary text-primary-foreground shadow-soft text-xs">
-              ⭐ Popular
+            <Badge variant="default" className="bg-primary text-primary-foreground shadow-soft text-xs flex items-center gap-1">
+              <Star className="w-3 h-3" />
+              Popular
             </Badge>
           )}
         </div>

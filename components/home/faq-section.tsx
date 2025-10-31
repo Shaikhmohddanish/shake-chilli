@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown, ChevronUp, Phone } from "lucide-react"
 import { useState, useRef, useEffect } from "react"
 import { BUSINESS_INFO } from "@/lib/constants"
 
@@ -110,7 +110,8 @@ export function FAQSection() {
                   href={`tel:${BUSINESS_INFO.phones.primary}`}
                   className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-colors"
                 >
-                  📞 Call: {BUSINESS_INFO.phones.display.primary}
+                  <Phone className="w-4 h-4" />
+                  Call: {BUSINESS_INFO.phones.display.primary}
                 </a>
                 <a
                   href={`https://wa.me/${BUSINESS_INFO.phones.primary.replace(/[^0-9]/g, "")}?text=Hi! I have a question about your menu.`}

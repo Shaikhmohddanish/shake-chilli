@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { MapPin, Phone } from "lucide-react"
+import { MapPin, Phone, Clock, Zap } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
 import { getDirectionsUrl } from "@/lib/utils"
 
@@ -22,14 +22,16 @@ export function LocationBanner() {
           <p className="text-background/80 mb-4">
             Near Al-Hidaya School, Shilphata | Easy access from Mumbra, Kausa, MM Valley, Dosti, Shimla Park, Shalimar, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium
           </p>
-          <p className="text-xl font-semibold text-primary mb-2">
-            🚀 Lightning Fast Delivery!
+          <p className="text-xl font-semibold text-primary mb-2 flex items-center justify-center gap-2">
+            <Zap className="w-5 h-5" />
+            Lightning Fast Delivery!
           </p>
           <p className="text-lg text-background/90 mb-8">
             Shalimar: 1 min • Dosti: 2 min • Shimla Park: 5-7 min • Others: 10-15 min
           </p>
-          <p className="text-lg text-background/90 mb-8">
-            ⏰ Open Daily: 12:00 PM - 3:00 AM
+          <p className="text-lg text-background/90 mb-8 flex items-center justify-center gap-2">
+            <Clock className="w-5 h-5" />
+            Open Daily: 12:00 PM - 3:00 AM
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Phone, MapPin, Clock } from "lucide-react"
+import { Phone, MapPin, Clock, Zap } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { BUSINESS_INFO } from "@/lib/constants"
 
@@ -86,7 +86,10 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {BUSINESS_INFO.fullName}. All rights reserved.
           </p>
           <p className="mt-1 md:mt-2">Serving Mumbra, Shilphata, Kausa, MM Valley, Dosti, Shimla Park, Shalimar, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium & nearby areas</p>
-          <p className="mt-1 text-primary font-medium">🚀 Fast delivery: Bypass & Shalimar (20 min) • Dosti (20 min) • Shimla Park & Kausa (40 min) • Amrut Nagar (40 min) • Station (60 min)</p>
+          <p className="mt-1 text-primary font-medium flex items-center justify-center gap-1">
+            <Zap className="w-3 h-3" />
+            Fast delivery: Bypass & Shalimar (20 min) • Dosti (20 min) • Shimla Park & Kausa (40 min) • Amrut Nagar (40 min) • Station (60 min)
+          </p>
           <p className="mt-1 text-sm">Open Daily: 12:00 PM - 3:00 AM</p>
         </div>
       </div>

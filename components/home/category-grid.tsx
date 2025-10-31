@@ -39,7 +39,7 @@ export function CategoryGrid() {
       icon: Sandwich,
       description: "6-inch & 12-inch subway-style sandwiches",
       color: "text-[#e10600]",
-      bgImage: "/images/shake-chilli-footlong-sandwich-wrap-menu-shilphata.jpeg",
+      bgImage: "/images/sandwhich/Chicken footlong sandwhich .jpg",
       bgGradient: "from-yellow-500 to-orange-500",
     },
     {
@@ -48,7 +48,7 @@ export function CategoryGrid() {
       icon: Salad,
       description: "Cheesy, corn & chicken garlic bread",
       color: "text-[#18a558]",
-      bgImage: "/images/menu/garlic-bread-menu.jpg",
+      bgImage: "/images/bread/Cheese garlic bread.jpg",
       bgGradient: "from-amber-500 to-yellow-500",
     },
     {

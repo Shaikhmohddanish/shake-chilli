@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Phone, MapPin, Menu, X, Search } from "lucide-react"
+import { Phone, MapPin, Menu, X, Search, Home, ClipboardList, Pizza, Sandwich, Coffee } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -141,7 +141,7 @@ export function Header() {
                       className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <span className="text-base">🏠</span>
+                      <Home className="w-4 h-4" />
                       Home
                     </Link>
                     <Link 
@@ -149,7 +149,7 @@ export function Header() {
                       className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <span className="text-base">📋</span>
+                      <ClipboardList className="w-4 h-4" />
                       Full Menu
                     </Link>
                     <Link 
@@ -157,7 +157,7 @@ export function Header() {
                       className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <span className="text-base">🍕</span>
+                      <Pizza className="w-4 h-4" />
                       Pizza
                     </Link>
                     <Link 
@@ -165,7 +165,7 @@ export function Header() {
                       className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <span className="text-base">🍔</span>
+                      <Sandwich className="w-4 h-4" />
                       Burgers & Starters
                     </Link>
                     <Link 
@@ -173,7 +173,7 @@ export function Header() {
                       className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <span className="text-base">☕</span>
+                      <Coffee className="w-4 h-4" />
                       Coffee & Beverages
                     </Link>
                     <Link 
@@ -181,7 +181,7 @@ export function Header() {
                       className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <span className="text-base">📞</span>
+                      <Phone className="w-4 h-4" />
                       Contact Us
                     </Link>
                   </div>

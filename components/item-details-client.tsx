@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { formatPriceAdvanced } from "@/lib/utils"
 import { generateSEOAltText } from "@/lib/image-seo"
-import { Star, Phone, ShoppingCart, Plus, Minus } from "lucide-react"
+import { Star, Phone, ShoppingCart, Plus, Minus, Leaf } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
 import { useCart } from "@/contexts/cart-context"
 import type { MenuItem } from "@/lib/menu-data"
@@ -76,23 +76,27 @@ export function ItemDetailsClient({ item }: ItemDetailsClientProps) {
         <div>
           <div className="flex items-start gap-2 mb-4">
             {item.isVeg && (
-              <Badge variant="secondary" className="bg-[#18a558] text-white">
-                🌱 Veg
+              <Badge variant="secondary" className="bg-secondary text-secondary-foreground flex items-center gap-1">
+                <Leaf className="w-3 h-3" />
+                Veg
               </Badge>
             )}
             {!item.isVeg && (
-              <Badge variant="default" className="bg-[#e10600] text-white">
-                🥩 Non-Veg
+              <Badge variant="default" className="bg-[#e10600] text-white flex items-center gap-1">
+                <Star className="w-3 h-3" />
+                Non-Veg
               </Badge>
             )}
             {item.isHalal && (
-              <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
-                ✨ Halal
+              <Badge variant="secondary" className="bg-secondary text-secondary-foreground flex items-center gap-1">
+                <Star className="w-3 h-3" />
+                Halal
               </Badge>
             )}
             {item.isPopular && (
-              <Badge variant="default" className="bg-[#e10600] text-white">
-                ⭐ Popular
+              <Badge variant="default" className="bg-[#e10600] text-white flex items-center gap-1">
+                <Star className="w-3 h-3" />
+                Popular
               </Badge>
             )}
           </div>
