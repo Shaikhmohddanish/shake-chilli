@@ -5,7 +5,7 @@ export type MenuCategory =
   | "pizza-2in1"
   | "burger"
   | "footlong-sandwich"
-  | "french-fries"
+  | "starters"
   | "garlic-bread"
   | "coffee-hot"
   | "coffee-cold"
@@ -302,22 +302,6 @@ export const MENU_ITEMS: MenuItem[] = [
     keywords: ["7th g pizza mumbra", "stuffed crust pizza shilphata", "chef special pizza near me", "three chicken flavours mumbra", "bold pizza mumbra"],
   },
   {
-    id: "8g-pizza",
-    slug: "8g-pizza",
-    name: "8G Pizza",
-    category: "pizza-special",
-    categoryDisplay: "Special Pizza",
-    description: "Eight gourmet toppings for the ultimate pizza experience",
-    descriptionLong:
-      "Take it to the next level with our 8G Pizza! Eight premium gourmet toppings, multiple cheese varieties, and our signature sauce. The ultimate pizza experience in Mumbra and Shilphata. Perfect for pizza enthusiasts who want it all.",
-    price: { S: 550, M: 700, L: 820 },
-    image: "/images/pizza/DOUBLE LAYER PIZZA.jpg",
-    tags: ["special", "gourmet", "premium", "ultimate"],
-    isVeg: false,
-    isHalal: true,
-    keywords: ["ultimate pizza mumbra", "8g pizza shilphata", "premium pizza near me"],
-  },
-  {
     id: "double-layer-pizza",
     slug: "double-layer-pizza",
     name: "Double Layer Pizza",
@@ -333,41 +317,6 @@ export const MENU_ITEMS: MenuItem[] = [
     isHalal: true,
     isPopular: true,
     keywords: ["double layer pizza mumbra", "heaviest pizza shilphata", "triple cheese pizza near me", "indulgent pizza mumbra", "cheese lover pizza"],
-  },
-
-  // FOOTLONG SANDWICH
-  {
-    id: "veg-subway",
-    slug: "veg-subway",
-    name: "Veg Subway",
-    category: "footlong-sandwich",
-    categoryDisplay: "Footlong Sandwich",
-    description: "Fresh vegetable sandwich subway style",
-    descriptionLong:
-      "Our Veg Subway features fresh vegetables, cheese, and sauces in a freshly baked footlong bread. Available in 6-inch and 12-inch sizes. Perfect for a healthy meal in Mumbra and Shilphata.",
-    price: { "6inch": 140, "12inch": 250 },
-    image: "/images/sandwhich/VEG FOOTLONG SANDWHICH.jpg",
-    tags: ["vegetarian", "healthy", "subway-style"],
-    isVeg: true,
-    isHalal: true,
-    keywords: ["veg sandwich mumbra", "subway shilphata", "footlong sandwich near me"],
-  },
-  {
-    id: "chicken-subway",
-    slug: "chicken-subway",
-    name: "Chicken Subway",
-    category: "footlong-sandwich",
-    categoryDisplay: "Footlong Sandwich",
-    description: "Grilled chicken sandwich with fresh veggies",
-    descriptionLong:
-      "Our Chicken Subway features tender grilled halal chicken, fresh vegetables, cheese, and your choice of sauces in freshly baked bread. Available in 6-inch and 12-inch. The best chicken sandwich in Mumbra and Shilphata!",
-    price: { "6inch": 160, "12inch": 280 },
-    image: "/images/sandwhich/Chicken footlong sandwhich .jpg",
-    tags: ["non-vegetarian", "chicken", "subway-style"],
-    isVeg: false,
-    isHalal: true,
-    isPopular: true,
-    keywords: ["chicken sandwich mumbra", "halal sandwich shilphata", "best sandwich near me"],
   },
 
   // HOT COFFEE
@@ -939,13 +888,13 @@ export const MENU_ITEMS: MenuItem[] = [
     keywords: ["chicken garlic bread mumbra", "non veg bread shilphata", "halal garlic bread near me", "protein bread mumbra"],
   },
 
-  // FRENCH FRIES & STARTERS
+  // STARTERS
   {
     id: "chicken-popcorn",
     slug: "chicken-popcorn",
     name: "Chicken Popcorn Homemade",
-    category: "french-fries",
-    categoryDisplay: "French Fries & Starters",
+    category: "starters",
+    categoryDisplay: "Starters",
     description: "Crispy bite-sized chicken popcorn, perfectly seasoned and fried to golden perfection",
     descriptionLong:
       "Our Chicken Popcorn is a homemade delight that's crispy on the outside and tender on the inside. Made with premium quality chicken pieces, marinated with our special blend of spices, coated in a crispy batter, and deep-fried to golden perfection. Each bite-sized piece is packed with flavor and crunch. Perfect as a starter, snack, or party appetizer. Served with our signature dipping sauces. Made fresh daily with 100% halal chicken at Shake Chilli Café & Pizzeria in Mumbra, Shilphata, Kausa, MM Valley, and Dosti. The best chicken popcorn in town!",
@@ -961,8 +910,8 @@ export const MENU_ITEMS: MenuItem[] = [
     id: "salted-fries",
     slug: "salted-fries",
     name: "Salted Fries",
-    category: "french-fries",
-    categoryDisplay: "French Fries & Starters",
+    category: "starters",
+    categoryDisplay: "Starters",
     description: "Classic golden french fries seasoned with perfect salt",
     descriptionLong:
       "Enjoy our classic Salted Fries - crispy, golden french fries made from fresh potatoes, fried to perfection and seasoned with just the right amount of salt. Simple yet absolutely delicious! These classic fries are crispy on the outside, fluffy on the inside, and perfectly salted for that authentic taste. Perfect as a side dish with your burger, pizza, or sandwich, or enjoy them as a standalone snack. Served hot and fresh. The best french fries in Mumbra, Shilphata, Kausa, MM Valley, Dosti, and nearby areas. Made fresh to order at Shake Chilli Café & Pizzeria!",
@@ -978,8 +927,8 @@ export const MENU_ITEMS: MenuItem[] = [
     id: "peri-peri-fries",
     slug: "peri-peri-fries",
     name: "Peri Peri Fries",
-    category: "french-fries",
-    categoryDisplay: "French Fries & Starters",
+    category: "starters",
+    categoryDisplay: "Starters",
     description: "Spicy and tangy fries tossed in authentic peri peri seasoning",
     descriptionLong:
       "Turn up the heat with our Peri Peri Fries! Golden crispy french fries generously tossed in our authentic peri peri seasoning blend, delivering the perfect balance of spicy and tangy flavors. Made from fresh potatoes, fried to perfection, and coated with our special peri peri spice mix that's bold, flavorful, and addictive. These spicy fries are perfect for those who love a kick in their snacks. Great as a starter or side dish with any meal. The best peri peri fries in Mumbra, Shilphata, Kausa, MM Valley, and Dosti. Made fresh daily at Shake Chilli Café & Pizzeria!",
@@ -995,8 +944,8 @@ export const MENU_ITEMS: MenuItem[] = [
     id: "cheesy-fries",
     slug: "cheesy-fries",
     name: "Cheesy Fries",
-    category: "french-fries",
-    categoryDisplay: "French Fries & Starters",
+    category: "starters",
+    categoryDisplay: "Starters",
     description: "Crispy fries loaded with melted cheese and cheese sauce",
     descriptionLong:
       "Indulge in our irresistible Cheesy Fries! Crispy golden french fries generously loaded with melted mozzarella cheese and drizzled with our creamy cheese sauce. Made from fresh potatoes, fried to perfection, and topped with premium quality cheese that melts beautifully over the hot fries. Every bite is a perfect combination of crispy, cheesy goodness. Perfect for cheese lovers and great as a starter, snack, or side dish. The ultimate comfort food! The best cheesy fries in Mumbra, Shilphata, Kausa, MM Valley, and Dosti. Made fresh to order at Shake Chilli Café & Pizzeria!",
@@ -1012,8 +961,8 @@ export const MENU_ITEMS: MenuItem[] = [
     id: "chicken-overloaded-fries",
     slug: "chicken-overloaded-fries",
     name: "Chicken Overloaded Fries",
-    category: "french-fries",
-    categoryDisplay: "French Fries & Starters",
+    category: "starters",
+    categoryDisplay: "Starters",
     description: "Ultimate loaded fries with crispy chicken, cheese, and special sauces",
     descriptionLong:
       "Experience the ultimate indulgence with our Chicken Overloaded Fries! Crispy golden french fries loaded with tender, juicy chicken pieces, melted mozzarella cheese, and drizzled with our special sauces and creamy cheese sauce. This is not just fries - it's a complete meal! Made with fresh potatoes, premium quality halal chicken, and topped with generous amounts of cheese and sauces. Every bite is packed with flavor, texture, and satisfaction. Perfect for sharing or as a hearty meal for one. The most loaded and delicious fries in Mumbra, Shilphata, Kausa, MM Valley, and Dosti. Made fresh daily with 100% halal chicken at Shake Chilli Café & Pizzeria!",
@@ -1155,7 +1104,7 @@ export const MENU_CATEGORIES = [
   { id: "pizza-non-veg", name: "Non-Veg Pizza", slug: "pizza", icon: "🍕" },
   { id: "burger", name: "Burgers", slug: "burger", icon: "🍔" },
   { id: "footlong-sandwich", name: "Footlong Sandwich", slug: "footlong-sandwich", icon: "🥖" },
-  { id: "french-fries", name: "French Fries & Starters", slug: "french-fries", icon: "🍟" },
+  { id: "starters", name: "Starters", slug: "starters", icon: "🍟" },
   { id: "garlic-bread", name: "Garlic Bread", slug: "garlic-bread", icon: "🥖" },
   { id: "coffee-hot", name: "Hot Coffee", slug: "coffee", icon: "☕" },
   { id: "coffee-cold", name: "Cold Coffee", slug: "coffee", icon: "🧊" },

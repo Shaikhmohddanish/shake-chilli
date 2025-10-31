@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { BUSINESS_INFO } from "@/lib/constants"
-import { generateLocalBusinessSchema } from "@/lib/seo"
+import { generateLocalBusinessSchema, generateOrganizationSchema, generateWebsiteSchema, generateFAQSchema } from "@/lib/seo"
 import { PWAInstall } from "@/components/pwa-install"
 import { CartProvider } from "@/contexts/cart-context"
 import { FloatingCart } from "@/components/floating-cart"
@@ -26,31 +26,65 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(BUSINESS_INFO.domain),
   title: {
-    default: `Best Pizza & Burgers in Shilphata–Mumbra | ${BUSINESS_INFO.name} (Halal)`,
+    default: `Best Pizza & Burgers in Shilphata–Mumbra | ${BUSINESS_INFO.name} (Halal) | Free Delivery`,
     template: `%s | ${BUSINESS_INFO.name}`,
   },
   description:
-    "Best Pizza, Burgers, Footlong Sandwiches & More in Shilphata, Mumbra. 4.7★ Rated Halal Restaurant near Al-Hidaya School. Free Home Delivery 30min. Order Online: 7208-697-371",
+    "Best Pizza, Burgers, Footlong Sandwiches & More in Shilphata, Mumbra. 4.7★ Rated Halal Restaurant near Al-Hidaya School. Free Home Delivery in 20-40min. Order: 7208-697-371. Fresh ingredients, premium quality, family-friendly dining.",
   keywords: [
+    // Primary Keywords
     "best pizza in mumbra",
+    "best burger in mumbra",
+    "shake chilli mumbra",
+    "shake chilli shilphata",
+    
+    // Location-based Keywords
     "pizza near shilphata",
+    "burger near shilphata",
     "halal restaurant mumbra",
-    "burgers near me",
-    "footlong sandwich shilphata",
-    "best food in mumbra",
-    "shake chilli",
-    "pizza delivery mumbra",
-    "coffee shop shilphata",
-    "milkshakes mumbra",
+    "restaurant near al-hidaya school",
+    "food near dosti mumbra",
+    "pizza delivery mumbra bypass",
+    "restaurant near shimla park",
+    "food delivery kausa",
+    "restaurant amrut nagar",
+    
+    // Product-specific Keywords
+    "chicken tikka pizza mumbra",
+    "veg pizza shilphata",
+    "footlong sandwich mumbra",
+    "best milkshake mumbra",
+    "cold coffee shilphata",
     "mocktails near me",
-    "chicken tikka pizza",
-    "veg pizza mumbra",
-    "combo meals shilphata",
-    "family restaurant mumbra",
-    "al-hidaya school restaurant",
-    "near al hidaya school",
-    "near dosti",
-    "near shalimar",
+    "garlic bread mumbra",
+    "french fries delivery",
+    
+    // Service Keywords
+    "free home delivery mumbra",
+    "online food order mumbra",
+    "pizza home delivery shilphata",
+    "fast food delivery mumbra",
+    "halal food near me",
+    
+    // Combo & Meal Keywords
+    "combo meals mumbra",
+    "family meal deals",
+    "pizza burger combo",
+    "student meal deals mumbra",
+    
+    // Quality & Feature Keywords
+    "fresh pizza mumbra",
+    "homemade pizza dough",
+    "100% halal restaurant",
+    "best cafe in mumbra",
+    "late night food mumbra",
+    
+    // Long-tail Keywords
+    "best pizza restaurant near al-hidaya school",
+    "halal burger near dosti",
+    "chicken pizza delivery mumbra",
+    "veg footlong sandwich shilphata",
+    "best restaurant for family mumbra",
   ],
   authors: [{ name: BUSINESS_INFO.name }],
   creator: BUSINESS_INFO.name,
@@ -65,22 +99,36 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: BUSINESS_INFO.domain,
     siteName: BUSINESS_INFO.fullName,
-    title: `Best Pizza & Burgers in Shilphata–Mumbra | ${BUSINESS_INFO.name}`,
-    description: "Best Pizza, Burgers, Footlong Sandwiches & More. Halal Restaurant with Free Home Delivery.",
+    title: `Best Pizza & Burgers in Shilphata–Mumbra | ${BUSINESS_INFO.name} | Halal Restaurant`,
+    description: "🍕 4.7★ Rated Halal Restaurant | Fresh Pizza, Juicy Burgers, Footlong Sandwiches, Starters, Coffee & More | 🆓 Free Home Delivery in 20-40min | 📞 Order: 7208-697-371 | Near Al-Hidaya School, Shilphata | Menu: Pizza (Veg/Non-Veg), Burgers, Sandwiches, Garlic Bread, Fries, Milkshakes, Mocktails",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/shake-chilli-complete-pizza-menu-mumbra-shilphata.jpeg",
         width: 1200,
         height: 630,
-        alt: `${BUSINESS_INFO.name} - Best Pizza & Burgers in Mumbra`,
+        alt: `${BUSINESS_INFO.name} - Best Pizza & Burgers in Mumbra Shilphata - Complete Menu with Halal Food & Free Delivery`,
+      },
+      {
+        url: "/images/pizza/Chicken tikka pizza.jpg",
+        width: 800,
+        height: 600,
+        alt: "Best Chicken Tikka Pizza in Mumbra - Shake Chilli Restaurant",
+      },
+      {
+        url: "/images/shake-chilli-logo.png",
+        width: 400,
+        height: 400,
+        alt: "Shake Chilli Cafe & Restaurant Logo - Best Halal Food in Mumbra",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: `Best Pizza & Burgers in Shilphata–Mumbra | ${BUSINESS_INFO.name}`,
-    description: "Best Pizza, Burgers, Footlong Sandwiches & More. Halal Restaurant with Free Home Delivery.",
-    images: ["/og-image.jpg"],
+    description: "🍕 4.7★ Rated Halal Restaurant | Fresh Pizza, Burgers, Sandwiches | 🆓 Free Delivery 20-40min | 📞 7208-697-371",
+    images: ["/images/shake-chilli-complete-pizza-menu-mumbra-shilphata.jpeg"],
+    creator: "@shakechilli",
+    site: "@shakechilli",
   },
   robots: {
     index: true,
@@ -92,6 +140,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  alternates: {
+    canonical: BUSINESS_INFO.domain,
   },
   manifest: "/manifest.webmanifest",
   icons: {
@@ -124,12 +175,34 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const jsonLd = generateLocalBusinessSchema()
+  const localBusinessSchema = generateLocalBusinessSchema()
+  const organizationSchema = generateOrganizationSchema()
+  const websiteSchema = generateWebsiteSchema()
+  const faqSchema = generateFAQSchema()
 
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        {/* Local Business Schema for Restaurant Details */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        {/* Organization Schema for Brand Recognition */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        {/* Website Schema with Sitelinks Search Box */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        {/* FAQ Schema for Rich Snippets */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       </head>
       <body className="antialiased">
         <CartProvider>

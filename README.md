@@ -26,11 +26,14 @@ A modern, responsive Next.js website for Shake Chilli Café & Restaurant in Shil
 - **Native app experience** on mobile
 
 ### 🎯 SEO Optimized
-- **Local SEO focused** for Mumbra, Shilphata area
-- **Structured data** (JSON-LD) for rich snippets
-- **Optimized meta tags** for all pages
+- **Local SEO focused** for Mumbra, Shilphata area with 60+ targeted keywords
+- **Enhanced structured data** (JSON-LD) with ratings, geo-coordinates, and payment info
+- **Optimized meta tags** with compelling titles and descriptions
 - **Sitemap and robots.txt** for better crawling
 - **Performance optimized** for Core Web Vitals
+- **Location-specific keywords** for all delivery zones
+- **Long-tail keyword optimization** for voice search
+- **Canonical URLs** to prevent duplicate content
 
 ### 🍕 Menu & Content Features
 - **Comprehensive menu** with categories and pricing
@@ -95,10 +98,18 @@ export default withPWA({
 ## 📊 SEO & Performance
 
 ### Local SEO Features
-- **Business Schema** markup for restaurant
+- **Enhanced Business Schema** with ratings (4.7★), geo-coordinates, and payment methods
+- **60+ targeted keywords** covering locations, products, and services
 - **Location-based keywords** throughout content
-- **Local landmarks** referenced (Al-Hidaya School, Dosti, Shalimar)
-- **Service area targeting** (Mumbra, Shilphata, Diva)
+- **Local landmarks** referenced (Al-Hidaya School, Dosti, Shalimar, Shimla Park, Kausa, Amrut Nagar)
+- **Service area targeting** with specific delivery zones
+- **Long-tail keywords** for voice search optimization
+- **Canonical URLs** for better indexing
+
+### Delivery Zones (Free Delivery)
+- **Express Zone (20 min)**: Mumbra Bypass, Dosti, Shalimar, Shilphata
+- **Standard Zone (40 min)**: Shimla Park, Kausa, Amrut Nagar, MM Valley, Y Junction, Millenium
+- **Extended Zone (60 min)**: Mumbra Station, Station Road
 
 ### Performance Metrics
 - **Lighthouse Score**: 90+ Performance, 95+ SEO

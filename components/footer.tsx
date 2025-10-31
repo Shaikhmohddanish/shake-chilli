@@ -86,7 +86,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {BUSINESS_INFO.fullName}. All rights reserved.
           </p>
           <p className="mt-1 md:mt-2">Serving Mumbra, Shilphata, Kausa, MM Valley, Dosti, Shimla Park, Shalimar, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium & nearby areas</p>
-          <p className="mt-1 text-primary font-medium">🚀 Lightning fast delivery: Shalimar (1 min) • Dosti (2 min) • Shimla Park (5-7 min) • Others (10-15 min)</p>
+          <p className="mt-1 text-primary font-medium">🚀 Fast delivery: Bypass & Shalimar (20 min) • Dosti (20 min) • Shimla Park & Kausa (40 min) • Amrut Nagar (40 min) • Station (60 min)</p>
           <p className="mt-1 text-sm">Open Daily: 12:00 PM - 3:00 AM</p>
         </div>
       </div>

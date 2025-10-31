@@ -51,7 +51,7 @@ export default function MenuPage() {
             </h1>
             <p className="text-base md:text-lg text-background/80 text-center max-w-2xl mx-auto">
               Explore our full range of fresh pizzas, burgers, footlong sandwiches, and beverages at Shake Chilli Cafe & Pizzeria. Best halal food in Mumbra, Shilphata, Kausa, MM Valley, Dosti, Amrut Nagar. All items available for dine-in and
-              delivery in just 10-15 minutes!
+              delivery in 20-40 minutes! Bypass & Dosti (20min), Shimla Park & Kausa (40min), Station (60min).
             </p>
           </div>
         </section>
@@ -61,7 +61,7 @@ export default function MenuPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Complete Menu with Prices</h2>
             <p className="text-center text-muted-foreground mb-8 md:mb-12 max-w-3xl mx-auto text-sm md:text-base">
               Browse our full menu cards with detailed pricing for all items. Available for dine-in and free home
-              delivery in Mumbra, Shilphata, Kausa, MM Valley, Dosti, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium and nearby areas. Reach in just 10-15 minutes!
+              delivery in Mumbra, Shilphata, Kausa, MM Valley, Dosti, Amrut Nagar, Mumbra Bypass, Y Junction, Millenium and nearby areas. Delivery time: Bypass area 20min, Shimla Park/Kausa/Amrut Nagar 40min, Station area 60min.
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">

@@ -11,6 +11,7 @@ import { AchievementsSection } from "@/components/home/achievements-section"
 import { ReviewsSection } from "@/components/home/reviews-section"
 import { FAQSection } from "@/components/home/faq-section"
 import { LocationBanner } from "@/components/home/location-banner"
+import { DeliveryZones } from "@/components/home/delivery-zones"
 import { FloatingCTA } from "@/components/floating-cta"
 import { generateBreadcrumbSchema, generateLocalBusinessSchema } from "@/lib/seo"
 
@@ -27,6 +28,7 @@ export default function HomePage() {
         <USPStrip />
         <CategoryGrid />
         <AboutSection />
+        <DeliveryZones />
         <SpecialtiesSection />
         <FeaturedCombos />
         <WhyUs />

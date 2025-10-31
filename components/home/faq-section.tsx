@@ -20,7 +20,7 @@ export function FAQSection() {
     },
     {
       question: "How long does delivery take?",
-      answer: "Our average delivery time is 25-35 minutes, depending on your location and order size. We strive to deliver hot, fresh food as quickly as possible while maintaining quality."
+      answer: "Our delivery time varies by location: Mumbra Bypass & Shalimar (20 minutes), Shimla Park, Kausa & Amrut Nagar (40 minutes), and Station area (60 minutes). We strive to deliver hot, fresh food as quickly as possible while maintaining quality."
     },
     {
       question: "Do you have vegetarian options?",

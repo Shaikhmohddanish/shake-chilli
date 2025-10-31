@@ -58,8 +58,7 @@ export function AboutSection() {
                 <h3 className="text-xl font-bold">Free Delivery</h3>
               </div>
               <p className="text-muted-foreground">
-                Free home delivery in Mumbra, Shilphata, Diva, Dosti, and nearby areas. 
-                Enjoy our delicious food from the comfort of your home.
+                Free home delivery in Mumbra, Shilphata, Kausa, MM Valley, Dosti, Shimla Park, Amrut Nagar and nearby areas. Delivery times: Bypass 20min, Shimla Park/Kausa 40min, Station 60min.
               </p>
             </CardContent>
           </Card>

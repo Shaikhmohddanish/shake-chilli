@@ -218,7 +218,7 @@ export function ItemDetailsClient({ item }: ItemDetailsClientProps) {
               ))}
               <li className="flex items-center gap-2 text-sm">
                 <span className="text-[#18a558]">✓</span>
-                <span>Free delivery in Mumbra, Shilphata, Kausa, MM Valley, Dosti - Reach in 10-15 min!</span>
+                <span>Free delivery in Mumbra, Shilphata, Kausa, MM Valley, Dosti - Bypass 20min, Shimla Park/Kausa/Amrut Nagar 40min, Station 60min!</span>
               </li>
               <li className="flex items-center gap-2 text-sm">
                 <span className="text-[#18a558]">✓</span>

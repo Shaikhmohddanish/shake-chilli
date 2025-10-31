@@ -21,7 +21,7 @@ export function CategoryGrid() {
       icon: Pizza,
       description: "Veg & Non-Veg pizzas with fresh toppings",
       color: "text-[#e10600]",
-      bgImage: "/images/backgrounds/pizza-bg.jpg",
+      bgImage: "/images/pizza/Chicken tikka pizza.jpg",
       bgGradient: "from-red-500 to-orange-500",
     },
     {
@@ -30,7 +30,7 @@ export function CategoryGrid() {
       icon: UtensilsCrossed,
       description: "Juicy burgers with crispy patties",
       color: "text-[#18a558]",
-      bgImage: "/images/backgrounds/burger-bg.jpg",
+      bgImage: "/images/burger/Chicken burger.jpg",
       bgGradient: "from-green-500 to-emerald-500",
     },
     {
@@ -39,7 +39,7 @@ export function CategoryGrid() {
       icon: Sandwich,
       description: "6-inch & 12-inch subway-style sandwiches",
       color: "text-[#e10600]",
-      bgImage: "/images/backgrounds/sandwich-bg.jpg",
+      bgImage: "/images/shake-chilli-footlong-sandwich-wrap-menu-shilphata.jpeg",
       bgGradient: "from-yellow-500 to-orange-500",
     },
     {
@@ -48,16 +48,16 @@ export function CategoryGrid() {
       icon: Salad,
       description: "Cheesy, corn & chicken garlic bread",
       color: "text-[#18a558]",
-      bgImage: "/images/backgrounds/garlic-bread-bg.jpg",
+      bgImage: "/images/menu/garlic-bread-menu.jpg",
       bgGradient: "from-amber-500 to-yellow-500",
     },
     {
-      name: "French Fries",
-      slug: "/french-fries",
+      name: "Starters",
+      slug: "/starters",
       icon: Salad,
       description: "Crispy fries, chicken popcorn & starters",
       color: "text-[#e10600]",
-      bgImage: "/images/backgrounds/fries-bg.jpg",
+      bgImage: "/images/starters/Cheesy fries.jpg",
       bgGradient: "from-yellow-600 to-orange-600",
     },
     {
@@ -66,7 +66,7 @@ export function CategoryGrid() {
       icon: Coffee,
       description: "Hot & cold coffee varieties",
       color: "text-[#18a558]",
-      bgImage: "/images/backgrounds/coffee-bg.jpg",
+      bgImage: "/images/coffee/Classic cold coffee.jpg",
       bgGradient: "from-amber-800 to-yellow-800",
     },
     {
@@ -75,7 +75,7 @@ export function CategoryGrid() {
       icon: Wine,
       description: "Thick & creamy milkshakes",
       color: "text-[#e10600]",
-      bgImage: null,
+      bgImage: "/images/milkshakes/Chocolate milk shake.jpg",
       bgGradient: "from-pink-500 to-rose-500",
     },
     {
@@ -84,7 +84,7 @@ export function CategoryGrid() {
       icon: Wine,
       description: "12+ flavors: Virgin, Mango, Kiwi & more",
       color: "text-[#18a558]",
-      bgImage: "/images/backgrounds/mocktail-bg.jpg",
+      bgImage: "/images/mocktails/Virgin mojito.jpg",
       bgGradient: "from-cyan-500 to-blue-500",
     },
   ]

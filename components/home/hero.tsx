@@ -30,7 +30,7 @@ export function Hero() {
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-6 md:mb-8 text-pretty max-w-3xl mx-auto font-medium">
             Freshly baked pizzas, juicy burgers & delicious sandwiches delivered hot to your doorstep. 
-            100% Halal certified with free home delivery across Mumbra, Shilphata, Kausa, MM Valley, Dosti (2 min), Shimla Park (5-7 min), Shalimar (1 min), Amrut Nagar & nearby areas!
+            100% Halal certified with free home delivery across Mumbra, Shilphata, Kausa, MM Valley, Dosti (20 min), Shimla Park (40 min), Shalimar (20 min), Amrut Nagar (40 min), Mumbra Bypass (20 min), Y Junction & nearby areas!
           </p>
           
           {/* Additional Hero Content */}
@@ -40,8 +40,8 @@ export function Hero() {
               <div className="text-sm opacity-90">Customer Rating</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white text-center">
-              <div className="text-2xl font-bold mb-1">1-15min</div>
-              <div className="text-sm opacity-90">Lightning Delivery</div>
+              <div className="text-2xl font-bold mb-1">20-40min</div>
+              <div className="text-sm opacity-90">Fast Delivery</div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-white text-center">
               <div className="text-2xl font-bold mb-1">₹0</div>

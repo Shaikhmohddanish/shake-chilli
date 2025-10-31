@@ -27,7 +27,21 @@ export const BUSINESS_INFO = {
   },
   features: ["Halal", "Free Home Delivery", "Fresh Ingredients", "Fast Service"],
   serviceAreas: ["Mumbra", "Shilphata", "Kausa", "MM Valley", "Dosti", "Shimla Park", "Shalimar", "Amrut Nagar", "Mumbra Bypass", "Y Junction", "Millenium"],
-  deliveryTime: "10-15 minutes",
+  deliveryTime: "20-40 minutes",
+  deliveryZones: {
+    fast: {
+      time: "20 minutes",
+      areas: ["Mumbra Bypass", "Dosti", "Shalimar", "Shilphata"],
+    },
+    standard: {
+      time: "40 minutes",
+      areas: ["Shimla Park", "Kausa", "Amrut Nagar", "MM Valley", "Y Junction", "Millenium"],
+    },
+    extended: {
+      time: "60 minutes",
+      areas: ["Mumbra Station", "Station Road"],
+    },
+  },
   cuisines: ["Pizza", "Burgers", "Sandwiches", "Coffee", "Milkshakes", "Mocktails"],
   priceRange: "₹₹",
 } as const
