@@ -147,16 +147,26 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/favicon.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon.png", sizes: "16x16", type: "image/png" },
+      { url: "/images/shake-chilli-logo.png", sizes: "192x192", type: "image/png" },
       { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
       { url: "/icons/icon-512x512.png", sizes: "512x512", type: "image/png" },
     ],
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/images/shake-chilli-logo.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: "/favicon.ico",
+    shortcut: ["/favicon.ico"],
+    other: [
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "192x192",
+        url: "/images/shake-chilli-logo.png",
+      },
+    ],
   },
   other: {
     "mobile-web-app-capable": "yes",
@@ -183,6 +193,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        {/* Explicit Logo Link for Search Engines */}
+        <link rel="icon" type="image/png" href="/images/shake-chilli-logo.png" />
+        <link rel="apple-touch-icon" href="/images/shake-chilli-logo.png" />
+        <link rel="shortcut icon" href="/images/shake-chilli-logo.png" />
+        
         {/* Local Business Schema for Restaurant Details */}
         <script
           type="application/ld+json"

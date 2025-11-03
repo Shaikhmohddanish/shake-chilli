@@ -22,19 +22,19 @@
       "type": "image/png"
     },
     {
-      "src": "/icons/icon-144x144.png",
+      "src": "/images/shake-chilli-logo.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-192x192.png",
+      "src": "/images/shake-chilli-logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/icons/icon-192x192.png",
+      "src": "/images/shake-chilli-logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"

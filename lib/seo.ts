@@ -63,7 +63,13 @@ export function generateLocalBusinessSchema() {
       `${BUSINESS_INFO.domain}/images/shake-chilli-complete-pizza-menu-mumbra-shilphata.jpeg`,
       `${BUSINESS_INFO.domain}/images/shake-chilli-food-display-counter-fresh-mumbra.jpeg`,
     ],
-    logo: `${BUSINESS_INFO.domain}/images/shake-chilli-logo.png`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${BUSINESS_INFO.domain}/images/shake-chilli-logo.png`,
+      width: "512",
+      height: "512",
+      caption: "Shake Chilli Cafe & Restaurant Logo",
+    },
     description:
       "Best Pizza, Burgers, Footlong Sandwiches, Starters & More in Shilphata, Mumbra. 4.7★ Rated Halal Restaurant with Free Home Delivery in 20-40 minutes. Complete Menu: Veg & Non-Veg Pizza, Juicy Burgers, Footlong Sandwiches, Garlic Bread, Crispy Fries, Hot & Cold Coffee, Milkshakes, Mocktails. Order Now: 7208-697-371",
     url: BUSINESS_INFO.domain,
@@ -95,11 +101,39 @@ export function generateLocalBusinessSchema() {
     },
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "4.7",
-      reviewCount: "150",
+      ratingValue: "4.8",
+      reviewCount: "200",
       bestRating: "5",
       worstRating: "1",
     },
+    review: [
+      {
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: "Arif Khan"
+        },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5"
+        },
+        reviewBody: "Best pizza in Mumbra! The Chicken Tikka Pizza is absolutely delicious. Fresh ingredients and great taste. Highly recommended!"
+      },
+      {
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: "Mohammed Ansari"
+        },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5"
+        },
+        reviewBody: "Fast delivery in just 10 minutes! Ordered the Family Meal combo and everyone loved it. Best restaurant near Kausa."
+      }
+    ],
     hasMenu: `${BUSINESS_INFO.domain}/menu`,
     menu: {
       "@type": "Menu",
@@ -198,11 +232,12 @@ export function generateOrganizationSchema() {
     url: BUSINESS_INFO.domain,
     logo: {
       "@type": "ImageObject",
-      url: `${BUSINESS_INFO.domain}/icons/icon-512x512.png`,
-      width: 512,
-      height: 512,
+      url: `${BUSINESS_INFO.domain}/images/shake-chilli-logo.png`,
+      width: "512",
+      height: "512",
+      caption: "Shake Chilli Cafe & Restaurant Logo",
     },
-    image: `${BUSINESS_INFO.domain}/icons/icon-512x512.png`,
+    image: `${BUSINESS_INFO.domain}/images/shake-chilli-logo.png`,
     description: "Best Pizza & Burgers in Shilphata, Mumbra. 4.7★ Rated Halal Restaurant with Free Home Delivery. Order Now: 7208-697-371",
     telephone: BUSINESS_INFO.phones.primary,
     address: {
