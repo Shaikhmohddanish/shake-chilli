@@ -13,15 +13,10 @@ import { FAQSection } from "@/components/home/faq-section"
 import { LocationBanner } from "@/components/home/location-banner"
 import { DeliveryZones } from "@/components/home/delivery-zones"
 import { FloatingCTA } from "@/components/floating-cta"
-import { generateBreadcrumbSchema, generateLocalBusinessSchema } from "@/lib/seo"
 
 export default function HomePage() {
-  const breadcrumbSchema = generateBreadcrumbSchema([{ name: "Home", url: "/" }])
-  const localBusinessSchema = generateLocalBusinessSchema()
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <Header />
       <main id="main-content">
         <Hero />
