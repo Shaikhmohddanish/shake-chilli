@@ -106,34 +106,6 @@ export function generateLocalBusinessSchema() {
       bestRating: "5",
       worstRating: "1",
     },
-    review: [
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Arif Khan"
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5"
-        },
-        reviewBody: "Best pizza in Mumbra! The Chicken Tikka Pizza is absolutely delicious. Fresh ingredients and great taste. Highly recommended!"
-      },
-      {
-        "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Mohammed Ansari"
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5"
-        },
-        reviewBody: "Fast delivery in just 10 minutes! Ordered the Family Meal combo and everyone loved it. Best restaurant near Kausa."
-      }
-    ],
     hasMenu: `${BUSINESS_INFO.domain}/menu`,
     menu: {
       "@type": "Menu",
