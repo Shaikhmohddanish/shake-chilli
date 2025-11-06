@@ -1016,7 +1016,7 @@ export const MENU_ITEMS: MenuItem[] = [
     descriptionLong:
       "Our Chicken Popcorn is a homemade delight that's crispy on the outside and tender on the inside. Made with premium quality chicken pieces, marinated with our special blend of spices, coated in a crispy batter, and deep-fried to golden perfection. Each bite-sized piece is packed with flavor and crunch. Perfect as a starter, snack, or party appetizer. Served with our signature dipping sauces. Made fresh daily with 100% halal chicken at Shake Chilli Café & Pizzeria in Mumbra, Shilphata, Kausa, MM Valley, and Dosti. The best chicken popcorn in town!",
     price: 150,
-    image: "/images/starters/Chicken overloaded fries.jpg",
+    image: "/images/starters/Chicken popcorn homemade.jpg",
     tags: ["fries", "chicken", "loaded", "overloaded", "complete meal", "indulgent", "halal", "cheese"],
     isVeg: false,
     isHalal: true,
