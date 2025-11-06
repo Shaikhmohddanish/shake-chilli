@@ -148,15 +148,15 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.png", sizes: "16x16", type: "image/png" },
-      { url: "/images/shake-chilli-logo.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon-img.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-img.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-img.png", sizes: "192x192", type: "image/png" },
       { url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
       { url: "/icons/icon-512x512.png", sizes: "512x512", type: "image/png" },
     ],
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-      { url: "/images/shake-chilli-logo.png", sizes: "180x180", type: "image/png" },
+      { url: "/favicon-img.png", sizes: "180x180", type: "image/png" },
     ],
     shortcut: ["/favicon.ico"],
     other: [
@@ -164,7 +164,7 @@ export const metadata: Metadata = {
         rel: "icon",
         type: "image/png",
         sizes: "192x192",
-        url: "/images/shake-chilli-logo.png",
+        url: "/favicon-img.png",
       },
     ],
   },
@@ -193,10 +193,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        {/* Explicit Logo Link for Search Engines */}
-        <link rel="icon" type="image/png" href="/images/shake-chilli-logo.png" />
-        <link rel="apple-touch-icon" href="/images/shake-chilli-logo.png" />
-        <link rel="shortcut icon" href="/images/shake-chilli-logo.png" />
+        {/* Explicit Favicon Links */}
+        <link rel="icon" type="image/png" href="/favicon-img.png" />
+        <link rel="apple-touch-icon" href="/favicon-img.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         
         {/* Local Business Schema for Restaurant Details */}
         <script
