@@ -103,6 +103,12 @@ export const metadata: Metadata = {
     description: "4.7★ Rated Halal Restaurant | Fresh Pizza, Juicy Burgers, Footlong Sandwiches, Starters, Coffee & More | Free Home Delivery in 20-40min | Order: 7208-697-371 | Near Al-Hidaya School, Shilphata | Menu: Pizza (Veg/Non-Veg), Burgers, Sandwiches, Garlic Bread, Fries, Milkshakes, Mocktails",
     images: [
       {
+        url: "/images/shake-chilli-logo.png",
+        width: 800,
+        height: 1280,
+        alt: "Shake Chilli Cafe & Restaurant Logo - Best Halal Food in Mumbra Shilphata",
+      },
+      {
         url: "/images/shake-chilli-complete-pizza-menu-mumbra-shilphata.jpeg",
         width: 1200,
         height: 630,
@@ -113,12 +119,6 @@ export const metadata: Metadata = {
         width: 800,
         height: 600,
         alt: "Best Chicken Tikka Pizza in Mumbra - Shake Chilli Restaurant",
-      },
-      {
-        url: "/images/shake-chilli-logo.png",
-        width: 400,
-        height: 400,
-        alt: "Shake Chilli Cafe & Restaurant Logo - Best Halal Food in Mumbra",
       },
     ],
   },
