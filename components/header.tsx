@@ -22,8 +22,8 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2 lg:gap-3 group flex-shrink-0">
             <div className="relative w-10 h-10 lg:w-12 lg:h-12 transition-transform group-hover:scale-110">
               <Image
-                src="/images/shake-chilli-logo.png"
-                alt="Shake Chilli Logo - Best Halal Restaurant in Mumbra Shilphata"
+                src="/logo-square.png"
+                alt="Shake Chilli - Best Halal Restaurant in Mumbra Shilphata"
                 fill
                 priority
                 quality={90}
@@ -120,8 +120,8 @@ export function Header() {
                   <div className="flex items-center gap-2">
                     <div className="relative w-7 h-7">
                       <Image
-                        src="/images/shake-chilli-logo.png"
-                        alt="Shake Chilli Logo"
+                        src="/logo-square.png"
+                        alt="Shake Chilli"
                         fill
                         className="object-contain"
                       />

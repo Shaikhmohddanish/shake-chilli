@@ -107,15 +107,23 @@ export function CategoryGrid() {
               <Card className="h-full hover:shadow-card transition-all duration-300 cursor-pointer group border-2 hover:border-primary/20 hover:-translate-y-1 overflow-hidden bg-white">
                 <div className="relative h-48 md:h-56 overflow-hidden">
                   {category.bgImage ? (
-                    <Image
-                      src={category.bgImage}
-                      alt={`Best ${category.name} in Mumbra Shilphata - ${category.description} - Shake Chilli Cafe`}
-                      fill
-                      priority={category.name === "Pizza" || category.name === "Burgers"}
-                      quality={80}
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
+                    <>
+                      <Image
+                        src={category.bgImage}
+                        alt={`Best ${category.name} in Mumbra Shilphata - ${category.description} - Shake Chilli Cafe`}
+                        fill
+                        priority={category.name === "Pizza" || category.name === "Burgers"}
+                        quality={80}
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        aria-describedby={`category-desc-${category.slug}`}
+                      />
+                      <span id={`category-desc-${category.slug}`} className="sr-only">
+                        Appetizing photo of {category.name.toLowerCase()} showing fresh ingredients and presentation. 
+                        This image represents our {category.description.toLowerCase()} available at Shake Chilli restaurant in Mumbra and Shilphata. 
+                        Click to explore our full {category.name.toLowerCase()} menu with prices and ordering options.
+                      </span>
+                    </>
                   ) : (
                     <div className={`absolute inset-0 bg-gradient-to-br ${category.bgGradient} transition-transform duration-300 group-hover:scale-105`} />
                   )}

@@ -38,7 +38,14 @@ export function ProductCard({ item }: ProductCardProps) {
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          aria-describedby={`product-desc-${item.id}`}
         />
+        <span id={`product-desc-${item.id}`} className="sr-only">
+          High-quality image of {item.name} from Shake Chilli restaurant. {item.description}. 
+          This {item.isVeg ? 'vegetarian' : 'non-vegetarian'} {item.categoryDisplay.toLowerCase()} is {item.isHalal ? 'halal certified and ' : ''}
+          made with fresh ingredients. {item.isPopular ? 'This is one of our most popular items.' : ''} 
+          Available for dine-in and home delivery in Mumbra and Shilphata.
+        </span>
         <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors duration-300" />
         <div className="absolute top-2 md:top-4 right-2 md:right-4 flex flex-col gap-2">
           {item.isVeg && (

@@ -208,7 +208,13 @@ export function SearchComponent({ className, onClose, showCloseButton = false }:
                         fill
                         className="object-cover transition-transform duration-200 hover:scale-105"
                         sizes="48px"
+                        aria-describedby={`search-item-${item.id}`}
                       />
+                      <span id={`search-item-${item.id}`} className="sr-only">
+                        Thumbnail image of {item.name}, a {item.isVeg ? 'vegetarian' : 'non-vegetarian'} 
+                        {item.categoryDisplay.toLowerCase()} available at Shake Chilli. 
+                        {item.description} Click to view full details and pricing.
+                      </span>
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">

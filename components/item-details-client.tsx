@@ -68,7 +68,18 @@ export function ItemDetailsClient({ item }: ItemDetailsClientProps) {
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
+              aria-describedby={`item-detail-desc-${item.id}`}
             />
+            <div id={`item-detail-desc-${item.id}`} className="sr-only">
+              Detailed product photo of {item.name} from Shake Chilli Cafe & Restaurant. 
+              This image shows the complete presentation of the dish including all ingredients and garnishing. 
+              {item.descriptionLong || item.description} 
+              The item is {item.isVeg ? 'vegetarian' : 'non-vegetarian'}, 
+              {item.isHalal ? 'halal certified, ' : ''}
+              and prepared fresh to order at our Shilphata location near Al-Hidaya School. 
+              {item.isPopular ? 'This is one of our best-selling menu items with excellent customer reviews.' : ''}
+              Available for immediate ordering with prices displayed below.
+            </div>
           </div>
         </div>
 
