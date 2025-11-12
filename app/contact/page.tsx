@@ -29,6 +29,15 @@ export const metadata: Metadata = {
     description: "Contact Shake Chilli for orders and delivery in Mumbra, Shilphata, Diva. Call 7208 697 371 or 9082 990 187. Open 11 AM - 11:30 PM.",
     url: "https://shakechillicafe.com/contact",
     type: "website",
+    siteName: "Shake Chilli - Cafe & Restaurant",
+    images: [
+      {
+        url: "https://shakechillicafe.com/logo-square.png",
+        width: 156,
+        height: 156,
+        alt: "Shake Chilli Restaurant",
+      },
+    ],
   },
   robots: {
     index: true,

@@ -29,6 +29,15 @@ export const metadata: Metadata = {
     description: "Best Pizza in Mumbra & Shilphata. Veg & Non-Veg pizzas with fresh toppings. Halal. Free delivery in 10-15 min.",
     url: "https://shakechillicafe.com/pizza",
     type: "website",
+    siteName: "Shake Chilli - Cafe & Restaurant",
+    images: [
+      {
+        url: "https://shakechillicafe.com/logo-square.png",
+        width: 156,
+        height: 156,
+        alt: "Shake Chilli Restaurant",
+      },
+    ],
   },
   robots: {
     index: true,

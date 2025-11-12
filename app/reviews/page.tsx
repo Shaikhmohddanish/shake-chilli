@@ -26,6 +26,15 @@ export const metadata: Metadata = {
     description: "Read customer reviews for Shake Chilli. 4.8/5 stars from 200+ customers in Mumbra, Shilphata, Kausa, MM Valley, Dosti.",
     url: "https://shakechillicafe.com/reviews",
     type: "website",
+    siteName: "Shake Chilli - Cafe & Restaurant",
+    images: [
+      {
+        url: "https://shakechillicafe.com/logo-square.png",
+        width: 156,
+        height: 156,
+        alt: "Shake Chilli Restaurant",
+      },
+    ],
   },
   robots: {
     index: true,

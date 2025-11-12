@@ -31,6 +31,15 @@ export const metadata: Metadata = {
     description: "Best French Fries & Starters in Mumbra & Shilphata. Salted fries, peri peri fries, cheesy fries, chicken popcorn & loaded fries. Free delivery in 10-15 min.",
     url: "https://shakechillicafe.com/french-fries",
     type: "website",
+    siteName: "Shake Chilli - Cafe & Restaurant",
+    images: [
+      {
+        url: "https://shakechillicafe.com/logo-square.png",
+        width: 156,
+        height: 156,
+        alt: "Shake Chilli Restaurant",
+      },
+    ],
   },
   robots: {
     index: true,
