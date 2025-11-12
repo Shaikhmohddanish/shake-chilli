@@ -17,6 +17,26 @@ export const metadata: Metadata = {
     "oreo shake shilphata",
     "thick shake near me",
   ],
+  alternates: {
+    canonical: "https://shakechillicafe.com/milkshakes",
+  },
+  openGraph: {
+    title: "Best Milkshakes in Mumbra, Shilphata | Thick Shakes Near Me",
+    description: "Best Milkshakes in Mumbra & Shilphata. Chocolate, Oreo, KitKat, Strawberry shakes. Thick & creamy. Free delivery in 10-15 min.",
+    url: "https://shakechillicafe.com/milkshakes",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function MilkshakesPage() {

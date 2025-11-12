@@ -21,6 +21,26 @@ export const metadata: Metadata = {
     "pizza delivery mumbra",
     "near al hidaya school",
   ],
+  alternates: {
+    canonical: "https://shakechillicafe.com/pizza",
+  },
+  openGraph: {
+    title: "Best Pizza in Shilphata, Mumbra | Veg & Non-Veg Pizza Near Me",
+    description: "Best Pizza in Mumbra & Shilphata. Veg & Non-Veg pizzas with fresh toppings. Halal. Free delivery in 10-15 min.",
+    url: "https://shakechillicafe.com/pizza",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function PizzaPage() {

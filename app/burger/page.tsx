@@ -20,6 +20,26 @@ export const metadata: Metadata = {
     "halal burger shilphata",
     "zinger burger mumbra",
   ],
+  alternates: {
+    canonical: "https://shakechillicafe.com/burger",
+  },
+  openGraph: {
+    title: "Best Burgers in Mumbra, Shilphata | Chicken & Veg Burgers Near Me",
+    description: "Best Burgers in Mumbra & Shilphata. Juicy chicken burgers, veg burgers, cheese burst. Halal. Free delivery in 10-15 min.",
+    url: "https://shakechillicafe.com/burger",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function BurgerPage() {

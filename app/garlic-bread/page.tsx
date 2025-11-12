@@ -22,6 +22,26 @@ export const metadata: Metadata = {
     "homemade garlic bread",
     "garlic bread delivery kausa",
   ],
+  alternates: {
+    canonical: "https://shakechillicafe.com/garlic-bread",
+  },
+  openGraph: {
+    title: "Best Garlic Bread in Mumbra, Shilphata | Cheesy Garlic Bread Near Me",
+    description: "Best Garlic Bread in Mumbra & Shilphata. Cheesy, corn, paneer & chicken garlic bread. Fresh & homemade. Free delivery in 10-15 min.",
+    url: "https://shakechillicafe.com/garlic-bread",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function GarlicBreadPage() {

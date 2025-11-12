@@ -2,7 +2,7 @@
 <browserconfig>
     <msapplication>
         <tile>
-            <square150x150logo src="/images/shake-chilli-logo.png"/>
+            <square150x150logo src="/logo-square.png"/>
             <TileColor>#e10600</TileColor>
         </tile>
     </msapplication>

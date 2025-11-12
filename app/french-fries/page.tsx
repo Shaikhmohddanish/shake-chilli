@@ -23,6 +23,26 @@ export const metadata: Metadata = {
     "chicken overloaded fries",
     "crispy fries kausa",
   ],
+  alternates: {
+    canonical: "https://shakechillicafe.com/french-fries",
+  },
+  openGraph: {
+    title: "Best French Fries & Starters in Mumbra, Shilphata | Crispy Fries Near Me",
+    description: "Best French Fries & Starters in Mumbra & Shilphata. Salted fries, peri peri fries, cheesy fries, chicken popcorn & loaded fries. Free delivery in 10-15 min.",
+    url: "https://shakechillicafe.com/french-fries",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function FrenchFriesPage() {
@@ -31,7 +51,7 @@ export default function FrenchFriesPage() {
     { name: "French Fries & Starters", url: "/french-fries" },
   ])
 
-  const friesItems = MENU_ITEMS.filter((item) => item.category === "french-fries")
+  const friesItems = MENU_ITEMS.filter((item) => item.category === "starters")
 
   const friesFAQs = [
     {

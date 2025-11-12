@@ -18,6 +18,26 @@ export const metadata: Metadata = {
     "customer feedback mumbra",
     "halal restaurant reviews",
   ],
+  alternates: {
+    canonical: "https://shakechillicafe.com/reviews",
+  },
+  openGraph: {
+    title: "Customer Reviews | Shake Chilli Mumbra, Shilphata | 4.8★ Rating",
+    description: "Read customer reviews for Shake Chilli. 4.8/5 stars from 200+ customers in Mumbra, Shilphata, Kausa, MM Valley, Dosti.",
+    url: "https://shakechillicafe.com/reviews",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function ReviewsPage() {

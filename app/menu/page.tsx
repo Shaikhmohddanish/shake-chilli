@@ -19,6 +19,26 @@ export const metadata: Metadata = {
     "food menu near me",
     "halal restaurant menu",
   ],
+  alternates: {
+    canonical: "https://shakechillicafe.com/menu",
+  },
+  openGraph: {
+    title: "Menu & Prices | Pizza, Burgers, Sandwiches",
+    description: "View our complete menu with prices. Best Pizza, Burgers, Footlong Sandwiches, Coffee, Milkshakes in Mumbra, Shilphata. Halal food with free delivery.",
+    url: "https://shakechillicafe.com/menu",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function MenuPage() {

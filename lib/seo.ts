@@ -58,16 +58,16 @@ export function generateLocalBusinessSchema() {
     name: BUSINESS_INFO.fullName,
     alternateName: BUSINESS_INFO.name,
     image: [
-      `${BUSINESS_INFO.domain}/images/shake-chilli-logo.png`,
-      `${BUSINESS_INFO.domain}/images/pizza/Chicken tikka pizza.jpg`,
+      `${BUSINESS_INFO.domain}/logo-square.png`,
       `${BUSINESS_INFO.domain}/images/shake-chilli-complete-pizza-menu-mumbra-shilphata.jpeg`,
+      `${BUSINESS_INFO.domain}/images/pizza/Chicken tikka pizza.jpg`,
       `${BUSINESS_INFO.domain}/images/shake-chilli-food-display-counter-fresh-mumbra.jpeg`,
     ],
     logo: {
       "@type": "ImageObject",
-      url: `${BUSINESS_INFO.domain}/images/shake-chilli-logo.png`,
-      width: "512",
-      height: "512",
+      url: `${BUSINESS_INFO.domain}/logo-square.png`,
+      width: "156",
+      height: "156",
       caption: "Shake Chilli Cafe & Restaurant Logo",
     },
     description:
@@ -204,12 +204,12 @@ export function generateOrganizationSchema() {
     url: BUSINESS_INFO.domain,
     logo: {
       "@type": "ImageObject",
-      url: `${BUSINESS_INFO.domain}/images/shake-chilli-logo.png`,
-      width: "512",
-      height: "512",
+      url: `${BUSINESS_INFO.domain}/logo-square.png`,
+      width: "156",
+      height: "156",
       caption: "Shake Chilli Cafe & Restaurant Logo",
     },
-    image: `${BUSINESS_INFO.domain}/images/shake-chilli-logo.png`,
+    image: `${BUSINESS_INFO.domain}/logo-square.png`,
     description: "Best Pizza & Burgers in Shilphata, Mumbra. 4.7★ Rated Halal Restaurant with Free Home Delivery. Order Now: 7208-697-371",
     telephone: BUSINESS_INFO.phones.primary,
     address: {

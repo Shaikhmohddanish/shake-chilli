@@ -21,6 +21,26 @@ export const metadata: Metadata = {
     "restaurant near al hidaya school",
     "halal food contact",
   ],
+  alternates: {
+    canonical: "https://shakechillicafe.com/contact",
+  },
+  openGraph: {
+    title: "Contact Us | Shake Chilli Mumbra, Shilphata | Call for Orders & Delivery",
+    description: "Contact Shake Chilli for orders and delivery in Mumbra, Shilphata, Diva. Call 7208 697 371 or 9082 990 187. Open 11 AM - 11:30 PM.",
+    url: "https://shakechillicafe.com/contact",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function ContactPage() {

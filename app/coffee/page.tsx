@@ -18,6 +18,26 @@ export const metadata: Metadata = {
     "iced coffee shilphata",
     "cold coffee near me",
   ],
+  alternates: {
+    canonical: "https://shakechillicafe.com/coffee",
+  },
+  openGraph: {
+    title: "Best Coffee in Mumbra, Shilphata | Hot & Cold Coffee Near Me",
+    description: "Best Coffee in Mumbra & Shilphata. Cappuccino, Latte, Iced Coffee, Cold Coffee. Premium coffee beans. Free delivery in 10-15 min.",
+    url: "https://shakechillicafe.com/coffee",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 }
 
 export default function CoffeePage() {
