@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Phone, MapPin, Menu, X, Search, Home, ClipboardList, Pizza, Sandwich, Coffee } from "lucide-react"
+import { Phone, MapPin, Menu, X, Search, Home, ClipboardList, Pizza, Sandwich, Coffee, BookOpen } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -59,6 +59,10 @@ export function Header() {
             </Link>
             <Link href="/burger" className="text-sm font-medium hover:text-primary transition-colors relative group">
               Burgers
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+            </Link>
+            <Link href="/blog" className="text-sm font-medium hover:text-primary transition-colors relative group">
+              Blog
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </Link>
             <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors relative group">
@@ -178,6 +182,14 @@ export function Header() {
                     >
                       <Coffee className="w-4 h-4" />
                       Coffee & Beverages
+                    </Link>
+                    <Link 
+                      href="/blog" 
+                      className="flex items-center gap-3 px-3 py-2.5 text-sm font-medium hover:text-primary hover:bg-accent/50 rounded-lg transition-all duration-200"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <BookOpen className="w-4 h-4" />
+                      Blog
                     </Link>
                     <Link 
                       href="/contact" 

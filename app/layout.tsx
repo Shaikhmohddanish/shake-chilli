@@ -115,10 +115,10 @@ export const metadata: Metadata = {
         alt: "Shake Chilli Cafe & Restaurant Logo - Best Halal Food in Mumbra Shilphata",
       },
       {
-        url: "/images/pizza/Chicken tikka pizza.jpg",
+        url: "/images/pizza/veg/Margherita pizza Veg.jpg",
         width: 800,
         height: 600,
-        alt: "Best Chicken Tikka Pizza in Mumbra - Shake Chilli Restaurant",
+        alt: "Best Margherita Pizza in Mumbra - Shake Chilli Restaurant",
       },
     ],
   },
