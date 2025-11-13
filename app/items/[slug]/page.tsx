@@ -75,6 +75,9 @@ export default async function ItemDetailPage({ params }: PageProps) {
     { name: item.name, url: `/items/${item.slug}` },
   ])
 
+  const priceValidUntil = new Date()
+  priceValidUntil.setFullYear(priceValidUntil.getFullYear() + 1)
+
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -85,6 +88,7 @@ export default async function ItemDetailPage({ params }: PageProps) {
       "@type": "Offer",
       price: typeof item.price === "number" ? item.price : item.price.S || item.price.regular || item.price["6inch"],
       priceCurrency: "INR",
+      priceValidUntil: priceValidUntil.toISOString().split('T')[0],
       availability: "https://schema.org/InStock",
       seller: {
         "@type": "Organization",
