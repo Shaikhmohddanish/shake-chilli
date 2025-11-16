@@ -1,26 +1,14 @@
-# *
+# Allow all bots to crawl everything
 User-agent: *
 Allow: /
 
-# Host
-Host: https://shakechillicafe.com
-
-# Sitemaps
+# Sitemap
 Sitemap: https://shakechillicafe.com/sitemap.xml
 
-# Improve crawl efficiency
-Crawl-delay: 1
-
-# Disallow admin and private areas
+# Disallow admin and API areas only
 Disallow: /admin/
-Disallow: /_next/
 Disallow: /api/
-Disallow: /*.json$
 
-# Allow important pages
-Allow: /menu
-Allow: /pizza
-Allow: /burger
-Allow: /contact
-Allow: /how-to-reach
-Allow: /reviews
+# Allow Next.js static assets (images, CSS, JS)
+Allow: /_next/static/
+Allow: /_next/image/
