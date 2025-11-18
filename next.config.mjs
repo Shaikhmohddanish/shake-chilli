@@ -17,6 +17,21 @@ const nextConfig = {
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.shakechillicafe.com',
+          },
+        ],
+        destination: 'https://shakechillicafe.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
@@ -25,6 +40,15 @@ const nextConfig = {
           {
             key: 'Content-Type',
             value: 'application/manifest+json',
+          },
+        ],
+      },
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Link',
+            value: '<https://shakechillicafe.com>; rel="canonical"',
           },
         ],
       },

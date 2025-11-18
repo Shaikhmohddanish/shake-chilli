@@ -90,6 +90,40 @@ export default async function ItemDetailPage({ params }: PageProps) {
       priceCurrency: "INR",
       priceValidUntil: priceValidUntil.toISOString().split('T')[0],
       availability: "https://schema.org/InStock",
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "0",
+          currency: "INR"
+        },
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "IN",
+          addressRegion: "Maharashtra"
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: "10",
+            maxValue: "20",
+            unitCode: "MIN"
+          },
+          transitTime: {
+            "@type": "QuantitativeValue",
+            minValue: "20",
+            maxValue: "40",
+            unitCode: "MIN"
+          }
+        }
+      },
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "IN",
+        returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+        merchantReturnDays: 0
+      },
       seller: {
         "@type": "Organization",
         name: BUSINESS_INFO.fullName,
@@ -128,7 +162,6 @@ export default async function ItemDetailPage({ params }: PageProps) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <Header />
