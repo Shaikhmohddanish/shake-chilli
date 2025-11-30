@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { BUSINESS_INFO } from "./constants"
 
 export interface SEOConfig {
@@ -8,6 +9,26 @@ export interface SEOConfig {
   ogImage?: string
   jsonLd?: any
 }
+
+export function buildCanonicalPath(path = "/") {
+  const trimmed = BUSINESS_INFO.domain.replace(/\/$/, "")
+  if (!path || path === "/") {
+    return trimmed
+  }
+  return `${trimmed}${path.startsWith("/") ? path : `/${path}`}`
+}
+
+export const DEFAULT_ROBOTS: Metadata["robots"] = {
+  index: true,
+  follow: true,
+  googleBot: {
+    index: true,
+    follow: true,
+    "max-video-preview": -1,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+  },
+} as const
 
 export function generateSEO(config: SEOConfig) {
   const {

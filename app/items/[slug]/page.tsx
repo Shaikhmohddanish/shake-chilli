@@ -2,7 +2,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FloatingCTA } from "@/components/floating-cta"
 import { MENU_ITEMS } from "@/lib/menu-data"
-import { generateBreadcrumbSchema } from "@/lib/seo"
+import { generateBreadcrumbSchema, buildCanonicalPath, DEFAULT_ROBOTS } from "@/lib/seo"
 import { generateFoodItemSchema } from "@/lib/image-seo"
 import { formatPriceAdvanced } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
@@ -57,7 +57,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `Best ${item.name} in Mumbra & Shilphata`,
       description: item.description,
       images: [item.image],
-    }
+    },
+    alternates: {
+      canonical: buildCanonicalPath(`/items/${item.slug}`),
+    },
+    robots: DEFAULT_ROBOTS,
   }
 }
 

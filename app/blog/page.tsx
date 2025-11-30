@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Clock } from "lucide-react"
 import { BUSINESS_INFO } from "@/lib/constants"
+import { buildCanonicalPath, DEFAULT_ROBOTS } from "@/lib/seo"
 
 export const metadata: Metadata = {
   title: "Blog - Pizza, Cafe & Food Guide in Mumbra",
@@ -26,6 +27,10 @@ export const metadata: Metadata = {
     description: "Discover the best pizza, cafes, and dining spots in Mumbra. Expert guides for couples, birthdays, and halal food lovers.",
     images: ["/images/shake-chilli-complete-pizza-menu-mumbra-shilphata.jpeg"],
   },
+  alternates: {
+    canonical: buildCanonicalPath("/blog"),
+  },
+  robots: DEFAULT_ROBOTS,
 }
 
 export default function BlogPage() {

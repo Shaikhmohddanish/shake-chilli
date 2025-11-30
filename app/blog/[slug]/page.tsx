@@ -12,6 +12,7 @@ import { Calendar, Clock, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { BUSINESS_INFO } from "@/lib/constants"
 import { BlogShare } from "@/components/blog-share"
+import { buildCanonicalPath, DEFAULT_ROBOTS } from "@/lib/seo"
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -60,6 +61,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       description: post.description,
       images: [post.image],
     },
+    alternates: {
+      canonical: buildCanonicalPath(`/blog/${post.slug}`),
+    },
+    robots: DEFAULT_ROBOTS,
   }
 }
 
