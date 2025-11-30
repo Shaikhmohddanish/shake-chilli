@@ -63,12 +63,24 @@ export default withPWA({
   disable: process.env.NODE_ENV === 'development',
   runtimeCaching: [
     {
-      urlPattern: /^https?.*/,
+      urlPattern: /^https:\/\/shakechillicafe\.com\/.*/,
       handler: 'NetworkFirst',
       options: {
-        cacheName: 'offlineCache',
+        cacheName: 'pages-cache',
+        expiration: {
+          maxEntries: 100,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+        },
+      },
+    },
+    {
+      urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp|avif)$/,
+      handler: 'CacheFirst',
+      options: {
+        cacheName: 'image-cache',
         expiration: {
           maxEntries: 200,
+          maxAgeSeconds: 60 * 24 * 60 * 60, // 60 days
         },
       },
     },
@@ -76,4 +88,7 @@ export default withPWA({
   buildExcludes: [/middleware-manifest\.json$/],
   scope: '/',
   sw: 'sw.js',
+  fallbacks: {
+    document: '/offline',
+  },
 })(nextConfig);

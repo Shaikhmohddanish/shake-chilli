@@ -28,49 +28,56 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const { slug } = await params
-  const post = getBlogPost(slug)
+  try {
+    const resolvedParams = await params
+    const post = getBlogPost(resolvedParams.slug)
 
-  if (!post) {
-    return {
-      title: "Post Not Found",
+    if (!post) {
+      return {
+        title: "Post Not Found",
+      }
     }
-  }
 
-  return {
-    title: post.title,
-    description: post.description,
-    keywords: post.tags,
-    authors: [{ name: post.author }],
-    openGraph: {
+    return {
       title: post.title,
       description: post.description,
-      type: "article",
-      publishedTime: post.publishedDate,
-      authors: [post.author],
-      images: [
-        {
-          url: post.image,
-          alt: post.imageAlt,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.description,
-      images: [post.image],
-    },
-    alternates: {
-      canonical: buildCanonicalPath(`/blog/${post.slug}`),
-    },
-    robots: DEFAULT_ROBOTS,
+      keywords: post.tags,
+      authors: [{ name: post.author }],
+      openGraph: {
+        title: post.title,
+        description: post.description,
+        type: "article",
+        publishedTime: post.publishedDate,
+        authors: [post.author],
+        images: [
+          {
+            url: post.image,
+            alt: post.imageAlt,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.description,
+        images: [post.image],
+      },
+      alternates: {
+        canonical: buildCanonicalPath(`/blog/${post.slug}`),
+      },
+      robots: DEFAULT_ROBOTS,
+    }
+  } catch (error) {
+    console.error('Error generating blog metadata:', error)
+    return {
+      title: "Blog Post",
+    }
   }
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params
-  const post = getBlogPost(slug)
+  const resolvedParams = await params
+  const post = getBlogPost(resolvedParams.slug)
 
   if (!post) {
     notFound()

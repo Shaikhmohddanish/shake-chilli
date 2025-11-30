@@ -17,9 +17,9 @@ import type { Metadata } from "next"
 import { ItemDetailsClient } from "@/components/item-details-client"
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export async function generateStaticParams() {
@@ -29,14 +29,15 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params
-  const item = MENU_ITEMS.find((i) => i.slug === slug)
+  try {
+    const resolvedParams = await params
+    const item = MENU_ITEMS.find((i) => i.slug === resolvedParams.slug)
 
-  if (!item) {
-    return {
-      title: "Item Not Found",
+    if (!item) {
+      return {
+        title: "Item Not Found",
+      }
     }
-  }
 
   return {
     title: `Best ${item.name} in Mumbra (Shilphata) | Price ₹${typeof item.price === "number" ? item.price : Object.values(item.price)[0]} | Reviews & Photos`,
@@ -63,11 +64,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     robots: DEFAULT_ROBOTS,
   }
+  } catch (error) {
+    console.error('Error generating item metadata:', error)
+    return {
+      title: "Menu Item",
+    }
+  }
 }
 
 export default async function ItemDetailPage({ params }: PageProps) {
-  const { slug } = await params
-  const item = MENU_ITEMS.find((i) => i.slug === slug)
+  const resolvedParams = await params
+  const item = MENU_ITEMS.find((i) => i.slug === resolvedParams.slug)
 
   if (!item) {
     notFound()
