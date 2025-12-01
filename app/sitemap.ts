@@ -33,21 +33,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: withBase(path),
     lastModified: nowIso,
     changeFrequency: path === "/" ? "daily" : "weekly",
-    priority: path === "/" ? 1 : 0.9,
+    priority: path === "/" ? 1.0 : path === "/menu" ? 0.9 : 0.8,
   }))
 
   const blogRoutes: MetadataRoute.Sitemap = getAllBlogPosts().map((post) => ({
     url: withBase(`/blog/${post.slug}`),
     lastModified: new Date(post.publishedDate || nowIso).toISOString(),
-    changeFrequency: "monthly",
-    priority: 0.8,
+    changeFrequency: "weekly",
+    priority: 0.7,
   }))
 
   const menuItemRoutes: MetadataRoute.Sitemap = MENU_ITEMS.map((item) => ({
     url: withBase(`/items/${item.slug}`),
     lastModified: nowIso,
-    changeFrequency: "monthly",
-    priority: 0.7,
+    changeFrequency: "weekly",
+    priority: item.isPopular ? 0.8 : 0.7,
   }))
 
   return [...staticRoutes, ...blogRoutes, ...menuItemRoutes]

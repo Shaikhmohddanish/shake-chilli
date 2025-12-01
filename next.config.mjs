@@ -17,21 +17,6 @@ const nextConfig = {
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'www.shakechillicafe.com',
-          },
-        ],
-        destination: 'https://shakechillicafe.com/:path*',
-        permanent: true,
-      },
-    ];
-  },
   async headers() {
     return [
       {
@@ -44,11 +29,15 @@ const nextConfig = {
         ],
       },
       {
-        source: '/:path*',
+        source: '/sitemap.xml',
         headers: [
           {
-            key: 'Link',
-            value: '<https://shakechillicafe.com>; rel="canonical"',
+            key: 'Content-Type',
+            value: 'application/xml',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, s-maxage=3600',
           },
         ],
       },

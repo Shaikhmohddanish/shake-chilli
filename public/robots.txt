@@ -8,7 +8,11 @@ Sitemap: https://shakechillicafe.com/sitemap.xml
 # Disallow admin and API areas only
 Disallow: /admin/
 Disallow: /api/
+Disallow: /_next/
 
 # Allow Next.js static assets (images, CSS, JS)
 Allow: /_next/static/
 Allow: /_next/image/
+
+# Crawl delay for better server performance
+Crawl-delay: 0
